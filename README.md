@@ -6,7 +6,7 @@
 
 ## Supports de cours
 
-- [cours-01](slides/cours-01.pdf)
+- [cours-01](slides/cours-01.pdf) -- le premier [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/).
 
 ## Learn-OCaml
 
