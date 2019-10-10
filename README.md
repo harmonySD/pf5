@@ -9,6 +9,7 @@
 - [cours-01](slides/cours-01.pdf) -- le [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/).
 - [cours-02](slides/cours-02.pdf) -- le [sketch](https://sketch.sh/s/l3N96HVMsM3eGQQw9JQ6y8/).
 - [cours-03](slides/cours-03.pdf) -- le [sketch](https://sketch.sh/s/N4zt2tZ1AX4X8kT2aHWwro/).
+- [cours-04](slides/cours-04.pdf) -- le [sketch](https://sketch.sh/s/q0QnNEkP6quhXdinv60zef/).
 
 ## Learn-OCaml
 
