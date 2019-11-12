@@ -13,6 +13,10 @@
 - [cours-05](slides/cours-05.pdf) -- le [code](slides/cours-05).
 - [cours-06](slides/cours-06.pdf) -- le [code](slides/cours-06).
 
+## Projet
+
+- [sujet](project/lambda-man.pdf)
+
 ## Learn-OCaml
 
 - Connectez vous sur [LearnOCaml](http://ocaml.hackojo.org)
