@@ -13,6 +13,7 @@
 - [cours-05](slides/cours-05.pdf) -- le [code](slides/cours-05).
 - [cours-06](slides/cours-06.pdf) -- le [code](slides/cours-06).
 - [cours-07](slides/cours-07.pdf) -- le [sketch](https://sketch.sh/s/pmpCjGZjGnrDneOBiLSuBF/).
+- le [sketch](https://sketch.sh/s/bU2dh9pkztj2TJrrCN5z15/).
 
 ## Projet
 
