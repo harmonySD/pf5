@@ -19,6 +19,10 @@
 
 - [sujet](project/lambda-man.pdf)
 
+## Examens
+
+- [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
+
 ## Learn-OCaml
 
 - Connectez vous sur [LearnOCaml](http://ocaml.hackojo.org)
