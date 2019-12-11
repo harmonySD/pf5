@@ -19,6 +19,12 @@
 
 - [sujet](project/lambda-man.pdf)
 
+- Le rendu du projet est le **6 janvier**.
+
+- Un script copiera le contenu de votre dépôt git à 18h00 le 6 janvier.
+
+- Aucun rendu par email ou par tout autre moyen ne sera accepté.
+
 ## Examens
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
