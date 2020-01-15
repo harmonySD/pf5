@@ -28,6 +28,7 @@
 ## Examens
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
+  Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
 
 ## Learn-OCaml
 
