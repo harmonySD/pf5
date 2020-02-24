@@ -47,9 +47,7 @@ Cette approche répond à des problèmes de l'ingénierie du logiciel:
   un passage à l'échelle des systèmes informatiques.
 
 La programmation fonctionnelle existe depuis les débuts de l'informatique
-mais elle connaît un essor important depuis quelques années:
-
-<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2051_RC11/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"functional programming","geo":"US","time":"2004-01-01 2020-02-24"},{"keyword":"object oriented programming","geo":"US","time":"2004-01-01 2020-02-24"}],"category":0,"property":""}, {"exploreQuery":"date=all&geo=US&q=functional%20programming,object%20oriented%20programming","guestPath":"https://trends.google.fr:443/trends/embed/"}); </script>
+mais elle connaît un essor important depuis [quelques années](https://trends.google.fr/trends/explore?date=all&geo=US&q=functional%20programming,object%20oriented%20programming).
 
 La plupart des mécanismes de la programmation fonctionnelle sont
 aujourd'hui intégrés dans les langages de programmation les plus
