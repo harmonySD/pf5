@@ -44,7 +44,7 @@ Cette approche répond à des problèmes de l'ingénierie du logiciel:
 
 - enfin, l'usage de composants logiciels sans état permet de dupliquer
   sans effort les unités de calcul et de stockage et ainsi favoriser
-  un passage à l'échelle des systèmes informatiques.
+  un **passage à l'échelle** des systèmes informatiques.
 
 La programmation fonctionnelle existe depuis les débuts de l'informatique
 mais elle connaît un essor important depuis [quelques années](https://trends.google.fr/trends/explore?date=all&geo=US&q=functional%20programming,object%20oriented%20programming).
