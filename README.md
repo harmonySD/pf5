@@ -56,9 +56,19 @@ mécanismes importants pour l'utiliser pleinement. C'est pourquoi on
 étudiera dans ce cours le langage de programmation OCaml qui donne
 accès à l'ensemble des mécanismes de la programmation fonctionnelle.
 
-## Informations pratiques
+## Organisation du cours
 
-- Le responsable du cours est Yann Régis-Gianas.
+- Le responsable du cours est Yann Régis-Gianas. L'amphi a lieu toutes
+  les semaines le vendredi de 13h30 à 15h30 en amphi 6C.
+
+- Les chargés de travaux dirigés sont:
+  - Giovanni Bernardi
+  - Antonio Bucciarelli
+  - Vincent Padovani
+  - Michel Pagani
+  - Christine Tasson
+
+- Le cours est évalué par un projet et par un examen final.
 
 ## Supports de cours
 
