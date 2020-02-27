@@ -72,6 +72,12 @@ accès à l'ensemble des mécanismes de la programmation fonctionnelle.
 
 ## Supports de cours
 
+Les transparents suivants sont utilisés pendant les séances de cours
+**mais** ils ne correspondent pas à la totalité du contenu des
+séances : vous **devez** avoir une **prise de notes actives et
+manuelles** pendant les cours, [c'est important pour bien
+apprendre](https://www.easybib.com/guides/typing-or-writing-notes-which-is-best/).
+
 - [cours-01](slides/cours-01.pdf) -- le [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/).
 - [cours-02](slides/cours-02.pdf) -- le [sketch](https://sketch.sh/s/l3N96HVMsM3eGQQw9JQ6y8/).
 - [cours-03](slides/cours-03.pdf) -- le [sketch](https://sketch.sh/s/N4zt2tZ1AX4X8kT2aHWwro/).
