@@ -8,11 +8,12 @@ année de licence d'Informatique de l'Université Paris Diderot intitulé
 
 Ce cours vise à vous familiariser avec l'approche fonctionnelle de la
 programmation, qui est une des grandes approches de la programmation
-avec la programmation procédurale et la programmation orientée objet.
+avec la programmation procédurale (dite aussi impérative) et la
+programmation orientée objet.
 
 Cette approche se caractérise par :
 
-- l'usage intensif fonctions récursives travaillant **structure de données
+- l'usage intensif de fonctions récursives travaillant sur des **structures de données
   inductives** (listes, arbres, ...) ;
 
 - une méthodologie qui consiste **à contrôler voire à supprimer toutes
@@ -47,7 +48,7 @@ Cette approche répond à des problèmes de l'ingénierie du logiciel:
   un **passage à l'échelle** des systèmes informatiques.
 
 La programmation fonctionnelle existe depuis les débuts de l'informatique
-mais elle connaît un essor important depuis [quelques années](https://trends.google.fr/trends/explore?date=all&geo=US&q=functional%20programming,object%20oriented%20programming).
+mais elle connaît un essor important depuis quelques années.
 
 La plupart des mécanismes de la programmation fonctionnelle sont
 aujourd'hui intégrés dans les langages de programmation les plus
@@ -58,58 +59,35 @@ accès à l'ensemble des mécanismes de la programmation fonctionnelle.
 
 ## Organisation du cours
 
-- Le responsable du cours est Yann Régis-Gianas. L'amphi a lieu toutes
-  les semaines le vendredi de 13h30 à 15h30 en amphi 6C.
+- Le responsable du cours est Pierre Letouzey. 
 
 - Les chargés de travaux dirigés sont:
+  - Balthazar Bauer
   - Giovanni Bernardi
-  - Antonio Bucciarelli
+  - Adrien Guatto
+  - Pierre Letouzey
   - Vincent Padovani
-  - Michel Pagani
-  - Christine Tasson
 
-- Le cours est évalué par un projet et par un examen final.
+- Le cours est évalué par un projet et par un examen final (à confirmer).
 
 ## Supports de cours
 
-Les transparents suivants sont utilisés pendant les séances de cours
-**mais** ils ne correspondent pas à la totalité du contenu des
-séances : vous **devez** avoir une **prise de notes actives et
-manuelles** pendant les cours, [c'est important pour bien
-apprendre](https://www.easybib.com/guides/typing-or-writing-notes-which-is-best/).
+Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants
+de ce cours, en particulier de Yann Régis-Gianas (merci!)
 
-- [cours-01](slides/cours-01.pdf) -- le [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/).
-- [cours-02](slides/cours-02.pdf) -- le [sketch](https://sketch.sh/s/l3N96HVMsM3eGQQw9JQ6y8/).
-- [cours-03](slides/cours-03.pdf) -- le [sketch](https://sketch.sh/s/N4zt2tZ1AX4X8kT2aHWwro/).
-- [cours-04](slides/cours-04.pdf) -- le [sketch](https://sketch.sh/s/q0QnNEkP6quhXdinv60zef/).
-- [cours-05](slides/cours-05.pdf) -- le [code](slides/cours-05).
-- [cours-06](slides/cours-06.pdf) -- le [code](slides/cours-06).
-- [cours-07](slides/cours-07.pdf) -- le [sketch](https://sketch.sh/s/pmpCjGZjGnrDneOBiLSuBF/).
-- le [sketch](https://sketch.sh/s/bU2dh9pkztj2TJrrCN5z15/) du cours 8.
+- Cours 1 :
+  - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
+  - Un premier [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/) de tour d'horizon d'OCaml.
 
 ## Projet
 
-- [sujet](project/lambda-man.pdf)
+Détails à venir
 
-- Le rendu du projet est le **6 janvier**.
+## Learn-OCaml
 
-- Un script copiera le contenu de votre dépôt git à 18h00 le 6 janvier.
-
-- Aucun rendu par email ou par tout autre moyen ne sera accepté.
+Détails à venir
 
 ## Examens
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
   Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
-
-## Learn-OCaml
-
-- Connectez vous sur [LearnOCaml](http://ocaml.hackojo.org)
-
-- Saisissez un login qui commence par votre groupe et se termine par
-  votre nom de famille. Par exemple `INFO3Skywalker`.
-
-- Le secret est `pf5`
-
-- Notez ensuite absolument votre TOKEN. C'est grâce à lui que vous
-  pourrez retrouver votre session lors de votre prochaine connexion.
