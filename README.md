@@ -70,22 +70,24 @@ accès à l'ensemble des mécanismes de la programmation fonctionnelle.
 
 - Le cours est évalué par un projet et par un examen final (à confirmer).
 
-## Supports de cours
+## Cours en ligne (ex-Amphis)
 
-Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants
-de ce cours, en particulier de Yann Régis-Gianas (merci!)
+Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
 - Cours 1 :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
+    Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/) de tour d'horizon d'OCaml.
+  - Séance de questions/réponses sur ces deux premiers documents : Précisions à venir
+
+
+## Travaux pratiques (via Learn-OCaml)
+
+Précisions à venir
 
 ## Projet
 
-Détails à venir
-
-## Learn-OCaml
-
-Détails à venir
+Précisions à venir
 
 ## Examens
 
