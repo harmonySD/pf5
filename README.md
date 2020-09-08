@@ -30,11 +30,19 @@ Ils sont remplacés par des enseignements en ligne :
 
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
-- Cours 1 (semaine du 9/9) :
+#### Cours 1 (semaine du 9/9) :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml.
-  - Séance de questions/réponses sur ces deux premiers documents : Précisions à venir
+  - Séance 1 de questions/réponses par visioconf après avoir lu ces deux premiers documents :
+    - Horaires : Mercredi 11:30-12:30 ou Jeudi 12:45-13:45.
+      P.ex cette semaine les noms de famille entre A et H le mercredi, les autres le jeudi.
+    - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux,
+      pour une fois pas d'obligation d'être là de la première à la dernière minute. 
+    - Lien de connexion: https://bbb2.math.univ-paris-diderot.fr/b/pie-7hz-rcp pour cette fois-ci.
+    - En cas de souci technique le lien ci-dessus pourra évoluer, soyez attentif aux évolution de cette page.
+    - Microphone conseillé (mais sera sur "Mute" par défaut) mais il y a aussi une zone de chat texte.
+      N'activez pas vos caméras (merci la bande passante).
 
 
 ## Travaux pratiques (via Learn-OCaml)
