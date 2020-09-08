@@ -23,10 +23,10 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 ## Cours en ligne (ex-Amphis)
 
-Les amphis initialement prévus pour ce cours *ne pourront avoir lieu* convenablement vu les contraintes sanitaires actuelles.
+Les amphis initialement prévus pour ce cours **sont suspendus** au vu des contraintes sanitaires actuelles.
 Ils sont remplacés par des enseignements en ligne :
   - des documents pédagogiques à lire/visionner chaque semaine
-  - des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45
+  - des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
 
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
@@ -41,11 +41,10 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain.
 Vu la capacité des salles de TP, une seconde salle (sans machines) pourra être utilisée
-en plus, *si vous disposez d'ordinateurs portables merci d'essayer de venir avec*.
+en plus, **si vous disposez d'ordinateurs portables merci d'essayer de venir avec**.
 
 Planning actuel:
 
-|----------|-------------|-----------------|--------------|
 | Groupe   | Enseignant  | Creneau         | Salle        |
 |----------|-------------|-----------------|--------------|
 | Groupe 1 | P. Letouzey | Mar 16:00-18:00 | 2003 (+2002) |
@@ -53,9 +52,8 @@ Planning actuel:
 | Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
 | Groupe 4 | A. Guatto   | Lun 14:15-16:15 | 2003 (+2036) |
 | MathInfo | V. Padovani | Mar 13:45-15:45 | 2003 (+2001) |
-|----------|-------------|-----------------|--------------|
 
-Les TP se feront en utilisant une instance de la plateforme *learnocaml*. Précisions à venir.
+Les TP se feront en utilisant une instance de la plateforme **Learn-OCaml**. Précisions à venir.
 
 ## Projet
 
