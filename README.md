@@ -23,7 +23,7 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 ## Cours en ligne (ex-Amphis)
 
-Les amphis initialement prévus pour ce cours ne pourront avoir lieu convenablement vu les contraintes sanitaires actuelles.
+Les amphis initialement prévus pour ce cours *ne pourront avoir lieu* convenablement vu les contraintes sanitaires actuelles.
 Ils sont remplacés par des enseignements en ligne :
   - des documents pédagogiques à lire/visionner chaque semaine
   - des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45
