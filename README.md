@@ -30,7 +30,7 @@ Ils sont remplacés par des enseignements en ligne :
 
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
-- Cours 1 :
+- Cours 1 (semaine du 9/9) :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml.
@@ -39,7 +39,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 ## Travaux pratiques (via Learn-OCaml)
 
-Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain.
+Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
 Vu la capacité des salles de TP, une seconde salle (sans machines) pourra être utilisée
 en plus, **si vous disposez d'ordinateurs portables merci d'essayer de venir avec**.
 
