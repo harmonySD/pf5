@@ -1,61 +1,12 @@
 # Introduction à la programmation fonctionnelle
 
 Ce dépôt git contient les ressources pédagogiques du cours de troisième
-année de licence d'Informatique de l'Université Paris Diderot intitulé
-"Programmation Fonctionnelle".
+année de licence d'Informatique de l'Université de Paris (ex-Diderot) intitulé
+"Programmation Fonctionnelle" (PF5).
 
 ## Objectifs du cours
 
-Ce cours vise à vous familiariser avec l'approche fonctionnelle de la
-programmation, qui est une des grandes approches de la programmation
-avec la programmation procédurale (dite aussi impérative) et la
-programmation orientée objet.
-
-Cette approche se caractérise par :
-
-- l'usage intensif de fonctions récursives travaillant sur des **structures de données
-  inductives** (listes, arbres, ...) ;
-
-- une méthodologie qui consiste **à contrôler voire à supprimer toutes
-  formes d'état** dans les programmes pour simplifier le raisonnement
-  et augmenter le parallélisme ;
-
-- une décomposition centrée sur les schémas de calcul (itération,
-  accumulation, filtrage, composition, réduction, ...) à travers
-  l'écriture de **fonctions d'ordre supérieur**
-
-Nous suivrons particulièrement l'approche *typée* de la programmation
-fonctionnelle, c'est-à-dire que l'on ne considérera que des programmes
-fonctionnels qui ont été validés par typage avant leur exécution. Cette
-validation garantit que le programme ne peut pas produire d'erreur
-d'exécution (accès à une mémoire désallouée, incompatibilité entre
-les opérations et leurs arguments, ...).
-
-Cette approche répond à des problèmes de l'ingénierie du logiciel:
-
-- d'abord, le typage garantit la **sûreté de l'exécution** ;
-
-- ensuite, le haut niveau d'abstraction des programmes fonctionnels
-  simplifient la **vérification de la correction des programmes** car
-  ils sont très proches de leur spécification ;
-
-- par ailleurs, l'approche fonctionnelle de la programmation améliore la
-  **robustesse au changement** en favorisant l'écriture de composants
-  logiciels généraux et composables ;
-
-- enfin, l'usage de composants logiciels sans état permet de dupliquer
-  sans effort les unités de calcul et de stockage et ainsi favoriser
-  un **passage à l'échelle** des systèmes informatiques.
-
-La programmation fonctionnelle existe depuis les débuts de l'informatique
-mais elle connaît un essor important depuis quelques années.
-
-La plupart des mécanismes de la programmation fonctionnelle sont
-aujourd'hui intégrés dans les langages de programmation les plus
-utilisés : Python, Java, Javascript... mais il manque encore quelques
-mécanismes importants pour l'utiliser pleinement. C'est pourquoi on
-étudiera dans ce cours le langage de programmation OCaml qui donne
-accès à l'ensemble des mécanismes de la programmation fonctionnelle.
+Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 ## Organisation du cours
 
@@ -72,6 +23,11 @@ accès à l'ensemble des mécanismes de la programmation fonctionnelle.
 
 ## Cours en ligne (ex-Amphis)
 
+Les amphis initialement prévus pour ce cours ne pourront avoir lieu convenablement vu les contraintes sanitaires actuelles.
+Ils sont remplacés par des enseignements en ligne :
+  - des documents pédagogiques à lire/visionner chaque semaine
+  - des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45
+
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
 - Cours 1 :
@@ -83,13 +39,29 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 ## Travaux pratiques (via Learn-OCaml)
 
-Précisions à venir
+Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain.
+Vu la capacité des salles de TP, une seconde salle (sans machines) pourra être utilisée
+en plus, *si vous disposez d'ordinateurs portables merci d'essayer de venir avec*.
+
+Planning actuel:
+
+|----------|-------------|-----------------|--------------|
+| Groupe   | Enseignant  | Creneau         | Salle        |
+|----------|-------------|-----------------|--------------|
+| Groupe 1 | P. Letouzey | Mar 16:00-18:00 | 2003 (+2002) |
+| Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | 2003 (+2002) |
+| Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
+| Groupe 4 | A. Guatto   | Lun 14:15-16:15 | 2003 (+2036) |
+| MathInfo | V. Padovani | Mar 13:45-15:45 | 2003 (+2001) |
+|----------|-------------|-----------------|--------------|
+
+Les TP se feront en utilisant une instance de la plateforme *learnocaml*. Précisions à venir.
 
 ## Projet
 
 Précisions à venir
 
-## Examens
+## Anciens examens
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
   Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
