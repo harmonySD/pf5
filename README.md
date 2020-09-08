@@ -33,7 +33,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 - Cours 1 :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
-  - Un premier [sketch](https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa/) de tour d'horizon d'OCaml.
+  - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml.
   - Séance de questions/réponses sur ces deux premiers documents : Précisions à venir
 
 
