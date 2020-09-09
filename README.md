@@ -45,7 +45,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
       P.ex cette semaine les noms de famille entre A et H le mercredi, les autres le jeudi.
     - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux,
       pour une fois pas d'obligation d'être là de la première à la dernière minute. 
-    - Lien de connexion: https://bbb2.math.univ-paris-diderot.fr/b/pie-7hz-rcp pour cette fois-ci.
+    - Lien de connexion: https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw pour cette semaine
     - En cas de souci technique le lien ci-dessus pourra évoluer, soyez attentif aux évolution de cette page.
     - Microphone conseillé (mais sera sur "Mute" par défaut) mais il y a aussi une zone de chat texte.
       N'activez pas vos caméras (merci la bande passante).
