@@ -21,6 +21,12 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 - Le cours est évalué par un projet et par un examen final (à confirmer).
 
+## Inscrivez-vous !
+
+- Inscrivez-vous sur https://moodle.u-paris.fr/course/view.php?id=1641
+- La mailing-liste dédié au cours est `l3.pf5.info@listes.u-paris.fr`. Inscrivez-vous via https://listes.u-paris.fr/wws/subscribe/l3.pf5.info
+
+
 ## Cours en ligne (ex-Amphis)
 
 Les amphis initialement prévus pour ce cours **sont suspendus** au vu des contraintes sanitaires actuelles.
@@ -33,7 +39,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 #### Cours 1 (semaine du 9/9) :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
-  - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml.
+  - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml, à regarder d'ici le premier TP.
   - Séance 1 de questions/réponses par visioconf après avoir lu ces deux premiers documents :
     - Horaires : Mercredi 11:30-12:30 ou Jeudi 12:45-13:45.
       P.ex cette semaine les noms de famille entre A et H le mercredi, les autres le jeudi.
@@ -43,7 +49,8 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
     - En cas de souci technique le lien ci-dessus pourra évoluer, soyez attentif aux évolution de cette page.
     - Microphone conseillé (mais sera sur "Mute" par défaut) mais il y a aussi une zone de chat texte.
       N'activez pas vos caméras (merci la bande passante).
-
+    - Vous pouvez aussi me posez vos questions via la mailing-list `l3.pf5.info@listes.u-paris.fr` (s'inscrire!) ou
+      directement via mon [email](http://www.irif.fr/~letouzey)
 
 ## Travaux pratiques (via Learn-OCaml)
 
