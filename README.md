@@ -68,7 +68,12 @@ Planning actuel:
 | Groupe 4 | A. Guatto   | Lun 14:15-16:15 | 2003 (+2036) |
 | MathInfo | V. Padovani | Mar 13:45-15:45 | 2003 (+2001) |
 
-Les TP se feront en utilisant une instance de la plateforme **Learn-OCaml**. Précisions à venir.
+Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateforme **Learn-OCaml** : 
+- A la première connexion, saisir un "nickname" qui commence par votre numéro de groupe puis votre nom de famille, par exemple 3Skywalker
+- Pour les MathInfo, mettre 5 comme numéro de groupe
+- Le secret est pf5
+- Notez absolument votre TOKEN. C'est grâce à lui que vous pourrez retrouver votre session lors de votre prochaine connexion.
+
 
 ## Projet
 
