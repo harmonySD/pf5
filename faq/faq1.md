@@ -53,7 +53,7 @@ Idéalement il y aura une soutenance autour de début janvier où on vient avec 
 
 # OCaml, versions, installations ...
 
-### Quoi installer sur sa machine
+### Quoi installer sur sa machine ?
 
 Pour les premiers TP, un navigateur web et du wifi suffiront, TPs sur une plateforme dédié :
 LearnOCaml, http://pf5.ddns.net , merci de respecter les consignes d'utilisation données sur la page du cours
@@ -77,9 +77,9 @@ même version.
 
 Penser par équation mathématique, et donc par *réécriture*. Cela permet de s'abstraire des détails d'implémentation machine (instructions bas niveau, mémoire, etc). 
 
-Par exemple, si ̀f` est `fun x -> x + 1`, alors `f 3` vaut ̀(fun x -> x+1) 3` qui vaut `3+1` qui vaut `4`.
+Par exemple, si `f` est `fun x -> x + 1`, alors `f 3` vaut `(fun x -> x+1) 3` qui vaut `3+1` qui vaut `4`.
 
-Voir aussi l'exemple du tri dans les slides (syntaxe idéalisée) : 
+Voir aussi l'exemple du tri dans les slides (syntaxe idéalisée pour l'instant) : 
 `tri(x puis L) = (tri L filtré sur les nombre < x) ++ x ++ (L filtré tri sur les nombre > x)`
 C'est une équation récursive. Pas besoin de savoir où sont ces listes en mémoire.
 
@@ -95,7 +95,7 @@ Le typage est ici une aide précieuse. Il est *inféré* par le système (mais o
 fun f x -> f x;; (* ici on ne sait pas si les types 'a (entrée de f) et 'b (sortie de f) sont identiques. *)
 
 fun f x -> f (f x);; (* ici on sait que les types 'a (entrée de f) et 'b (sortie de f) sont identiques. *)
-̀``
+```
 
 ### Manipulation de données structurées
 
