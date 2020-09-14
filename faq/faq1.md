@@ -186,7 +186,7 @@ f (c + f 5);; (* les parenthèses changent radicalement le sens de cette express
 Tout ceci vaut également pour les fonctions à plusieurs arguments : `f 1 2` ou `f x y` mais `f (x+1) y`.
 Dans cette dernière expression, les parenthères sont indispensables, `f x + 1 y` serait une addition entre un appel `f x` et ... une erreur, vu que `1 y` est *mal typé*, 1 n'étant pas une fonction.
 
-On verra par la suite qu'une syntaxe comme ̀f(1,2)` est possible aussi en OCaml, mais avec une autre signification: fonction recevait une *paire* `(1,2)`.
+On verra par la suite qu'une syntaxe comme `f(1,2)` est possible aussi en OCaml, mais avec une autre signification: fonction recevait une *paire* `(1,2)`.
 
 ### Et le match ?
 
@@ -197,7 +197,7 @@ quand on a un match avec une liste, on pourra analyser les différents cas, exem
 
 ### Pourquoi dire qu'un `let x = ...` n'allouera peut-être pas de mémoire ?
 
-Par exemple dans le cas d'un "let" local : 
+Par exemple dans le cas d'un `let` local, avec en outre que des constantes derrière :
 
 ```
 let x = 3+3
@@ -205,4 +205,4 @@ in x+x;;
 ```
 
 Ici la compilation a toutes les informations, il n'a pas besoin de sauvegarder ces valeurs.
-Un compilateur intelligent remplacera le code au dessus par 12 car ça ne change pas la sémantique.
+Un compilateur intelligent remplacera le code ci-dessus par 12 car ça ne change pas la sémantique.
