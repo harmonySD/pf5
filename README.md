@@ -40,6 +40,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml, à regarder d'ici le premier TP.
+  - Un fichier [FAQ](faq/faq1.md) issu des sessions de questions/réponses de cette semaine.
   - Séance 1 de questions/réponses par visioconf après avoir lu ces deux premiers documents :
     - Horaires : Mercredi 11:30-12:30 ou Jeudi 12:45-13:45.
       P.ex cette semaine les noms de famille entre A et H le mercredi, les autres le jeudi.
