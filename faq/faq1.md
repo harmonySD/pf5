@@ -259,7 +259,7 @@ match c'est à peu près l'equivalent de switch dans Java, mais aux stéroides.
 
 quand on a un match avec une liste, on pourra analyser les différents cas, exemple le cas d'une liste avec deux éléments exactement.
 
-Note : la fonction `remove_repetiton` utilise plusieurs possibilités avancées du `match` pour que vous aillez une petite idée de ses possibilités, c'est tout-à-fait normal de ne pas comprendre tous les détails pour l'instant.
+Note : la fonction `remove_repetiton` utilise plusieurs possibilités avancées du `match` pour que vous ayez une petite idée de ses possibilités, c'est tout-à-fait normal de ne pas comprendre tous les détails pour l'instant.
 
 ### Pourquoi dire qu'un `let x = ...` n'allouera peut-être pas de mémoire ?
 
