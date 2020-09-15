@@ -68,7 +68,7 @@ Planning actuel:
 
 | Groupe   | Enseignant  | Creneau         | Salle        |
 |----------|-------------|-----------------|--------------|
-| Groupe 1 | P. Letouzey | Mar 16:00-18:00 | 2003 (+2002) |
+| Groupe 1 | P. Letouzey | Mar 16:00-18:00 | 2031 (+2036) |
 | Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | 2003 (+2002) |
 | Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
 | Groupe 4 | A. Guatto   | Lun 14:15-16:15 | 2003 (+2036) |
