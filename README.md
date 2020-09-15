@@ -53,6 +53,11 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
     - Vous pouvez aussi me posez vos questions via la mailing-list `l3.pf5.info@listes.u-paris.fr` (s'inscrire!) ou
       directement via mon [email](http://www.irif.fr/~letouzey)
 
+#### Cours 2 (semaine du 14/9) :
+  - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml. Et en particulier les *listes*, que nous utiliserons abondemment la semaine prochaine.
+  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
+
+
 ## Travaux pratiques (via Learn-OCaml)
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
