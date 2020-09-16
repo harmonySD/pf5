@@ -54,7 +54,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
       directement via mon [email](http://www.irif.fr/~letouzey)
 
 #### Cours 2 (semaine du 14/9) :
-  - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml. Et en particulier les *listes*, que nous utiliserons abondemment la semaine prochaine.
+  - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml. Et en particulier les *listes*, que nous utiliserons abondamment la semaine prochaine.
   - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
 
 
