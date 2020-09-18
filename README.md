@@ -31,8 +31,11 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 Les amphis initialement prévus pour ce cours **sont suspendus** au vu des contraintes sanitaires actuelles.
 Ils sont remplacés par des enseignements en ligne :
-  - des documents pédagogiques à lire/visionner chaque semaine
-  - des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
+  - Des documents pédagogiques à lire/visionner chaque semaine, voir plus bas.
+  - Des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
+  - Pour l'instant le lien BBB pour ces séances est https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw 
+  - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux.
+  - Vous pouvez aussi me posez vos questions via la mailing-list (cf ci-dessous) ou via mon [email](http://www.irif.fr/~letouzey)
 
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
 
@@ -41,21 +44,14 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml, à regarder d'ici le premier TP.
   - Un fichier [FAQ](faq/faq1.md) issu des sessions de questions/réponses de cette semaine.
-  - Séance 1 de questions/réponses par visioconf après avoir lu ces deux premiers documents :
-    - Horaires : Mercredi 11:30-12:30 ou Jeudi 12:45-13:45.
-      P.ex cette semaine les noms de famille entre A et H le mercredi, les autres le jeudi.
-    - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux,
-      pour une fois pas d'obligation d'être là de la première à la dernière minute. 
-    - Lien de connexion: https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw pour cette semaine
-    - En cas de souci technique le lien ci-dessus pourra évoluer, soyez attentif aux évolution de cette page.
-    - Microphone conseillé (mais sera sur "Mute" par défaut) mais il y a aussi une zone de chat texte.
-      N'activez pas vos caméras (merci la bande passante).
-    - Vous pouvez aussi me posez vos questions via la mailing-list `l3.pf5.info@listes.u-paris.fr` (s'inscrire!) ou
-      directement via mon [email](http://www.irif.fr/~letouzey)
 
 #### Cours 2 (semaine du 14/9) :
   - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml. Et en particulier les *listes*, que nous utiliserons abondamment la semaine prochaine.
-  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
+  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière. Les fichiers :
+    - FAQ/sketch : à venir
+    - Capture vidéo brute de ces séances :
+      [mercredi 16](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600248349291) et
+      [jeudi 17](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600339588749) (incluant quelques bons cafouillages, vive le direct)
 
 
 ## Travaux pratiques (via Learn-OCaml)
