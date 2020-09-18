@@ -47,8 +47,8 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 #### Cours 2 (semaine du 14/9) :
   - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml. Et en particulier les *listes*, que nous utiliserons abondamment la semaine prochaine.
-  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière. Les fichiers :
-    - FAQ/sketch : à venir
+  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
+    - Le code OCaml montré pendant ces séances, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch en ligne](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
     - Capture vidéo brute de ces séances :
       [mercredi 16](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600248349291) et
       [jeudi 17](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600339588749) (incluant quelques bons cafouillages, vive le direct)
