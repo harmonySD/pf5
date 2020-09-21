@@ -1,11 +1,10 @@
 Un tour d'OCaml
 ===============
 
+Transcription de https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b
 Forked from https://sketch.sh/s/agM8OE0PPCmcU0oO9GPWBa
 
 Auteur initial : Yann Régis-Gianas.
-
-​
 
 Ce fichier est fait pour vous aider à mener vos premières expérimentations avec des programmes OCaml. 
 
@@ -13,13 +12,9 @@ En changeant un peu les exemples de code, vous pourrez expérimenter et vérifie
 
 Si vous souhaitez sauvegarder vos changements, connectez-vous avec un compte github puis faites "fork".
 
-​
-
 ## Des expressions typées! Au revoir les commandes!
 
 En OCaml, les calculs sont définis par des expressions. On peut évaluer une expression dans la boucle interactive OCaml (appelée aussi *toplevel*) en terminant par deux point-virgules `;;`. On verra plus tard que ces `;;` ne sont pas toujours obligatoires, mais pour l'instant mettons-les.
-
-​
 
 Voici une expression qui calcule un entier. Vous pouvez l'évaluer en cliquant sur "Run" tout en haut (ou en tapant Ctrl+Enter).
 ```ocaml
@@ -27,8 +22,6 @@ Voici une expression qui calcule un entier. Vous pouvez l'évaluer en cliquant s
 ```
 
 Le retour de l'évaluateur d'OCaml produit deux choses importantes : un type et une valeur. On ne s'en rend pas compte ici mais l'évaluateur a procédé en deux étapes : 1. il a déterminé le type de l'expression sans l'évaluer (on dit aussi qu'il a *inféré* ce type) 2. il a calculé effectivement le résultat de l'évaluation de l'expression.
-
-​
 
 On voit mieux ces deux étapes lorsque l'on fait une erreur de typage comme dans l'exemple suivant.
 
@@ -39,11 +32,7 @@ Enlever les marqueurs de commentaires `(*` et `*)` et évaluer pour voir l'erreu
 
 Avant d'évaluer l'expression, le typeur a remarqué qu'évaluer cette expression n'a pas de sens puisque l'addition + n'est défini que sur les entiers. Le calcul n'est donc même pas commencé.
 
-​
-
 Remettez bien les commentaires `(*` et `*)` autour de l'exemple précédent avant de continuer (ou corrigez l'erreur de type !), sinon Sketch n'évaluera pas les exemples suivants.
-
-​
 
 Bien sûr, on retrouve en OCaml tous les types de données primitifs classiques : entiers, booléens, flottants, caractères, chaînes de caractères et leurs opérateurs standards associés.
 ```ocaml
@@ -54,8 +43,6 @@ true || false && (not true);;
 ```
 
 ## Définition de valeurs
-
-​
 
 En OCaml, on peut donner un nom au résultat d'un calcul. La valeur correspondante est alors identifiée et on peut y faire référence dans les calculs suivants.
 ```ocaml
@@ -74,11 +61,7 @@ Cette expression est équivalente à :
 
 mais `x + x` est plus court, et fait moins de calcul! Au lieu de 2 multiplications et 3 additions, `x + x`  ne fait qu'une seule addition, et la définition de `x` avait nécessité auparavant une multiplication et une addition. Le gain est marginal ici, mais la *factorisation* du code et des calculs redondants est une technique essentielle (qui peut même devenir indispensable en cas de programmation récursive).
 
-​
-
 Remarquez que `x` n'est pas une variable au sens des langages de programmation impérative. En effet, en Java ou en C, une variable est un espace mémoire modifiable et nommé. Ici, on ne fait que nommer le résultat d'un calcul, et ce résultat ne peut être modifié ensuite. Selon les optimisations internes d'OCaml, on n'alloue peut-être même pas d'espace en mémoire pour lui. Bref, en toute rigueur `x` n'est pas une variable ... car elle ne peut pas varier. On devrait parler d'abbréviation `x`, même si le mot *variable* a la vie dure en pratique.
-
-​
 
 Attention, on peut toujours introduire une nouvelle définition pour le même nom `x` mais elle ne modifie pas la définition précédente. Cette dernière n'est plus "visible" et donc utilisable directement mais elle peut parfois intervenir indirectement, comme le montre l'exemple suivant. Avant d'appuyez sur "run", demandez vous quel est la valeur de `mystery`.
 ```ocaml
@@ -98,8 +81,6 @@ x;;
 ```
 
 ## Les fonctions, sérieusement
-
-​
 
 En plus des types primitifs présentés dans la section précédente, OCaml a un type de donnée pour les fonctions. Les fonctions sont des valeurs de première classe, c'est-à-dire qu'on peut calculer et transmettre des fonctions de la même façon que l'on transmet des entiers ou des chaînes de caractères.
 ```ocaml
@@ -125,29 +106,25 @@ let risky =
     fun x -> 2. /. x
   else
     fun x -> 2. *. x
-​
+
 (* La fonction `risky` est l'une ou l'autre des deux fonctions: cela dépend d'une valeur aléatoire! *)
 let win_or_lose_it_depends =
   if risky 100. <> 200. then
     "GAME OVER"
  else
     "JACKPOT";;
-​
+
 let twice = fun f x -> f (f x);;
-​
+
 (* La fonction `twice` compose la fonction `f` avec elle-même. *)
 let cool = twice (fun x -> 2 * x) 10;;
-​
+
 (* L'expression entre parenthèses s'évalue en une fonction, que l'on évalue à son tour en 10 *)
 ```
 
 Ces calculs de fonctions peuvent peut-être vous sembler compliqués et abstrait. Vous pouvez peut-être aussi ne pas comprendre quels problèmes on cherche à résoudre ici. C'est normal! L'utilisation des fonctions comme des objets de première classe sera l'objet de nombreuses séquences de cours.
 
-​
-
 ## Récursivité
-
-​
 
 La programmation fonctionnelle fait un usage intensif des fonctions récursives. Voici l'exemple très classique de la fonction factorielle écrite en OCaml :
 ```ocaml
@@ -167,21 +144,19 @@ let rec ping = fun n ->
     "ping!"
   else
     "ping-" ^ pong (n - 1)
-​
+
 and pong n =
   if n = 0 then
     "pong!"
   else
     "pong-" ^ ping(n - 1);;
-​
+
 let battle = ping 7;;
 ```
 
 ## Une analyse par motifs
 
 Bien souvent, un algorithme est défini par un ensemble de cas à traiter. On analyse l'entrée du problème et on effectue un calcul en fonction de la forme de cette entrée.
-
-​
 
 Les langages comme Java ou C proposent la construction "switch" pour exprimer une telle décomposition par cas. En OCaml, on retrouve une construction similaire que l'on appelle "analyse par motifs" (pattern-matching en anglais). Par exemple, on peut décomposer un problème en fonction de la valeur d'un entier comme suit.
 ```ocaml
@@ -240,7 +215,7 @@ module Stack: sig
     Le type "t" est un nouveau type introduit par le module.
     Le typeur nous force à supposer qu'il est différent de tous les autres types du programme.
   *)
-​
+
   val empty: t
   
   val push : int -> t -> t
@@ -256,7 +231,7 @@ end = struct (* Maintenant on implémente la signature désirée *)
     Voici l'implémentation réelle du type t.
     Cette implémentation est interne, i.e. accessible seulement entre les mots-clés struct et end.
   *)
-​
+
   let empty = []
   
   let push = fun x s -> x :: s
@@ -288,7 +263,5 @@ let z = Stack.top s
 ```
 
 La dernière définition est rejetée même si une pile est bien implémentée par une liste. Pourquoi? Pour forcer les clients du module à ne pas faire de supposition sur l'implémentation interne d'une structure de donnée et s'autoriser à modifier cette implémentation dans le futur sans avoir à mettre à jour les clients du module `Stack`.
-
-​
 
 Nous étudierons aussi le système de modules d'OCaml et pourquoi il répond d'une façon très pertinente à des problématiques de développement logiciel que nous rencontrons très couramment.
