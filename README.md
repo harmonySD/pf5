@@ -43,12 +43,12 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/) de tour d'horizon d'OCaml, à regarder d'ici le premier TP.
-    Version markdown [cours1](sketchs/cours1.md) (fichier statique).
+    Sa version statique : [cours1](sketchs/cours1.md).
   - Un fichier [FAQ](faq/faq1.md) issu des sessions de questions/réponses de cette semaine.
 
 #### Cours 2 (semaine du 14/9) :
   - Un [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) présentant les types de données usuels d'OCaml.
-    Version markdown : [cours1](sketchs/cours1.md).
+    Version statique : [cours2](sketchs/cours2.md).
     Voir en particulier les *listes*, que nous utiliserons abondamment la semaine prochaine.
   - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
     - Le code OCaml montré pendant ces séances, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch en ligne](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
