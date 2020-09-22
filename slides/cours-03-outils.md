@@ -96,7 +96,7 @@ Fichiers d’implémentation et d’interface pour un petit exemple:
  - Le fichier [sayHello.mli](2019/cours-02/simple/sayHello.mli) définit l’interface du module SayHello.
  - Le module [Hello](2019/cours-02/simple/hello.ml) utilise le module SayHello.
 
-## Compilation en code-octet (bytecode)
+## Compilation en bytecode (code-octet en bon français)
 
 Pour compiler ce petit programme, il faut :
 
@@ -116,7 +116,7 @@ $ ocamlc -o hello sayHello.cmo hello.cmo
 Extensions
   - .ml : fichier source OCaml
   - .mli : interface OCaml
-  - .cmo : implémentation de module compilé en code-octet.
+  - .cmo : implémentation de module compilé en bytecode
   - .cmi : interface de module compilé.
 
 Ici, on peut obtenir le même programme en une ligne :
@@ -125,8 +125,11 @@ Ici, on peut obtenir le même programme en une ligne :
 
 ## Compilation en code natif
 
-Le code natif est environ 10 fois plus rapide que le code-octet mais non portable.
-Pour compiler ce petit programme, il faut :
+Sur les systèmes majeurs, OCaml propose aussi ̀ocamlopt`, un
+compilateur vers le code natif (i.e. l'assembleur) de votre machine.
+C'est environ 10 fois plus rapide que le bytecode mais non portable.
+
+Pour compiler notre petit programme, il faut :
 
 ```sh
 $ ocamlopt -c sayHello.ml # Compiler l'implémentation de SayHello.
@@ -159,7 +162,7 @@ open SayHello
 let main = say_it ()
 ```
 
-## Bibliothèque standard d’OCaml(1/2)
+## Bibliothèque standard d’OCaml
 
   - Un module nommé `Pervasives` (ou `Stdlib` depuis peu) est
     accessible automatiquement par tout programme OCaml. Il fournit
@@ -197,7 +200,7 @@ let main = say_it ()
 
    - Les bibliothèques sont des ensembles de modules.
    - Elles viennent sous trois formats distincts:
-     - Bibliothèques statiques code-octets : .cma
+     - Bibliothèques statiques bytecode : .cma
      - Bibliothèques statiques natives : .cmxa
      - Bibliothèques dynamiques natives : .cmxs
    - Pour utiliser une bibliothèque, il suffit de préciser le fichier de la bibliothèque lors de l’édition des liens :
@@ -218,7 +221,7 @@ et de bibliothèques usuelles sont déjà installables via les "paquets"
 logiciel de votre distribution. Par exemple :
 
 ```sh
-sudo apt install dune libzarith-ocaml-dev
+sudo apt install tuareg-mode ocaml-findlib dune libzarith-ocaml-dev
 ```
 
 Tant que cela satisfait vos besoins, s'en servir en priorité (meilleur
@@ -237,7 +240,7 @@ Ses atouts:
 Ses limites:
   - gourmand en espace disque
   - des installations et mises-à-jour encore assez "fragiles" (plantages de temps en temps)
-  - besoin d'une configuration `eval $(opam env)` pour l'activer 
+  - besoin d'une configuration pour s'en servir, du style `eval $(opam env)`
 
 ## L’outil ocamlfind
 
