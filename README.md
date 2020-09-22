@@ -56,6 +56,10 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
       [mercredi 16](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600248349291) et
       [jeudi 17](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600339588749) (incluant quelques bons cafouillages, vive le direct)
 
+#### Cours 3 (semaine du 21/9) :
+  - Un document sur les [outils](slides/cours-03-outils.md) pour utiliser OCaml sur sa machine et aller vers des programmes complets.
+  - Séances de questions/réponses : même fonctionnement et même lien https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
+
 
 ## Travaux pratiques (via Learn-OCaml)
 
