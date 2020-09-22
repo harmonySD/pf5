@@ -12,7 +12,7 @@ Pour l'instant, on a utilisé OCaml via des sites en ligne, et en mode "phrase p
 
    - LearnOCaml et son instance ici http://pf5.ddns.net
    - Accessible de partout, le "toplevel" http://try.ocamlpro.com
-   - Documents avec fragments éxecutables de code : http://sketch.sh
+   - Documents avec fragments exécutables de code : http://sketch.sh
 
 C'est très bien pour commencer, mais ces sites sont dépendants d'un
 fournisseur "bénévole", et ne sont donc pas pérennes.
