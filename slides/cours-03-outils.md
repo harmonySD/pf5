@@ -213,12 +213,12 @@ let main = say_it ()
 
 ## Les paquets OCaml via linux
 
-Sous linux (p.ex. Ubuntu ou Debian), un grand nombre d'outils OCaml
-et de bibliothèques usuelles sont déjà installable via les "paquets"
+Sur un linux récent (p.ex. Ubuntu ou Debian), un grand nombre d'outils OCaml
+et de bibliothèques usuelles sont déjà installables via les "paquets"
 logiciel de votre distribution. Par exemple :
 
 ```sh
-sudo apt install sudo apt install dune libzarith-ocaml-dev
+sudo apt install dune libzarith-ocaml-dev
 ```
 
 Tant que cela satisfait vos besoins, s'en servir en priorité (meilleur
@@ -231,7 +231,7 @@ Sinon, l'outil `opam` permet également d'installer des "paquets" OCaml
 
 Ses atouts:
   - il n'est pas limité à linux
-  - disponibilités plus rapide des paquets, y compris de paquets plus rares
+  - disponibilités plus rapide des versions d'OCaml et des paquets, y compris de paquets plus rares
   - possibilité d'avoir plusieurs versions d'OCaml simultanément (cf `opam switch`)
 
 Ses limites:
@@ -263,7 +263,8 @@ dune est un outil qui prend en charge la compilation de programmes OCaml.
 Il a tendance à remplacer ces dernières années un outil précédent nommé ocamlbuild.
 
 Il suffit de décrire ce que l’on veut faire dans un fichier nommé `dune` à la racine
-de l’arbre des sources, contenant par exemple au moins `(executable (name hello))`.
+de l’arbre des sources, contenant au moins `(executable (name hello))`
+pour notre exemple.
 
 Exécuter ensuite la commande : `dune build hello.exe` pour que dune
 calcule automatiquement les dépendances du projet et lance les bonnes
