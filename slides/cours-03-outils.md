@@ -103,7 +103,7 @@ Pour compiler ce petit programme, il faut :
 ```sh
 $ ocamlc -c sayHello.ml # Compiler l'implémentation de SayHello.
   # Le fichier sayHello.cmo est produit.
-$   ocamlc -c sayHello.mli # Compiler l'interface de SayHello.
+$ ocamlc -c sayHello.mli # Compiler l'interface de SayHello.
   # Le fichier sayHello.cmi est produit.
 $ ocamlc -c hello.ml     # Compiler l'implémentation de Hello.
   # Les fichiers hello.cmo et hello.cmi sont produits.
@@ -186,20 +186,20 @@ let main = say_it ()
     https://ocaml.org/releases/4.11/htmlman/libunix.html
                
   - D’autres bibliothèques importantes sont inclues dans la distribution:
-        -   `Str` : pour utiliser des expressions régulières.
-        -   `Threads` : pour utiliser des fils d’exécution (système).
-        -   `Bigarray` : pour travailler sur de grandes quantités de données.
-        -   `Num` : pour faire du calcul arithmétique en précision arbitraire
-            (récemment devenue une bibliothèque externe, voir plutôt `Zarith`)
+    - `Str` : pour utiliser des expressions régulières.
+    - `Threads` : pour utiliser des fils d’exécution (système).
+    - `Bigarray` : pour travailler sur de grandes quantités de données.
+    - `Num` : pour faire du calcul arithmétique en précision arbitraire
+      (récemment sorti de la bibliothèque standard, voir plutôt `Zarith`)
 
 
 ## Au fait, qu'est-ce qu'une bibliothèque ?
 
    - Les bibliothèques sont des ensembles de modules.
    - Elles viennent sous trois formats distincts:
-         - Bibliothèques statiques code-octets : .cma
-         - Bibliothèques statiques natives : .cmxa
-         - Bibliothèques dynamiques natives : .cmxs
+     - Bibliothèques statiques code-octets : .cma
+     - Bibliothèques statiques natives : .cmxa
+     - Bibliothèques dynamiques natives : .cmxs
    - Pour utiliser une bibliothèque, il suffit de préciser le fichier de la bibliothèque lors de l’édition des liens :
      `ocamlopt -o mywebserver unix.cma webserver.cmo`
 
@@ -273,12 +273,13 @@ le projet.  Pour plus d’informations: http://dune.readthedocs.io
 ## Autres éléments utiles pour le développement logiciel
 
 OCaml ou sa communauté propose également d'autres outils ou bibliothèques pour :
-    - produire de la documentation : `ocamldoc`, `odoc`.
-    - faire des tests unitaires : `ounit`, `alcotest`...
-    - debugger pas-à-pas : `ocamldebug`
-    - profiler l'efficacité de son code : `ocamlprof`
-    - produire du code client web à partir de code OCaml : `js_of_ocaml`.
-    - Ecrire ses propres bibliothèques.
-    - Distribuer ses paquets logiciels.
-    - Utiliser des extensions du langage.
-    - etc
+
+  - produire de la documentation : `ocamldoc`, `odoc`.
+  - faire des tests unitaires : `ounit`, `alcotest`...
+  - debugger pas-à-pas : `ocamldebug`
+  - profiler l'efficacité de son code : `ocamlprof`
+  - produire du code client web à partir de code OCaml : `js_of_ocaml`.
+  - écrire ses propres bibliothèques.
+  - distribuer ses paquets logiciels.
+  - utiliser des extensions du langage.
+  - etc
