@@ -19,7 +19,7 @@ fournisseur "bénévole", et ne sont donc pas pérennes.
 
 Note technique : derrière le capot, ces sites utilise une compilation d'OCaml vers javascript : `js_of_ocaml`.
 
-## Le toplevel OCaml "historique" (1/2)
+## Le toplevel OCaml "historique"
 
 C'est le programme nommé `ocaml` ou `ocaml.exe`, selon les systèmes.
 Il doit être lancé dans un terminal (alias une console, un shell).
@@ -29,7 +29,22 @@ C'est le mode phrase par phrase, que les outils en lignes précédents simulent.
 On parle aussi d'interpréteur OCaml, même si le terme n'est pas très juste :
 en fait, on y *compile* quand même chaque phrase en bytecode avant de la lancer.
 
-## Le toplevel OCaml "historique" (2/2)
+#### Une session
+
+```sh
+$ ocaml
+        OCaml version 4.07.0
+
+# 1+1;;
+- : int = 2
+```
+
+Note : le `$` ici symbolise le *prompt* de mon shell, dans lequel je lance `ocaml`.
+Le `#` est le prompt affiché par OCaml. Ne pas taper ni `$` ni `#`, sauf ci-dessous
+dans le cas de `#use` et quelques autres. Pour sortir : `Ctrl+d`. Pour arrêter une
+évaluation qui boucle : `Ctrl+c`.
+
+#### Remarques complémentaires
 
  - Ici `;;` obligatoire pour démarrer l'évaluation d'une phrase.
  - Très basique côté fonctionnalités : pas d'édition de la ligne en cours, pas d'historique, etc.
@@ -43,7 +58,7 @@ en fait, on y *compile* quand même chaque phrase en bytecode avant de la lancer
 
 Bref : bien pour quelques essais, mais **éviter de s'en servir directement** pour plus que quelques lignes.
 
-## Editeurs de code pour OCaml (1/2)
+## Editeurs de code pour OCaml
 
 C'est le mode de programmation OCaml recommandé en local sur votre machine.
 L'éditeur communiquera avec le toplevel OCaml ou plus tard avec le compilateur.
@@ -52,7 +67,7 @@ La plupart des éditeurs de code (eclipse, vscode, ...) supportent OCaml, eventu
 Mais le meilleur support d'OCaml reste encore `emacs` avec son extension `tuareg-mode`.
 Eventuellement, voir aussi l'extension `merlin` (typage en direct, etc).
 
-## Editeurs de code pour OCaml (1/2)
+## Emacs et OCaml
 
 Si emacs et tuareg sont bien installés :
 
@@ -62,6 +77,7 @@ Si emacs et tuareg sont bien installés :
  - Cela doit proposer en bas un choix de toplevel OCaml, acceptez `ocaml`
  - Un deuxième "buffer" (fenêtre emacs) s'ouvre avec la réponse d'OCaml à votre phrase.
  - Voir le menu `tuareg` pour d'autres possibilités (p.ex. évaluer tout le fichier, etc).
+ - Plus tard : compiler depuis emacs donne une localisation directe des erreurs.
 
 ## Vers des programmes réalistes
 
@@ -78,7 +94,7 @@ Fichiers d’implémentation et d’interface
 Le fichier sayHello.ml définit le module SayHello.
 Le fichier sayHello.mli définit l’interface du module SayHello.
 
-Observons le code de https://gaufre.informatique.univ-paris-diderot.fr/letouzey/pf5/slides/2019/cours-02/code/simple/
+Observons le (code)[2019/cours-02/code/simple]
 
 Le module Hello utilise le module SayHello.
 
@@ -166,16 +182,13 @@ let main = say_it ()
   
     https://ocaml.org/releases/4.11/htmlman/stdlib.html
 
-
-## Bibliothèque standard d’OCaml(2/2)
-
-   - Cette bibliothèque standard est complétée par une bibliothèque pour la
-      programmation système, nommé Unix. On y trouve les appels systèmes
-      standards de POSIX. Ces appels sont en grande partie émulées sous Windows.
+  - Cette bibliothèque standard est complétée par une bibliothèque pour la
+    programmation système, nommé Unix. On y trouve les appels systèmes
+    standards de POSIX. Ces appels sont en grande partie émulées sous Windows.
 
     https://ocaml.org/releases/4.11/htmlman/libunix.html
                
-   - D’autres bibliothèques importantes sont inclues dans la distribution:
+  - D’autres bibliothèques importantes sont inclues dans la distribution:
         -   `Str` : pour utiliser des expressions régulières.
         -   `Threads` : pour utiliser des fils d’exécution (système).
         -   `Bigarray` : pour travailler sur de grandes quantités de données.
@@ -183,7 +196,7 @@ let main = say_it ()
             (récemment devenue une bibliothèque externe, voir plutôt `Zarith`)
 
 
-## Bibliothèques
+## Au fait, qu'est-ce qu'une bibliothèque ?
 
    - Les bibliothèques sont des ensembles de modules.
    - Elles viennent sous trois formats distincts:
@@ -216,7 +229,8 @@ intégration avec le reste de votre système, mises-à-jour automatiques, etc).
 
 ## Les paquets OCaml via opam
 
-Sinon, l'outil `opam` permet également d'installer des "paquets" OCaml.
+Sinon, l'outil `opam` permet également d'installer des "paquets" OCaml
+*par dessus* votre système.
 
 Ses atouts:
   - il n'est pas limité à linux
