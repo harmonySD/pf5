@@ -94,7 +94,7 @@ Fichiers d’implémentation et d’interface
 Le fichier sayHello.ml définit le module SayHello.
 Le fichier sayHello.mli définit l’interface du module SayHello.
 
-Observons le (code)[2019/cours-02/code/simple]
+Observons le [code](2019/cours-02/code/simple)
 
 Le module Hello utilise le module SayHello.
 
