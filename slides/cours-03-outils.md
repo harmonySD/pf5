@@ -90,14 +90,11 @@ Si emacs et tuareg sont bien installés :
 
 ## Les modules OCaml définis par des fichiers
 
-Fichiers d’implémentation et d’interface
-Le fichier sayHello.ml définit le module SayHello.
-Le fichier sayHello.mli définit l’interface du module SayHello.
+Fichiers d’implémentation et d’interface pour un petit exemple:
 
-Observons le [code](2019/cours-02/code/simple)
-
-Le module Hello utilise le module SayHello.
-
+ - Le fichier [sayHello.ml](2019/cours-02/simple/sayHello.ml) définit le module SayHello.
+ - Le fichier [sayHello.mli](2019/cours-02/simple/sayHello.mli) définit l’interface du module SayHello.
+ - Le module [Hello](2019/cours-02/simple/hello.ml) utilise le module SayHello.
 
 ## Compilation en code-octet (bytecode)
 
