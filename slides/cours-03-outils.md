@@ -125,7 +125,7 @@ Ici, on peut obtenir le même programme en une ligne :
 
 ## Compilation en code natif
 
-Sur les systèmes majeurs, OCaml propose aussi ̀ocamlopt`, un
+Sur les systèmes majeurs, OCaml propose aussi `ocamlopt`, un
 compilateur vers le code natif (i.e. l'assembleur) de votre machine.
 C'est environ 10 fois plus rapide que le bytecode mais non portable.
 
@@ -161,6 +161,17 @@ Ici aussi, ocamlopt peut faire beaucoup de choses en une même ligne:
 open SayHello
 let main = say_it ()
 ```
+
+## Comment se déroule l'exécution d'un programme OCaml ?
+
+  - Toutes les phrases des différents modules sont exécutées (dans l'ordre du "link").
+  - Contrairement au toplevel, aucun affichage par défaut : la plupart des phrases
+    sont silencieuses (définitions de fonctions, calcul de valeurs "pures", etc).
+  - A vous de communiquer, via des effets de bord !
+  - Voir par exemple `print_string`, `read_line`, `Printf.printf`, lectures/écritures de fichiers, etc.
+  - Accès à la ligne de commande via le tableau `Sys.argv`.
+  - Usage (mais non obligatoire) : un unique point d'entrée lançant le déroulement
+    du programme, comme le `main` de `hello.ml` ci-dessus.
 
 ## Bibliothèque standard d’OCaml
 
