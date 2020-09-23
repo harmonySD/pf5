@@ -3,7 +3,7 @@ L'écosystème d'outils et de bibliothèques OCaml pour développer des logiciel
 
 Un certain nombre d'outils et bibliothèques utiles en OCaml.
 Liste loin d'être exhaustive. Ceci n'est pas non plus un manuel complet
-de ces outils, voir leur documentation respectives ou des tutoriels plus
+de ces outils, voir leurs documentations respectives ou des tutoriels plus
 complets.
 
 ## OCaml en ligne
