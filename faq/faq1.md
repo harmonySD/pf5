@@ -232,9 +232,9 @@ La préférence du prof : en général, aller au plus court, donc les arguments 
 
 ### Appel de fonction sans parenthèse ?
 
-Tant que l'argument est "simple" (une constante ou bien une variable), l'usage est de ne *pas* parenthéser,
+Tant que l'argument est "simple" (une constante positive ou bien une variable), l'usage est de ne *pas* parenthéser,
 juste mettre un blanc. Mettre des parenthèses ne seraient pas une erreur, juste un style un peu lourd.
-Par contre, pour un argument plus complexe (lui-même un calcul, appel de fonction, etc), les parenthèses
+Par contre, pour un argument plus complexe (lui-même un calcul, appel de fonction, nombre négatif, etc), les parenthèses
 sont nécessaires pour désambiguer.
 
 ```ocaml
@@ -242,16 +242,19 @@ let f x = 2 * x;;
 let c = 3;;
 
 f 5;;  (* argument constant *)
+f (-5);; (* argument constant, mais le - oblige à parenthéser sinon OCaml lira ((f)-(5)) *)
 f c;; (* argument : une variable *)
 f c + f 5;;
 f(c) + f(5);; (* possible aussi, mais pas "idiomatique" en OCaml *)
 f (c + f 5);; (* les parenthèses changent radicalement le sens de cette expression, resultat 26 au lieu de 16 *)
 ```
 
-Tout ceci vaut également pour les fonctions à plusieurs arguments : `f 1 2` ou `f x y` mais `f (x+1) y`.
+Tout ceci vaut également pour les fonctions à plusieurs arguments : `f 1 2` ou `f x y` mais `f (x + 1) y`.
 Dans cette dernière expression, les parenthères sont indispensables, `f x + 1 y` serait une addition entre un appel `f x` et ... une erreur, vu que `1 y` est *mal typé*, 1 n'étant pas une fonction.
 
-On verra par la suite qu'une syntaxe comme `f(1,2)` est possible aussi en OCaml, mais avec une autre signification: fonction recevait une *paire* `(1,2)`.
+Là encore, si vous avez un doute, vous pouvez toujours mettre une paire de parenthèses autour de *chaque* argument, par exemple `f (x+1) (y)` ou même `f(x+1)(y)`. Pas forcément très joli aux yeux d'un habité du langage, mais toujours correct.
+
+On verra par la suite qu'une syntaxe comme `f(1,2)` existe aussi en OCaml, mais avec une autre signification: fonction recevait une *paire* `(1,2)`.
 
 ### Et le match ?
 

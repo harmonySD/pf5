@@ -94,10 +94,12 @@ On peut utiliser une fonction en *l'appliquant*. La syntaxe de l'application per
 double 21;;
 ```
 
-Bien entendu, si l'argument est une expression plus complexe, des parenthèses sont nécessaires. Ainsi, quel est le résultat du calcul suivant ? A qui ajoute-on 1 ?
+Bien entendu, si l'argument est une expression plus complexe, des parenthèses sont nécessaires autour de cet argument. Ainsi, quel est le résultat du calcul suivant ? A qui ajoute-on 1 ?
 ```ocaml
 double (double 10 + 1);;
 ```
+
+Attention aussi aux constantes négatives: écrire `double (-10)` et non pas `double -10` sinon OCaml comprendra une soustraction entre `double` et `10`, ce qui sera mal typé.
 
 Les fonctions sont des valeurs au même titre que les entiers : on peut les calculer, les transmettre, les renvoyer, ... Voici quelques exemples :
 ```ocaml
