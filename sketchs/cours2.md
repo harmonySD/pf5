@@ -365,7 +365,7 @@ let beautiful_tree = Node (Node (leaf 1, 3, EmptyTree), 5, leaf 4)
 
 ```
 
-Il n'y a rien à dire de plus : l'analyse par motifs permet de les traiter exactement comme des types sommes non récursifs. Ces analyses de motifs apparaîtront souvent dans des fonctions récursives. D'ailleurs, un schéma de programmation très commun en programmation fonctionne consiste à définir une fonction *recursive* ainsi :
+Il n'y a rien à dire de plus : l'analyse par motifs permet de les traiter exactement comme des types sommes non récursifs. Ces analyses de motifs apparaîtront souvent dans des fonctions récursives. D'ailleurs, un schéma de programmation très commun en programmation fonctionne consiste à définir une fonction *récursive* ainsi :
 
 ```ocaml
 let rec f x y z = 
