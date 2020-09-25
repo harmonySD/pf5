@@ -24,7 +24,7 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 ## Inscrivez-vous !
 
 - Inscrivez-vous sur https://moodle.u-paris.fr/course/view.php?id=1641
-- La mailing-liste dédié au cours est `l3.pf5.info@listes.u-paris.fr`. Inscrivez-vous via https://listes.u-paris.fr/wws/subscribe/l3.pf5.info
+- La mailing-liste dédiée au cours est `l3.pf5.info@listes.u-paris.fr`. Inscrivez-vous via https://listes.u-paris.fr/wws/subscribe/l3.pf5.info
 
 
 ## Cours en ligne (ex-Amphis)
