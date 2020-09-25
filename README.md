@@ -43,23 +43,23 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
   - Un premier [tour d'horizon](sketchs/cours1.md) d'OCaml et sa version dynamique d'origine : [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/).
-  - Si la version dynamique disfonctionne toujours, copier-coller les exemples de code dans un *toplevel* OCaml, par exemple https://try.ocamlpro.com
+  - En cas de souci avec sketch, copier-coller les exemples de code dans un *toplevel* OCaml, par exemple https://try.ocamlpro.com
   - Un fichier [FAQ](faq/faq1.md) issu des sessions de questions/réponses de cette semaine.
 
 #### Cours 2 (semaine du 14/9) :
-  - Une [présentation](sketchs/cours2.md) des types de données usuels d'OCaml. Voir en particulier les *listes*, que nous utiliserons abondamment.
-  - Au cas où il remarche un jour, le [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) dynamique d'origine.
-  - Séances de questions/réponses : même fonctionnement et même lien que la semaine dernière.
-    - Le code OCaml montré pendant ces séances, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
-    - Capture vidéo brute de ces séances :
+  - Les [types de données](sketchs/cours2.md) usuels d'OCaml. Voir en particulier les *listes*, que nous utiliserons abondamment.
+  - Le [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) dynamique d'origine.
+  - Le code OCaml montré pendant les séances questions/réponses, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
+  - Capture vidéo brute de ces séances :
       [mercredi 16/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600248349291) et
       [jeudi 17/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600339588749) (incluant quelques bons cafouillages, vive le direct)
 
 #### Cours 3 (semaine du 21/9) :
-  - Un document sur les [outils](slides/cours-03-outils.md) pour utiliser OCaml sur sa machine et aller vers des programmes complets.
-  - Séances de questions/réponses : même fonctionnement et même lien https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
-  - Capture vidéo brute :
-      [mercredi 24/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600853601938)
+  - [Outils](slides/cours-03-outils.md) pour utiliser OCaml sur sa machine et aller vers des programmes complets.
+  - Cette fois-ci, les séances visioconf ont plutôt été des démos de ces outils.
+  - Capture vidéo brute de ces séances :
+      [mercredi 23/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600853601938) et
+      [jeudi 24/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600944358350)
 
 ## Travaux pratiques (via Learn-OCaml)
 
