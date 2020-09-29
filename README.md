@@ -63,8 +63,8 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 #### Cours 4 (semaine du 28/9)
   - Un fichier [faq3.md](faq/faq3.md) avec quelques faux-amis du débutant OCaml. Attention aux erreurs classiques...
-  - Le cours sur les [fonctions](slides/cours-04-fun.md) de première classe et la programmation d'ordre supérieure.
-  - Le sketch correspondant arrive rapidement...
+  - Le cours sur les [fonctions](slides/cours-04-fun.md) de première classe et la programmation d'ordre supérieur.
+  - Les sketchs correspondants : [sketch4a](https://sketch.sh/s/XjV2RE6tIUAJkvdfQ1rgFN/) et [sketch4b](https://sketch.sh/s/tDqsDWq7jwLNCLPX3mzky7/)
   - Séances visioconf, comme d'habitude: https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
 
 ## Travaux pratiques (via Learn-OCaml)
