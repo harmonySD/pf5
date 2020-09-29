@@ -1,4 +1,4 @@
-fonctions de première classe et programmation d'ordre supérieur
+Fonctions de première classe et programmation d'ordre supérieur
 ===============================================================
 
 Auteur initial : Yann Régis-Gianas
@@ -251,8 +251,7 @@ let f x = 2 * x;; (* Equivalent à la définition précédente. *)
 Une fois vos fonctions correctement généralisées, vous pouvez retrouver des cas particuliers par *spécialisation*, ce qui
 peut souvent se faire par une simple applicaton partielle.
 
-On a vu auparavant le cas de `is_sorted`. OCaml fournit une fonction de tri des listes sur ce modèle : `List.sort`. Au lieu
-d'une comparaison booléenne, il faut ici une comparaison ternaire.
+On a vu auparavant le cas de `is_sorted`. OCaml fournit une fonction de tri des listes sur ce modèle : `List.sort`. Au lieu d'une comparaison booléenne, il faut ici une comparaison ternaire.
 
 ```ocaml
 List.sort;;
@@ -291,7 +290,7 @@ let equal_sum s (x, y) = (x + y = s)
 
 let answer s l = all_pairs l l |> filter (equal_sum s)
 
-let _ = answer 10 [1; 3; 4; 7; 9; 6];;
+let _ = answer 10 [1; 3; 4; 7; 9; 6]
 ```
 
 L'opérateur `|>` (écrit | puis > en ASCII) est maintenant disponible par défaut en OCaml. Il est défini comme suit :
@@ -393,7 +392,7 @@ Preuve:
 
 ```
 
-### Les catamorphismes
+### Les catamorphismes (fold)
 
 Un schéma de calcul typique consiste à itérer un calcul en parcourant une structure de donnée.
 Pour les listes, voici quelques instances de ce schéma :
@@ -412,11 +411,9 @@ let rec length = function
   | x :: xs -> 1 + length xs
 ```
 
-En observant ces fonctions, on remarque qu'elles renvoient une valeur pour la liste vide et que pour une liste non vide de la forme `x :: xs`,
-on *combine* l'élément `x` avec le résultat de l'appel récursif sur `xs` (pour une certaine notion de combinaison).
+En observant ces fonctions, on remarque qu'elles renvoient une valeur pour la liste vide et que pour une liste non vide de la forme `x :: xs`, on *combine* l'élément `x` avec le résultat de l'appel récursif sur `xs` (pour une certaine notion de combinaison).
 
-Plutôt que de répéter encore et encore ce schéma dans nos programmes,
-essayons plutôt d'en extraire une fonction généralisant cette situation.
+Plutôt que de répéter encore et encore ce schéma dans nos programmes, essayons plutôt d'en extraire une fonction généralisant cette situation.
 ```ocaml
 let rec fold f accu = function
   | [] -> accu
@@ -433,8 +430,7 @@ let length = fold (fun _ len -> len+1) 0
 let length = fold (fun _ -> succ) 0
 ```
 
-Exercice : En utilisant `fold`, définir une fonction `max_list` calculant le maximum d'une liste d'entiers.
-On supposera ici que `max_list []` vaut `min_int` (le plus petit entier disponible). Oui je sais, ce n'est pas idéal, mais bon...
+Exercice : En utilisant `fold`, définir une fonction `max_list` calculant le maximum d'une liste d'entiers. On supposera ici que `max_list []` vaut `min_int` (le plus petit entier disponible). Oui je sais, ce n'est pas idéal, mais bon...
 
 ```ocaml
 
