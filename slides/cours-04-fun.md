@@ -463,7 +463,7 @@ Exercice : sauriez-vous définir la fonction `fold` sur les arbres?
 
 ```
 
-## Encore quelques autres usage de l'ordre supérieur
+## Encore quelques autres usages de l'ordre supérieur
 
 ### Le style par passage de continuation
 
@@ -545,7 +545,7 @@ let _ = binary ['1';'0';'1';'0';'z']
 
 ```
 
-## Représenter des valeurs "potentielles"
+### Représenter des valeurs "potentielles"
 
 Un autre usage des fonctions est la représentation de valeurs "infinies". Bien entendu, la mémoire des ordinateurs étant finie, on ne peut pas représenter _explicitement_ une valeur infinie. Par contre, des fonctions peuvent servir à la représentation _implicite_ d'une valeur infinie, en donnant une méthode permettant d'en calculer une portion aussi large que l'on veut (ou peut, selon le temps et la mémoire disponible).
 
