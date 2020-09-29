@@ -61,6 +61,12 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
       [mercredi 23/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600853601938) et
       [jeudi 24/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600944358350)
 
+#### Cours 4 (semaine du 28/9)
+  - Un fichier [faq3.md](faq/faq3.md) avec quelques faux-amis du débutant OCaml. Attention aux erreurs classiques...
+  - Le cours sur les [fonctions](slides/cours-04-fun.md) de première classe et la programmation d'ordre supérieure.
+  - Le sketch correspondant arrive rapidement...
+  - Séances visioconf, comme d'habitude: https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
+
 ## Travaux pratiques (via Learn-OCaml)
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
