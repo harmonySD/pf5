@@ -132,7 +132,7 @@ let rec appartient x l =
   | y :: ys -> appartient x ys
 ```
 
-Ce code est accepté par OCaml, mais indices signalent qu'il y a un souci :
+Ce code est accepté par OCaml, mais des indices signalent qu'il y a un souci :
 
  - un *warning* nous indique que la dernière ligne du match est "unused"
  
