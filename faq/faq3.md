@@ -6,6 +6,8 @@ en soi. Ils peuvent même être acceptés par OCaml comme bien typés, au
 moins dans certains contextes. Mais soit leur type peut surprendre,
 soit c'est l'évaluation qui pose problème. Méfiance !
 
+Pour essayer ces fragments : https://sketch.sh/s/lHst8UznxiTfmsXHzn3oZ5/
+
 ## Double application
 
 Attention avec:
@@ -106,7 +108,7 @@ fonctionnel, vérifiez que vos `else` sont bien là.
 
 Quel est le souci avec :
 ```ocaml
-let fact n =
+let rec fact n =
   let next = fact (n-1) in
   if n = 0 then 1 else n * next
 ```
