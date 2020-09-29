@@ -470,13 +470,13 @@ Exercice : sauriez-vous définir la fonction `fold` sur les arbres?
 Le style de programmation dit "par passage de continuations" (en anglais _Continuation Passing Style_ que l'on écrit CPS) consiste à toujours
 recevoir une fonction, et toujours la lancer à la fin des travaux locaux. Cela peut sembler étrange, mais cela apporte des réponses intéressantes
 concernant la programmation *récursive terminale* (dont nous parlerons la semaine prochaine) et aussi concernant la programmation *réactive*
-(*hooks* et *callbacks* sont liés à ces notions de continuations). Voici juste un exemple:
+(*hooks* et *callbacks* sont liés à ces notions de continuations). Vous reverrez ce style CPS en Master, ici voici juste un petit exemple:
 
 ```ocaml
 let rec fact_aux (continuation : int -> int) n =
   if n = 0 then continuation 1 else fact_aux (fun v -> continuation (v * n)) (n - 1)
   
-let fact n= fact_aux (fun x -> x)
+let fact n = fact_aux (fun x -> x)
 ```
 
 Comment lire cette drôle de version de `fact`? 
@@ -547,7 +547,7 @@ let _ = binary ['1';'0';'1';'0';'z']
 
 ## Représenter des valeurs "potentielles"
 
-Un autre usage des fonctions est la représentation de valeurs "infinies". Bien entendu, la mémoire des ordinateurs étant finie, on ne peut pas représenter _explicitement_ une valeur infinie. Par contre, des fonctions peuvent servir à la représentation _implicite_ d'une valeur infinie, en donnant ue méthode permettant d'en calculer une portion aussi large que l'on veut (ou peut, selon le temps et la mémoire disponible).
+Un autre usage des fonctions est la représentation de valeurs "infinies". Bien entendu, la mémoire des ordinateurs étant finie, on ne peut pas représenter _explicitement_ une valeur infinie. Par contre, des fonctions peuvent servir à la représentation _implicite_ d'une valeur infinie, en donnant une méthode permettant d'en calculer une portion aussi large que l'on veut (ou peut, selon le temps et la mémoire disponible).
 
 ```ocaml
 type 'a stream = Stream of 'a * (unit -> 'a stream)
