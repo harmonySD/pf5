@@ -33,7 +33,8 @@ Les amphis initialement prévus pour ce cours **sont suspendus** au vu des contr
 Ils sont remplacés par des enseignements en ligne :
   - Des documents pédagogiques à lire/visionner chaque semaine, voir plus bas.
   - Des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
-  - Pour l'instant le lien BBB pour ces séances est https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw 
+  - Pour l'instant le lien BBB pour ces séances est https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
+  - Ce lien BBB propose aussi une liste des captures vidéos brutes des séances passées (incluant quelques cafouillages du prof, vive le direct).
   - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux.
   - Vous pouvez aussi me posez vos questions via la mailing-list (cf ci-dessous) ou via mon [email](http://www.irif.fr/~letouzey)
 
@@ -49,24 +50,21 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 #### Cours 2 (semaine du 14/9) :
   - Les [types de données](sketchs/cours2.md) usuels d'OCaml. Voir en particulier les *listes*, que nous utiliserons abondamment.
   - Le [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) dynamique d'origine.
-  - Le code OCaml montré pendant les séances questions/réponses, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
-  - Capture vidéo brute de ces séances :
-      [mercredi 16/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600248349291) et
-      [jeudi 17/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600339588749) (incluant quelques bons cafouillages, vive le direct)
+  - Le code OCaml montré pendant les séances questions/réponses de cette semaine, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/).
+  - Capture vidéo brute de ces séances : cf lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) plus haut.
 
 #### Cours 3 (semaine du 21/9) :
   - [Outils](slides/cours-03-outils.md) pour utiliser OCaml sur sa machine et aller vers des programmes complets.
   - Cette fois-ci, les séances visioconf ont plutôt été des démos de ces outils.
-  - Capture vidéo brute de ces séances :
-      [mercredi 23/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600853601938) et
-      [jeudi 24/9](https://bbb-lb.math.univ-paris-diderot.fr/playback/presentation/2.0/playback.html?meetingId=3b6b42d639e7beaead2c576a74f50d2eb75847ea-1600944358350)
+  - Capture vidéo brute de ces séances : cf lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) plus haut.
 
 #### Cours 4 (semaine du 28/9)
   - Un fichier [faq3.md](faq/faq3.md) avec quelques faux-amis du débutant OCaml. Attention aux erreurs classiques...
   - Le cours sur les [fonctions](slides/cours-04-fun.md) de première classe et la programmation d'ordre supérieur.
   - Les sketchs correspondants : [sketch4a](https://sketch.sh/s/XjV2RE6tIUAJkvdfQ1rgFN/) et [sketch4b](https://sketch.sh/s/tDqsDWq7jwLNCLPX3mzky7/)
-  - Séances visioconf, comme d'habitude: https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
-     - Le [sketch](https://sketch.sh/s/iHoll1bLeBUb3LCn5Hw22U/) de la séance du 30/9.
+  - Le [sketch](https://sketch.sh/s/iHoll1bLeBUb3LCn5Hw22U/) de la séance questions/réponses du 30/9
+    et [celui](https://sketch.sh/s/JFcq7Uv7yfl5BtcobMwcWe/) du 1/10.
+  - Capture vidéo brute de ces séances : cf lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) plus haut.
 
 ## Travaux pratiques (via Learn-OCaml)
 
