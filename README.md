@@ -34,11 +34,14 @@ Ils sont remplacés par des enseignements en ligne :
   - Des documents pédagogiques à lire/visionner chaque semaine, voir plus bas.
   - Des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
   - Pour l'instant le lien BBB pour ces séances est https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
-  - Ce lien BBB propose aussi une liste des captures vidéos brutes des séances passées (incluant quelques cafouillages du prof, vive le direct).
   - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux.
   - Vous pouvez aussi me posez vos questions via la mailing-list (cf ci-dessous) ou via mon [email](http://www.irif.fr/~letouzey)
 
 Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cours, en particulier de Yann Régis-Gianas (merci!).
+
+**Videos**:
+  - Le lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) ci-dessus propose aussi une liste des captures vidéos brutes des séances questions/réponses passées (incluant quelques cafouillages du prof, vive le direct).
+  - Nouveau: un [autre dépôt](https://www.irif.fr/~letouzey/pf5/videos) pour ces vidéos (dans un format visible *et* téléchargeable, merci [bbb-downloader](https://github.com/trahay/bbb-downloader), mais sans les messages de chat).
 
 #### Cours 1 (semaine du 9/9) :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
