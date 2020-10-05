@@ -69,6 +69,10 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
     et [celui](https://sketch.sh/s/JFcq7Uv7yfl5BtcobMwcWe/) du 1/10.
   - Capture vidéo brute de ces séances : cf lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) plus haut.
 
+#### Cours 5 (semaine du 5/9)
+  - Le cours sur la [récursivité terminale](https://sketch.sh/s/6k9ft6DS3nA6xQjVNa4v1g/). Sa [version statique](slides/cours-05-tailrec.md).
+  - Séance visioconf sur [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) comme d'habitude.
+
 ## Travaux pratiques (via Learn-OCaml)
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
