@@ -71,7 +71,8 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 #### Cours 5 (semaine du 5/9)
   - Le cours sur la [récursivité terminale](https://sketch.sh/s/6k9ft6DS3nA6xQjVNa4v1g/). Sa [version statique](slides/cours-05-tailrec.md).
-  - Séance visioconf sur [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) comme d'habitude.
+  - Le [sketch](https://sketch.sh/s/PFfSXHi1Swq166PNO4W7lK/) de la séance du 7/10, et [celui](https://sketch.sh/s/xqq4NfSAyoChnDhjTGemTS/) du 8/10 (exercices sur la récursivité terminale). Voir plus haut pour les vidéos, comme d'habitude.
+
 
 ## Travaux pratiques (via Learn-OCaml)
 
@@ -98,7 +99,9 @@ Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateform
 
 ## Projet
 
-Précisions à venir
+Précisions à venir. Pour l'instant les curieux peuvent jeter un oeil sur:
+  - https://fr.wikipedia.org/wiki/L-Syst%C3%A8me et le début du livre http://algorithmicbotany.org/papers/#abop
+  - https://www.irif.fr/~letouzey/pf5/teaser/
 
 ## Anciens examens
 
