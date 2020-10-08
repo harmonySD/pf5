@@ -7,6 +7,8 @@ Pierre Letouzey, d'après Yann Régis-Gianas
 
 Après avoir déjà évoquée parfois cette notion, voici le moment d'étudier précisément la *récursivité terminale* (*tail recursion* ou *tailrec* en anglais).
 
+Note : solution des exercices ici : https://sketch.sh/s/xqq4NfSAyoChnDhjTGemTS/
+
 ## Un premier exemple : la factorielle
 
 Reprenons l'archétype de la fonction récursive sur les entiers :
@@ -91,7 +93,7 @@ En effet, il faut faire la multiplication entre les deux retours des appels à l
 Notez bien qu'il s'agit d'une notion propre à chaque appel de fonction présent dans une définition donnée.
 Une même fonction peut avoir certains de ses appels qui sont en position terminale, et d'autres qui ne le sont pas.
 
-Exercice : dans le corps de `make_even` ci-dessous, deux des appels à `succ` sont en position terminale, mais pas le troisième. Voyez lequel et pourquoi ?
+Exercice : dans le corps de `make_even` ci-dessous, deux des appels à `succ` sont en position terminale, mais pas le troisième. Voyez-vous lequel et pourquoi ?
 ```ocaml
 let make_even n = if n mod 2 = 0 then succ (succ n) else succ n
 ```
@@ -216,8 +218,7 @@ let rec fact_loop n accu =
 let fact n = fact_loop n 1 
 
 ```
-Remarquez que notre nouvelle fonction `fact` est une fonction écrite avec une récursion terminale. Cette fonction sera d'ailleurs compilée comme le programme C suivant :
-
+Remarquez que notre nouvelle fonction `fact` est une fonction écrite avec une récursion Remarquez que notre nouvelle fonction `fact` est une fonction écrite avec une récursion terminale. Cette fonction sera d'ailleurs compilée comme le programme C suivant :
 ```
 int fact (int n) {
     int accu = 1;
@@ -234,7 +235,8 @@ exit_loop:
 }
 ```
 
-Cette transformation est simple mais elle s'applique uniquement si on arrive à trouver un "accumulateur" à introduire pour effectuer le calcul de façon itérative (ou plusieurs accumulateurs). Sauriez-vous le faire pour les deux fonctions suivantes?
+Cette transformation est simple mais elle s'applique uniquement si on arrive à trouver un "accumulateur" à introduire pour effectuer le calcul de façon itérative (ou plusieurs accumulateurs).
+Exercice : Sauriez-vous le faire pour les deux fonctions suivantes?
 ```ocaml
 type 'a tree = Empty | Node of 'a tree * 'a * 'a tree
 
@@ -259,7 +261,6 @@ let rec height t =
   match t with
   | Empty -> 0
   | Node (lhs, _, rhs) -> 1 + max (height lhs) (height rhs)
-  
 
 ```
 ## D'autres intérêts du récursif terminal
@@ -295,8 +296,7 @@ On peut d'ailleurs noter un lien évident entre les accumulateurs en récursif t
 
 #### Average en un unique passage
 
-Reprenons la fonction `average` sur des listes d'entiers. En TP il était demandé comment écrire cette fonction
-en faisant un seul passage dans la liste. Une première réponse, à base de paires en réponse:
+Reprenons la fonction `average` sur des listes d'entiers. En TP il était demandé comment écrire cette fonction en faisant un seul passage dans la liste. Une première réponse, à base de paires en réponse:
 
 ```ocaml
 let rec sum_and_length = function
