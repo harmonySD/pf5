@@ -69,9 +69,12 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
     et [celui](https://sketch.sh/s/JFcq7Uv7yfl5BtcobMwcWe/) du 1/10.
   - Capture vidéo brute de ces séances : cf lien [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) plus haut.
 
-#### Cours 5 (semaine du 5/9)
+#### Cours 5 (semaine du 5/10)
   - Le cours sur la [récursivité terminale](https://sketch.sh/s/6k9ft6DS3nA6xQjVNa4v1g/). Sa [version statique](slides/cours-05-tailrec.md).
   - Le [sketch](https://sketch.sh/s/PFfSXHi1Swq166PNO4W7lK/) de la séance du 7/10, et [celui](https://sketch.sh/s/xqq4NfSAyoChnDhjTGemTS/) du 8/10 (exercices sur la récursivité terminale). Voir plus haut pour les vidéos, comme d'habitude.
+
+#### Cours 6 (semaine du 12/10)
+  - Cours sur le [type option et les exceptions](https://sketch.sh/s/LNYzzbJLVpKgRIEYW5l2pM/). Sa [version statique](slides/cours-06-exn.md).
 
 
 ## Travaux pratiques (via Learn-OCaml)
