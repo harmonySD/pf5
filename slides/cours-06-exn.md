@@ -7,7 +7,7 @@ fetched from https://sketch.sh/s/LNYzzbJLVpKgRIEYW5l2pM
 
 Reprenons un exercice comme le calcul du minimum d'une liste. Que répondre dans le cas d'une liste vide ?
 C'est assez régulier en programmation d'avoir ainsi des cas spéciaux à gérer.
-j
+
 Pour une liste d'entiers, on peut ici faire des "bricolages", comme utiliser `min_int` (le plus petit entier possible) ou même `-1` (si l'on sait qu'on ne rencontrera que des entiers positifs). Mais ce genre de bidouille est à proscrire autant que possible : comment savoir ensuite si la réponse était bien dans la liste d'origine, ou si c'est une réponse par défaut ? Plus mathématiquement on invalide la propriété pourtant souhaitable `∀l, minlist l ∈ l`.
 
 De plus, il n'y a pas que les entiers dans la vie, on aura parfois des types sans plus petit élément. Pire, si on souhaite faire une fonction `minlist` polymorphe, on ne connaît alors *aucune* valeur particulière du type `'a` au moment de la définition.
