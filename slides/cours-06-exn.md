@@ -7,7 +7,7 @@ fetched from https://sketch.sh/s/LNYzzbJLVpKgRIEYW5l2pM
 
 Reprenons un exercice comme le calcul du minimum d'une liste. Que répondre dans le cas d'une liste vide ?
 C'est assez régulier en programmation d'avoir ainsi des cas spéciaux à gérer.
-
+j
 Pour une liste d'entiers, on peut ici faire des "bricolages", comme utiliser `min_int` (le plus petit entier possible) ou même `-1` (si l'on sait qu'on ne rencontrera que des entiers positifs). Mais ce genre de bidouille est à proscrire autant que possible : comment savoir ensuite si la réponse était bien dans la liste d'origine, ou si c'est une réponse par défaut ? Plus mathématiquement on invalide la propriété pourtant souhaitable `∀l, minlist l ∈ l`.
 
 De plus, il n'y a pas que les entiers dans la vie, on aura parfois des types sans plus petit élément. Pire, si on souhaite faire une fonction `minlist` polymorphe, on ne connaît alors *aucune* valeur particulière du type `'a` au moment de la définition.
@@ -74,7 +74,7 @@ type ('a, 'b) result =
   - Similaire à Java et ses `throw` et `try ... catch ...`
   - Syntaxes OCaml : `raise` et `try ... with ...`
   - Le type d'une fonction OCaml n'indique pas les exceptions qu'elle est susceptible de lancer (pas de déclaration `throws ...` comme en Java). Donc usage beaucoup plus léger qu'en Java, pratique au début, mais souvent très délicat à gérer dans les gros programmes.
-  - Beaucoup mieux compilé qu'en Java (mais attention à l'efficacité si usage de ̀`js_of_ocaml`)
+  - Beaucoup mieux compilé qu'en Java (mais attention à l'efficacité si usage de `js_of_ocaml`)
   - Du coup, sert souvent d'idiome généraliste de programmation en OCaml, pas seulement en cas d'erreurs fatales.
 
 ### Quelques exceptions OCaml prédéfinies
