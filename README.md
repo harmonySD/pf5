@@ -99,6 +99,9 @@ Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateform
 - Le secret est pf5
 - Notez absolument votre TOKEN. C'est grâce à lui que vous pourrez retrouver votre session lors de votre prochaine connexion.
 
+#### TP6 : Morpion
+
+ Code fourni : [morpion.zip](tp/morpion.zip)
 
 ## Projet
 
