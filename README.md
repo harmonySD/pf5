@@ -101,7 +101,7 @@ Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateform
 
 #### TP6 : Morpion
 
- Code fourni : [morpion.zip](tp/morpion.zip)
+ Code fourni : [morpion.zip](tp/morpion.zip) (Version 2, évite de planter si une police de caractère manque).
 
 ## Projet
 
