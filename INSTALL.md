@@ -46,6 +46,7 @@ d'autres éditeurs de code proposant un support pour OCaml, à vous de voir.
 
 ## Plus d'informations
 
-Revoir le cours 2 à propos des outils disponibles dans l'écosystème OCaml.
+Revoir le cours 3 sur les [Outils](slides/cours-03-outils.md) disponibles dans 
+l'écosystème OCaml.
 
 
