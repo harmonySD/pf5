@@ -73,6 +73,9 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Cours sur le [type option et les exceptions](https://sketch.sh/s/LNYzzbJLVpKgRIEYW5l2pM/). Sa [version statique](slides/cours-06-exn.md).
   - Sketchs des séances du [14/10](https://sketch.sh/s/pmgQm3hZcaHFMIEZuuNEZT/) et [15/10](https://sketch.sh/s/ntcctHLxV6FYVAXN4epFaL/). Captures vidéo par [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) ou en [webm](https://www.irif.fr/~letouzey/pf5/videos).
 
+#### Cours 7 (semaine du 19/10)
+  - Cours sur les [entrées/sorties et le graphisme](slides/cours-07-io-graphics.pdf).
+
 ## Travaux pratiques (via Learn-OCaml)
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
