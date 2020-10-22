@@ -105,7 +105,10 @@ Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateform
 
 ## Projet
 
-Précisions à venir. Pour l'instant les curieux peuvent jeter un oeil sur:
+Voir le sous-repertoire `projet` et en particulier le [sujet](projet/projet.pdf) et le [README.md](projet/README.md).
+Attention, il peut y avoir encore des changements et correctifs, à suivre.
+
+Quelques liens:
   - https://fr.wikipedia.org/wiki/L-Syst%C3%A8me et le début du livre http://algorithmicbotany.org/papers/#abop
   - https://www.irif.fr/~letouzey/pf5/teaser/
 
