@@ -15,7 +15,7 @@ Tout processus Unix a au moins trois canaux de communication (voir le cours de *
 
 - `stdin` : entrée « normale » du processus, normalement associée au clavier. Peut aussi être une redirection d'un tuyau ou d'un fichier.
 
-- `stdout` : sortie « normale » du processus, normalement associée à l'écran. Peut aussi être rédirigée vers un tuyau ou un fichier.
+- `stdout` : sortie « normale » du processus, normalement associée à l'écran. Peut aussi être redirigée vers un tuyau ou un fichier.
 
 - `stderr` : sortie pour les messages d'erreur. Normalement confondue avec stdout et associée à l'écran, mais peut aussi être redirigée.
 
@@ -135,7 +135,7 @@ close_in c;;
 
 - Le module `Scanf` permet de lire des lignes dans un format précis (analogue à Printf, mais d'usage délicat).
 
-- Pour des lectures plus complexes, il existe des outils dédiés tels que ocamllex et ocamlyacc ou menhir ... et des cours entiers pour les apprendre (Compilation).
+- Pour des lectures plus complexes, il existe des outils dédiés tels que `ocamllex` et `ocamlyacc` ou `menhir` ... et des cours entiers pour les apprendre (Compilation).
 
 ```ocaml
 let rec read_and_add x =

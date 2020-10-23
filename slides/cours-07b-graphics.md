@@ -40,7 +40,7 @@ open_graph " 800x600";;
 close_graph ();;
 ```
 
-## Coordonnées sur le canvas graphique
+## Coordonnées dans la fenêtre graphique
 
 ![coordonnees](https://github.com/ocaml/graphics/blob/master/libgraph.png)
 
