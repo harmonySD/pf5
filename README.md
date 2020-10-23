@@ -116,3 +116,26 @@ Quelques liens:
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
   Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
+
+## Références et bibliographie
+
+OCaml ailleurs sur internet ou dans des livres. Ceci n'est clairement pas exhaustif, et privilégie les ressources accessibles gratuitement.
+
+- Le site principal sur OCaml : https://ocaml.org
+- Le manuel d'OCaml : https://ocaml.org/releases/latest/manual.html
+- Une bibliographie complète : https://ocaml.org/learn/books.html
+- Les [notes de cours](http://www.enseignement.polytechnique.fr/profs/informatique/Jean-Christophe.Filliatre/14-15/INF549/ocaml.pdf) de J.C. Filliâtre à l'X. L'essentiel d'OCaml en 50 pages!
+  Et aussi un petit [résumé de la syntaxe](http://www.enseignement.polytechnique.fr/profs/informatique/Jean-Christophe.Filliatre/14-15/INF549/memo-java-ocaml.pdf) comparée avec celle de Java.
+
+#### Quelques Livres
+
+- [Développement d'applications avec OCaml](https://www-apr.lip6.fr/~chaillou/Public/DA-OCAML/index.html), E. Chailloux, P. Manoury, B. Pagano. 2002 mais encore très pertinent!
+
+- [Apprendre à programmer avec OCaml](http://programmer-avec-ocaml.lri.fr/), S. Conchon, J.C. Filliâtre, 2014. Seulement partiellement disponible en ligne, mais beaucoup d'exemples et d'exercices.
+
+- [Real World OCaml](https://dev.realworldocaml.org/), Y. Minsky, A. Madhavapeddy, J. Hickey, 2013. Je le mentionne car ce livre est très connu, mais **attention** même si ce livre parle évidemment d'OCaml il utilise dès le début une bibliothèque alternative (`Base` et `Core`) qui diffère sensiblement de la bibliothèque standard d'OCaml.
+
+- [Unix System Programming in OCaml](http://ocaml.github.io/ocamlunix/), X. Leroy, D. Rémy, 2010.
+
+- [Le langage Caml](http://caml.inria.fr/pub/distrib/books/llc.pdf) P. Weis, X Leroy, 1993-1999.
+  Le tout premier livre sur Caml. **Attention** ce livre traite de Caml Light, le précurseur d'OCaml, il y a donc de sensibles différences par endroit (syntaxe, bibliothèques). Mais cela reste une lecture passionnante.
