@@ -21,14 +21,9 @@ Tout processus Unix a au moins trois canaux de communication (voir le cours de *
 
 ## Sortie vers `stdout`
 
-- Fonctions de sortie vers `stdout` pour tous les types de base
-
-- La sortie vers `stdout` n'est pas effectuée tout de suite : il y a un tampon (buffer). Un saut de ligne (p.ex. via `print_newline`) force la sortie du contenu du tampon.
-
-- Pour des valeurs dont le type n'est pas un type de base (p.ex. listes, types sommes, etc), c'est à nous d'écrire des fonctions d'affichage vers `stdout`. Même si en fait l'interpréteur OCaml sait en afficher la plupart quand il nous présente un résultat !
+- Fonctions de sortie vers `stdout` pour les types de base
 
 ```ocaml
-(* fonctions pour imprimer sur stdout *)
 print_int;;
 print_float;;
 print_string;;
@@ -41,6 +36,10 @@ print_string "toto\n";;
 (* on peut aussi enchainer des action avec ; *)
 print_string "toto"; print_newline ();;
 ```
+
+- La sortie vers `stdout` n'est pas effectuée tout de suite : il y a un tampon (buffer). Un saut de ligne (p.ex. via `print_newline`) force la sortie du contenu du tampon.
+
+- Pour des valeurs dont le type n'est pas un type de base (p.ex. listes, types sommes, etc), c'est à nous d'écrire des fonctions d'affichage vers `stdout`. Même si en fait l'interpréteur OCaml sait en afficher la plupart quand il nous présente un résultat !
 
 ## Le module `Printf`
 
@@ -62,7 +61,7 @@ Printf.printf "La longueur de %s est %i\n";; (* string -> int -> unit *)
 
 ## Sortie vers `stderr`
 
-- Il y a des fonctions analogues pour la sortie vers ̀stderr`.
+- Il y a des fonctions analogues pour la sortie vers `stderr`.
 
 - La distinction entre `stdout` et `stderr` est importante : un utilisateur peut avoir besoin de séparer la sortie normale des messages d'erreur.
 

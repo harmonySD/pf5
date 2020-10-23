@@ -74,7 +74,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Sketchs des séances du [14/10](https://sketch.sh/s/pmgQm3hZcaHFMIEZuuNEZT/) et [15/10](https://sketch.sh/s/ntcctHLxV6FYVAXN4epFaL/). Captures vidéo par [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) ou en [webm](https://www.irif.fr/~letouzey/pf5/videos).
 
 #### Cours 7 (semaine du 19/10)
-  - Cours sur les [entrées/sorties et le graphisme](slides/cours-07-io-graphics.pdf) (auteur initial R. Treinen).
+  - Cours sur les [entrées/sorties](slides/cours-07a-io.md) et le [graphisme](slides/cours-07b-graphics.md). Le [pdf](slides/cours-07-io-graphics.pdf] donné à l'origine. Auteur initial de ce cours : R. Treinen.
 
 ## Travaux pratiques (via Learn-OCaml)
 
