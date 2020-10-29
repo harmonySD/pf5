@@ -65,7 +65,7 @@ Mais ce genre de renversement est un effet habituel du passage au style par accu
 ```ocaml
 let fact_incr n =
   let rec loop k acc =
-     if k = n then acc
+     if k > n then acc
      else loop (k+1) (k*acc)
   in loop 1 1
    
