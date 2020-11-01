@@ -81,9 +81,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 ## Travaux pratiques (via Learn-OCaml)
 
-Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
-Vu la capacité des salles de TP, une seconde salle (sans machines) pourra être utilisée
-en plus, **si vous disposez d'ordinateurs portables merci d'essayer de venir avec**.
+A compter du 2 novembre, passage à des TP à distance.
 
 Planning actuel:
 
@@ -95,7 +93,7 @@ Planning actuel:
 | Groupe 4 | A. Guatto   | Lun 14:00-16:00 | ~~2003 (+2036)~~ [Zoom](https://u-paris.zoom.us/j/85003023927) |
 | MathInfo | V. Padovani | Mar 13:45-15:45 | 2003 (+2001) |
 
-Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateforme **Learn-OCaml** : 
+Les premiers TP utilisent http://pf5.ddns.net , une instance de la plateforme **Learn-OCaml** : 
 - A la première connexion, saisir un "nickname" qui commence par votre numéro de groupe puis votre nom de famille, par exemple 3Skywalker
 - Pour les MathInfo, mettre 5 comme numéro de groupe
 - Le secret est pf5
@@ -105,6 +103,11 @@ Les TP se feront en utilisant http://pf5.ddns.net , une instance de la plateform
 
 - Code fourni : [morpion.zip](tp/morpion.zip) (Version 2, évite de planter si une police de caractère manque).
 - Voir [INSTALL.md](INSTALL.md) pour les conseils d'installation d'OCaml sur sa machine.
+
+#### TP7 : Morpion partie 2
+
+- [Sujet du tp7](tp/tp7.pdf)
+- Code fourni : [morpion-partie-2.zip](tp/morpion-partie-2.zip)
 
 ## Projet
 
