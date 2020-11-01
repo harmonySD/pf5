@@ -76,6 +76,9 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 #### Cours 7 (semaine du 19/10)
   - Cours sur les [entrées/sorties](slides/cours-07a-io.md) et le [graphisme](slides/cours-07b-graphics.md). Le [pdf](slides/cours-07-io-graphics.pdf) donné à l'origine. Auteur initial de ce cours : R. Treinen.
 
+#### Cours 8 (semaine du 2/11)
+  - Cours sur les [structures impératives](https://sketch.sh/s/odCwxaMbe7e5NxgNAboW9e/) et sa [version statique](slides/cours-08-imperatif.md).
+
 ## Travaux pratiques (via Learn-OCaml)
 
 Pour l'instant les TP sont bien prévus sur place, dans le bâtiment Sophie Germain, à partir du **lundi 14/9**.
