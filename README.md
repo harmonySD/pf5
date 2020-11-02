@@ -91,7 +91,7 @@ Planning actuel:
 | Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | 2003 (+2002) |
 | Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
 | Groupe 4 | A. Guatto   | Lun 14:00-16:00 | ~~2003 (+2036)~~ [Zoom](https://u-paris.zoom.us/j/85003023927) |
-| MathInfo | V. Padovani | Mar 13:45-15:45 | 2003 (+2001) |
+| MathInfo | V. Padovani | Mar 13:45-15:45 | ~~2003 (+2001)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/vin-3pn-fce-cgh) |
 
 Les premiers TP utilisent http://pf5.ddns.net , une instance de la plateforme **Learn-OCaml** : 
 - A la première connexion, saisir un "nickname" qui commence par votre numéro de groupe puis votre nom de famille, par exemple 3Skywalker
