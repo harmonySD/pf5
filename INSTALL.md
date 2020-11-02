@@ -10,7 +10,7 @@ bibliothèque `graphics` en local.
     également OCaml, mais privilégiez plutôt vos propres ordinateurs.
 
   - Sur vos propres machines, tout dépend du système:
-    * Sur une Ubuntu ou Debian : `sudo apt install ocaml ocaml-findlib dune`
+    * Sur une Ubuntu ou Debian : `sudo apt install ocaml ocaml-findlib`
     * Les autres Linux fournissent presque tous ocaml : https://ocaml.org/docs/install.html#Linux
     * Sur Mac et Windows, privilégier une machine virtuelle Linux si vous avez ça. 
       Sinon suivre les instructions de https://ocaml.org/docs/install.html .
@@ -50,6 +50,10 @@ Sur Debian Buster, normalement `sudo apt install dune`. Sur Ubuntu 20.04 ce paqu
 s'appelle maintenant `ocaml-dune`, et il n'est malheureusement pas fourni par Ubuntu
 18.04. Dans ce cas, et sur les autres systèmes, faire `opam install dune` après avoir
 installé et configuré [opam](https://ocaml.org/docs/install.html#OPAM).
+
+Remarque : sur Ubuntu 18.04, même `opam` commence à dater, mieux vaut éviter la version 1
+qui n'est plus maintenue. Voir les [conseils suivants](https://opam.ocaml.org/doc/Install.html#Ubuntu)
+pour installer `opam` depuis un "PPA" plutôt que la version d'origine du système.
 
 ## Editeur de code
 
