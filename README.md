@@ -46,12 +46,12 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 #### Cours 1 (semaine du 9/9) :
   - Un document d'[introduction au fonctionnel et à OCaml](slides/cours-01-yann.pdf) par Yann Régis-Gianas. 
     Très riche, privilégier l'idée générale aux détails fins pour l'instant.
-  - Un premier [tour d'horizon](sketchs/cours1.md) d'OCaml et sa version dynamique d'origine : [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/).
+  - Un premier [tour d'horizon](slides/cours-01-tour.md) d'OCaml et sa version dynamique d'origine : [sketch](https://sketch.sh/s/H3xyXu6P3YdaHMqOVYXq6b/).
   - En cas de souci avec sketch, copier-coller les exemples de code dans un *toplevel* OCaml, par exemple https://try.ocamlpro.com
   - Un fichier [FAQ](faq/faq1.md) issu des sessions de questions/réponses de cette semaine.
 
 #### Cours 2 (semaine du 14/9) :
-  - Les [types de données](sketchs/cours2.md) usuels d'OCaml. Voir en particulier les *listes*, que nous utiliserons abondamment.
+  - Les [types de données](slides/cours-02-types.md) usuels d'OCaml. Voir en particulier les *listes*, que nous utiliserons abondamment.
   - Le [sketch](https://sketch.sh/s/RjxDVUFPNMiZqKxDtzdezN/) dynamique d'origine.
   - Le code OCaml montré pendant les séances questions/réponses de cette semaine, avec quelques commentaires : [fichier OCaml](faq/faq2.ml) ou [sketch](https://sketch.sh/s/nhihzKwLxmobjB0TDbEeKk/). Captures vidéo par [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw) ou en [webm](https://www.irif.fr/~letouzey/pf5/videos).
 

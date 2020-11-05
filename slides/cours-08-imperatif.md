@@ -1,11 +1,14 @@
 Les mécanismes impurs d'OCaml
 ==============================
 
-fetched from https://sketch.sh/s/odCwxaMbe7e5NxgNAboW9e
+[Lien Sketch](https://sketch.sh/s/odCwxaMbe7e5NxgNAboW9e)
+
+Pierre Letouzey, d'après Yann Régis-Gianas.
 
 Après le cours sur les entrées/sorties et le graphisme, nous continuons avec les structures permettant la programmation "impérative" en OCaml (on dit également "déclarative"). Ces structures sont dites "impures" car on s'éloigne ici fortement de la programmation fonctionnelle pure. Comme la semaine dernière, on va procéder par "effet de bord", cette fois-ci en modifiant "en place" certaines zones mémoires. Certaines propriétés fondamentales des structures fonctionnelles pures ne sont plus garanties. Par exemple:
+
   - Une liste OCaml est "immutable" (une fois créée, son contenu ne change plus), un tableau OCaml n'est certainement pas immutable.
-  - Une concaténation `@` sur les listes partage en mémoire la liste de droite, un ̀`Array.append` ne pourra pas faire de même.
+  - Une concaténation `@` sur les listes partage en mémoire la liste de droite, un `Array.append` ne pourra pas faire de même.
   - Une fonction pure recevant les mêmes données pures donnera toujours le même résultat.
 
 Evidemment, dans ce cours de programmation fonctionnelle, nous vous incitons à utiliser les structures impératives avec parcimonie, car elles peuvent mener à de nombreux effets (de bord) pervers. Mais elles sont à connaître également, et peuvent parfois être la bonne réponse à certains problèmes (persistance d'un état, efficacité parfois, ...).
@@ -216,8 +219,9 @@ let r' = eval fibo42;; (* ce deuxième accès est gratuit *)
 ## Structures de contrôle de la programmation impérative
 
 OCaml propose les deux structures de contrôle standard de la programmation itérative : les boucles bornées et les boucles potentiellement non bornées:
-   - `for i = a to b do ... done`
-   - `while ... do ... done`
+
+  - `for i = a to b do ... done`
+  - `while ... do ... done`
    
 En voici quelques exemples.
 ```ocaml
@@ -243,7 +247,7 @@ let fact_for n =
 
 Nous avons déjà vu ensemble les conditionnelles `if`, a priori rien de nouveau. Mais en présence de code impératif, attention à deux points délicats.
 
-Jusqu'à maintenant, les conditionnelles `if` s'utilisaient toujours de façon complètes : `if ... then ... else ...`. Ne pas mettre d'alternative `else` était une faute. Mais il existe bien une variante de `if` sans le `else`. Cette variante s'utilise lorsque la première branche est de type `unit`, donc typiquement une action. A ce moment-là, l'absence d'une branche `else` équivaut à une branche `else ()` disant de ne rien faire dans l'autre cas. Cette possibilité d'un `if ... then ...` sans le ̀`else` est à l'origine de messages d'erreur obscures lorsqu'on oublie le ̀`else` avec une première branche de type autre que `unit`. 
+Jusqu'à maintenant, les conditionnelles `if` s'utilisaient toujours de façon complètes : `if ... then ... else ...`. Ne pas mettre d'alternative `else` était une faute. Mais il existe bien une variante de `if` sans le `else`. Cette variante s'utilise lorsque la première branche est de type `unit`, donc typiquement une action. A ce moment-là, l'absence d'une branche `else` équivaut à une branche `else ()` disant de ne rien faire dans l'autre cas. Cette possibilité d'un `if ... then ...` sans le `else` est à l'origine de messages d'erreur obscures lorsqu'on oublie le `else` avec une première branche de type autre que `unit`. 
 ```ocaml
 if Random.int 2 = 0 then print_string "gagné";;
 ```
@@ -316,4 +320,3 @@ let fibo40' = fibo_fast 40;;
 ## Exercice
 
 savoir définir soi-même `List.iter`, `Array.iter`, `Array.append`, `Array.map`, et d'autres fonctions du même genre, soit en utilisant `for` soit en s'en passant.
-
