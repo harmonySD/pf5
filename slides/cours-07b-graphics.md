@@ -42,7 +42,7 @@ close_graph ();;
 
 ## Coordonnées dans la fenêtre graphique
 
-![coordonnees](https://github.com/ocaml/graphics/blob/master/libgraph.png)
+![coordonnees](https://github.com/ocaml/graphics/raw/master/libgraph.png)
 
 L'origine `(0,0)` est en bas à gauche.
 
