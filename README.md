@@ -88,7 +88,7 @@ Planning actuel:
 | Groupe   | Enseignant  | Creneau         | Salle        |
 |----------|-------------|-----------------|--------------|
 | Groupe 1 | P. Letouzey | Mar **13:45-15:45** | ~~2031 (+2036)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-m7s-reo-mzs) |
-| Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | ~~2003 (+2002)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/gio-fky-edc-t6w) |
+| Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | ~~2003 (+2002)~~ [SFU](https://vps-63c87489.vps.ovh.net:8443/group/pf5) |
 | Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
 | Groupe 4 | A. Guatto   | Lun 14:00-16:00 | ~~2003 (+2036)~~ [Zoom](https://u-paris.zoom.us/j/85003023927) |
 | MathInfo | V. Padovani | Mar 13:45-15:45 | ~~2003 (+2001)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/vin-3pn-fce-cgh) |
