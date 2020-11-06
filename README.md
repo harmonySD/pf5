@@ -32,7 +32,7 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 Les amphis initialement prévus pour ce cours **sont suspendus** au vu des contraintes sanitaires actuelles.
 Ils sont remplacés par des enseignements en ligne :
   - Des documents pédagogiques à lire/visionner chaque semaine, voir plus bas.
-  - Des séances en ligne de questions/réponses sur ces documents : mercredi 11:30-12:30 et jeudi 12:45-13:45.
+  - Des séances en ligne de questions/réponses sur ces documents : **jeudi 11h-12h**.
   - Le lien BBB pour ces séances est https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-rcp-d5b-tvw
   - Venez poser vos questions au moment que vous voulez (ou pouvez) dans ces créneaux.
   - Vous pouvez aussi me posez vos questions via la mailing-list (cf ci-dessous) ou via mon [email](http://www.irif.fr/~letouzey)
@@ -87,10 +87,10 @@ Planning actuel:
 
 | Groupe   | Enseignant  | Creneau         | Salle        |
 |----------|-------------|-----------------|--------------|
-| Groupe 1 | P. Letouzey | Mar **13:45-15:45** | ~~2031 (+2036)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-m7s-reo-mzs) |
+| Groupe 1 | P. Letouzey | Mar 13:30-15:30 | ~~2031 (+2036)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/pie-m7s-reo-mzs) |
 | Groupe 2 | G. Bernardi | Jeu 13:45-15:45 | ~~2003 (+2002)~~ [SFU](https://vps-63c87489.vps.ovh.net:8443/group/pf5) (sans mot de passe)|
-| Groupe 3 | B. Bauer    | Lun 14:15-16:15 | 2032 (+2036) |
-| Groupe 4 | A. Guatto   | Lun 14:00-16:00 | ~~2003 (+2036)~~ [Zoom](https://u-paris.zoom.us/j/85003023927) |
+| Groupe 3 | B. Bauer    | Lun 13:30-15:30 | 2032 (+2036) |
+| Groupe 4 | A. Guatto   | Lun 13:30-15:30 | ~~2003 (+2036)~~ [Zoom](https://u-paris.zoom.us/j/85003023927) |
 | MathInfo | V. Padovani | Mar 13:45-15:45 | ~~2003 (+2001)~~ [BBB](https://bbb-front.math.univ-paris-diderot.fr/recherche/vin-3pn-fce-cgh) |
 
 Les premiers TP utilisent http://pf5.ddns.net , une instance de la plateforme **Learn-OCaml** : 
