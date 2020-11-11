@@ -79,6 +79,9 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 #### Cours 8 (semaine du 2/11)
   - Cours sur les [structures impératives](https://sketch.sh/s/odCwxaMbe7e5NxgNAboW9e/) et sa [version statique](slides/cours-08-imperatif.md).
 
+#### Cours 9 (semaine du 9/11)
+  - Etude de cas : comment réaliser un [téléchargeur de Sketch.sh](https://github.com/letouzey/sketch-downloader/blob/master/getsketch.ml) grâce à OCaml ? Regarder ce code, et on en discute ce jeudi.
+
 ## Travaux pratiques (via Learn-OCaml)
 
 A compter du 2 novembre, passage à des TP à distance.
