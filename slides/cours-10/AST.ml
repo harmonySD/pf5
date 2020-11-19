@@ -10,6 +10,7 @@ and value_definition =
 and term =
   | Var     of identifier
   | Lit     of literal
+  | Op      of operation
   | Let     of value_definition * term
   | Lam     of identifier * term
   | App     of term * term
@@ -22,6 +23,7 @@ and branch = pattern * term
 
 and pattern =
   | PVar of identifier
+  | PLit of literal
   | PKApp of constructor * pattern list
   | PWildcard
 
@@ -33,3 +35,5 @@ and identifier = Id of string
 and label = LId of string
 
 and constructor = CId of string
+
+and operation = Add | Mul | Sub | Div

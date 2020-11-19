@@ -90,6 +90,10 @@ rule token = parse
 | number as i {
   INT (int_of_string i)
 }
+| "(+)" { OP Add }
+| "( * )" { OP Mul }
+| "(-)" { OP Sub }
+| "(/)" { OP Div }
 | identifier as s {
   ID s
 }

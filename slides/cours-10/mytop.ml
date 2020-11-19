@@ -1,2 +1,2 @@
 let main =
-  Mycaml.parse Sys.argv.(1)
+  Mycaml.run Sys.argv.(1)

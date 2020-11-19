@@ -13,8 +13,11 @@ open AST
 (** Structural symbols. *)
 %token LBRACE RBRACE LPAREN RPAREN EOF
 
-(** Identifiers. *)
+(** Identifiers *)
 %token<string> ID UID
+
+(** Primitive operations *)
+%token<AST.operation> OP
 
 (** Literals. *)
 %token<int> INT
@@ -25,7 +28,7 @@ open AST
 %right RARROW
 %left ID INT
 %left LPAREN
-
+%nonassoc OP
 %%
 
 program: ds=toplevel_definition* EOF
@@ -95,6 +98,10 @@ x=identifier
 {
   Lit (LInt x)
 }
+| o=OP
+{
+  Op o
+}
 | s=simple_term DOT l=label
 {
   Proj (s, l)
@@ -118,6 +125,10 @@ pattern:
 x=identifier
 {
   PVar x
+}
+| n=INT
+{
+  PLit (LInt n)
 }
 | k=constructor LPAREN ps=separated_list(COMMA, pattern) RPAREN
 {
