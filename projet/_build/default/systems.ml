@@ -16,7 +16,7 @@ type 's system = {
 
 
 
-let rec printWord word =
+(**let rec printWord word =
     match word with
     |Symb s -> Printf.printf "%s" s;
     |Seq se -> printSeq se;
@@ -37,3 +37,4 @@ let rec transfo axiom rules=
 	|Symb x -> match rules with
 				|Symb y  when x=y-> Seq y
 				|Symb ->
+**)
