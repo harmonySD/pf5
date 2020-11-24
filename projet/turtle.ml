@@ -15,12 +15,12 @@ type position = {
 
 (** Put here any type and function implementations concerning turtle *)
 
-let transformWordInCommand 
+(* let transformWordInCommand 
 	(word : 's word) 
 	: 's command =
-;;
+;; *)
 
-let dessin (listeCommande :'s command)
+(* let dessin (listeCommande :'s command)
 	(position : position)
 	: unit =
 	match listeCommande with
@@ -32,4 +32,4 @@ let dessin (listeCommande :'s command)
 	|Turn(n)::e -> position.a <- n; dessin e position
 	|Store::e ->
 	|Restore::e ->
-;;
+;; *)

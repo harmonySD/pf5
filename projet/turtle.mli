@@ -16,5 +16,5 @@ type position = {
 
 (** Put here any type and function signatures concerning turtle *)
 
-val transformWordInCommand : 's word -> 's command
-val dessin : 's command -> position -> unit
+(* val transformWordInCommand : 's word -> 's command
+val dessin : 's command -> position -> unit *)
