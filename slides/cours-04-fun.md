@@ -492,7 +492,7 @@ Dans le cas récursif, on doit mettre à jour la continuation puisqu'après l'ap
 
 La fonction `fact` se contente de passer à `fact_aux` une continuation qui représente le fait de renvoyer immédiatement son argument.
 
-Pour mieux comprendre ce qui se passe, essayons de réprésenter une trace d'exécution pour le calcul `fact 2`:
+Pour mieux comprendre ce qui se passe, essayons de représenter une trace d'exécution pour le calcul `fact 2`:
 
 ```
 fact 2 =
