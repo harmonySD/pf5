@@ -479,7 +479,7 @@ concernant la programmation *récursive terminale* (dont nous parlerons la semai
 let rec fact_aux (continuation : int -> int) n =
   if n = 0 then continuation 1 else fact_aux (fun v -> continuation (v * n)) (n - 1)
   
-let fact n = fact_aux (fun x -> x)
+let fact n = fact_aux (fun x -> x) n
 ```
 
 Comment lire cette drôle de version de `fact`? 
