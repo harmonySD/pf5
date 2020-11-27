@@ -1,4 +1,4 @@
-Evaluation d'un programme OCaml (Sémantique)
+Évaluation d'un programme OCaml (Sémantique)
 ============================================
 
 Quelques notes correspondant grosso modo à la séance du 19/11/2020.
@@ -64,14 +64,14 @@ let _ = r.contents <- 1 in
 r.contents
 ```
 
-Si on essaie d'évaluer ce code par substitution, `{ contents = 0 }` est déjà une valeur, la règle pour le `let` (cf page 7/15) nous indique ensuite de subsitituer cette valeur partout ensuite où il y a du `r`, ce qui donne: 
+Si on essaie d'évaluer ce code par substitution, `{ contents = 0 }` est déjà une valeur, la règle pour le `let` (cf page 7/15) nous indique ensuite de substituer cette valeur partout ensuite où il y a du `r`, ce qui donne:
 
 ```ocaml
 let _ = { contents = 0 }.contents <- 1 in
 { contents = 0 }.contents
 ```
 
-Problème : plus rien ne relie maintenant les deux occurences des `{ contents = 0 }` dans les deux lignes restantes. En particulier on peut en modifier l'une sans changer l'autre. Un aspect crucial, à savoir le *partage mémoire* (ou *aliasing*) a été perdu, et c'est justement le souci avec la sémantique à substitution en présence de données mutables.
+Problème : plus rien ne relie maintenant les deux occurrences des `{ contents = 0 }` dans les deux lignes restantes. En particulier on peut en modifier l'une sans changer l'autre. Un aspect crucial, à savoir le *partage mémoire* (ou *aliasing*) a été perdu, et c'est justement le souci avec la sémantique à substitution en présence de données mutables.
 
 Pour finir cette évaluation, `{ contents = 0 }.contents <- 1` donne un résultat `()` (seule valeur dans le type `unit`), après avoir modifié *cette* copie de `{ contents = 0 }` (qui est perdue juste après).
 
@@ -100,7 +100,7 @@ Notez en effet qu'OCaml accepte dans certaines conditions des cycles sur les don
 let rec liste_cyclique = 1 :: liste_cyclique
 ```
 
-Cette définition semble former une liste infinie contenant uniquement des 1. Mais cela n'utilise heureusement pas une mémoire infini, juste un bloc de taille 2 contenant `[ 1 | ptr ]`, où `ptr` est l'adresse de ce bloc lui-même (pointeur "retour"). Tout accès au début de cette liste donnera des éléments 1, par exemple `List.nth liste_cyclique 1000 = 1`. Par contre, toute tentative d'aller jusqu'aù bout de la liste se soldera par un calcul infini, même un simple `List.length liste_cyclique`.
+Cette définition semble former une liste infinie contenant uniquement des 1. Mais cela n'utilise heureusement pas une mémoire infini, juste un bloc de taille 2 contenant `[ 1 | ptr ]`, où `ptr` est l'adresse de ce bloc lui-même (pointeur "retour"). Tout accès au début de cette liste donnera des éléments 1, par exemple `List.nth liste_cyclique 1000 = 1`. Par contre, toute tentative d'aller jusqu'au bout de la liste se soldera par un calcul infini, même un simple `List.length liste_cyclique`.
 
 Un autre exemple :
 
@@ -110,7 +110,7 @@ let rec flip_flop = 1 :: 2 :: flip_flop
 
 Ici cette liste se comporte comme une alternance infinie de 1 et de 2. En mémoire, il s'agit de deux blocs d'adresses `ptr1` et `ptr2` contenant respectivement `[ 1 | ptr2 ]` et `[ 2 | ptr1 ]` (cycles "croisées").
 
-De telles données cycliques sont à éviter en temps normal, car leur usage est très délicat. Par contre elles peuvent parfois être commodes, comme par exemple pour parler de valeurs cycliques dans notre mini-evaluateur, voir le traitement du `RecFunction` dans [mycaml.ml](cours-10/mycaml.ml).
+De telles données cycliques sont à éviter en temps normal, car leur usage est très délicat. Par contre elles peuvent parfois être commodes, comme par exemple pour parler de valeurs cycliques dans notre mini-évaluateur, voir le traitement du `RecFunction` dans [mycaml.ml](cours-10/mycaml.ml).
 
 
 ## Qu'est-ce donc qu'une clôture ?
@@ -141,4 +141,4 @@ Fichiers principaux:
 
 - [mycaml.ml](cours-10/mycaml.ml) est le coeur de notre mini-évaluateur. Par rapport à l'année dernière, j'y ai ajouté le code pour les fonctions récursives et celui pour le traitement du `match`. Il y avait aussi un petit bug dans le code de 2019 traitant d'une application `App (a,b)`, le calcul de la valeur de l'argument `b` se faisait dans un environnement `env` qui n'était pas le bon (celui dans la fonction issue de `a` au lieu de l'ancien `env`). Autre ajout : un début de traitement des opérateurs arithmétiques, histoire de pouvoir faire au moins quelques additions. Attention, pour garder le code simple, ces opérations sont à écrire en mini-OCaml en "infixe", par exemple `(+) 1 2` au lieu de `1+2`, et `( * ) 1 2` au lieu de `1*2` (les espaces dans ce dernier cas sont pour éviter toute confusion avec les commentaires).
 
-- [TEST.sh](cours-10/TEST.sh) et [TEST.utop](cours-10/TEST.utop) : quelques examples d'utilisation de ce petit évaluateur, soit depuis la ligne de commande, soit à l'interieur d'un toplevel ocaml amélioré (utop). Dans les deux cas, commencer par compiler le code avec `make` et/ou `make top`. 
+- [TEST.sh](cours-10/TEST.sh) et [TEST.utop](cours-10/TEST.utop) : quelques exemples d'utilisation de ce petit évaluateur, soit depuis la ligne de commande, soit à l'intérieur d'un toplevel ocaml amélioré (utop). Dans les deux cas, commencer par compiler le code avec `make` et/ou `make top`.
