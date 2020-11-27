@@ -72,7 +72,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - **Etude de cas** : comment réaliser un [téléchargeur de Sketch.sh](https://github.com/letouzey/sketch-downloader/blob/master/getsketch.ml) grâce à OCaml. Code à regarder, plus d'explication dans la video du jeudi 12/11.
   
 #### Cours 10 (semaine du 16/11)
-  - Retour sur **l'évaluation** d'un programme OCaml (à savoir sa *sémantique*) : [pdf](slides/2019/cours-06.pdf), avec quelques points à discuter et préciser ce jeudi.
+  - Retour sur **l'évaluation** d'un programme OCaml (à savoir sa *sémantique*) : [pdf](slides/2019/cours-06.pdf) 2019 plus quelques [remarques](slides/cours-10-eval.md) complémentaires (grosso modo vues pendant la séance du jeudi).
   - Un petit [évaluateur d'OCaml en OCaml](slides/cours-10).
 
 #### Cours 11 (semaine du 23/11)
