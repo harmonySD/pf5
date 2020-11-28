@@ -123,6 +123,8 @@ Quelques liens:
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
   Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
 
+- [examen 2019/2020](exams/examen1920.pdf) par Y. Regis-Gianas.
+
 ## Références et bibliographie
 
 OCaml ailleurs sur internet ou dans des livres. Ceci n'est clairement pas exhaustif, et privilégie les ressources accessibles gratuitement.
