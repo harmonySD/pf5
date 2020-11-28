@@ -14,7 +14,7 @@ Dès maintenant, exprimons les points cruciaux de cet algorithme d'inférence à
 En particulier ce système de type permet d'exclure tout un ensemble de plantages à l'exécution:
 
 - Si une expression est typée comme étant une fonction, elle le sera bien lors de l'évaluation, et recevra bien des arguments du bon type.
-- Chaque structure en mémoire sera bien accédée de façon légale (jamais de "Segmentation Fault" en OCaml, ni de "NullPointerException").
+- Chaque structure en mémoire sera bien accédée de façon légale (jamais de `Segmentation Fault` en OCaml, ni de `NullPointerException`).
 
 ## Sources documentaires
 
@@ -37,13 +37,13 @@ On rappelle que `t1 -> t2 -> t3` est la même chose que `t1 -> (t2 -> t3)` : une
 
 ## Les définitions de type
 
-Le nom d'une constante de type correspond à une définition faite soit dans une bibliothque d'OCaml, soit auparavant par l'utilisateur. On utilise parfois un nom *qualifié*, p.ex. `String.t` est la constante de type `t` définie dans le module `String` (et c'est un synonyme de `string`).
+Le nom d'une constante de type correspond à une définition faite soit dans une bibliothèque d'OCaml, soit auparavant par l'utilisateur. On utilise parfois un nom *qualifié*, p.ex. `String.t` est la constante de type `t` définie dans le module `String` (et c'est un synonyme de `string`).
 
 Il y a plusieurs variantes de définitions de type, qui commencent toutes par le mot-clé `type`. Notez que plusieurs définitions de types peuvent former un même *bloc mutuel* en utilisant le mot-clé `and` après un premier `type`, chaque définition dans ce bloc peut alors mentionner un autre des types défini dans ce bloc. Voir par exemple [slide/cours-10/AST.ml](slide/cours-10/AST.ml).
 
-#### Primo : les abbréviations de type
+#### Primo : les abréviations de type
 
-Une abbréviation de type donne seulement un nom à une expression de type (qui existait donc déjà). Par exemple:
+Une abréviation de type donne seulement un nom à une expression de type (qui existait donc déjà). Par exemple:
 
 ```ocaml
 type truc = int (* crée un synonyme de int *)
@@ -53,15 +53,15 @@ type 's rewrite_rules = 's -> 's word
 
 Notez qu'après le `=` on n'a pas de *constructeurs* (nom en majuscule) comme pour la définition d'un type algébrique un peu plus bas.
 
-Après la définition d'une abbréviation de type, le nouveau nom et l'expression après le `=` sont librement interchangeables. Après `type truc = int`, les quatres types `truc->int` et `int->truc` et `truc->truc` et `int->int` sont quatre écritures possible du même type. OCaml affichera lui la version avec le moins d'abbreviation possible (ici `int->int`).
+Après la définition d'une abréviation de type, le nouveau nom et l'expression après le `=` sont librement interchangeables. Après `type truc = int`, les quatre types `truc->int` et `int->truc` et `truc->truc` et `int->int` sont quatre écritures possible du même type. OCaml affichera lui la version avec le moins d'abréviation possible (ici `int->int`).
 
-Si l'abbréviation a des paramètres, on les fait suivre quand on transforme le nom du type vers son contenu ou vice-versa. Par exemple écrire `int rewrite_rules` c'est exactement comme écrire `int -> int word`, ce qui désigne donc ici les fonctions des entiers vers les mots sur les entiers (`word` étant défini dans le projet).
+Si l'abréviation a des paramètres, on les fait suivre quand on transforme le nom du type vers son contenu ou vice-versa. Par exemple écrire `int rewrite_rules` c'est exactement comme écrire `int -> int word`, ce qui désigne donc ici les fonctions des entiers vers les mots sur les entiers (`word` étant défini dans le projet).
 
 #### Secondo : les définitions de types algébriques 
 
 Parfois appelé aussi types énumérés ou types sommes. 
 
-Cela commence comme une abbréviation, mais après le `=` on liste les constructeurs possibles de ce nouveau type, avec les types des éventuels arguments de ces constructeurs après le mot-clé `of`. Je ne détaillerais pas plus, on en a déjà vu à de multiples reprises. Par exemple:
+Cela commence comme une abréviation, mais après le `=` on liste les constructeurs possibles de ce nouveau type, avec les types des éventuels arguments de ces constructeurs après le mot-clé `of`. Je ne détaillerais pas plus, on en a déjà vu à de multiples reprises. Par exemple:
 
 ```ocaml
 type answer = Yes | No | Maybe
@@ -80,7 +80,7 @@ Le nom des constructeurs commencent obligatoirement par une majuscule. Seule ent
 
 #### Tertio : les définitions de types enregistrement
 
-Déjà vu auparavent également.
+Déjà vu auparavant également.
 
 ```ocaml
 type monrecord = { champ1 : type1; champ2 : type2 } (* et on peut aussi ajouter des paramètres de type *)
@@ -95,9 +95,9 @@ Revenons sur le rôle de ces variables de types. Une même expression OCaml peut
 
 Techniquement, cette instantiation correspond à une *substitution*, c'est-à-dire une fonction des variables de types vers les types. Si une variable `α` n'est pas concernée par une instantiation, on considère juste que `φ(α)=α`. Et une telle substitution `φ` s'étend à tout un type, en faisant agir `φ` sur toutes les variables de ce type. La substitution vide est la fonction identité `id`. Et on peut composer deux substitutions, je vous laisse imaginer comment : `φ∘ψ`.
 
-L'instantiation correspond aussi à une notion d'ordre (partiel) sur les types, un type plus général étant vu comme "plus grand" qu'un type plus spécialisé. Le plus grand type possible est alors une simple variable `α` et à l'autre extrême les plus petits types possibles sont tous les types concrets n'ayant plus du tout de variables. Ainsi par exemple `(int->bool) < (β->γ) < α`. On parle parfois de sous-typage pour cette relation d'ordre, mais attention cela n'a qu'un lien très lointain avec le sous-typage des langages object.
+L'instantiation correspond aussi à une notion d'ordre (partiel) sur les types, un type plus général étant vu comme "plus grand" qu'un type plus spécialisé. Le plus grand type possible est alors une simple variable `α` et à l'autre extrême les plus petits types possibles sont tous les types concrets n'ayant plus du tout de variables. Ainsi par exemple `(int->bool) < (β->γ) < α`. On parle parfois de sous-typage pour cette relation d'ordre, mais attention cela n'a qu'un lien très lointain avec le sous-typage des langages objet.
 
-Cette opération d'instantiation est évidemment à faire de manière contrôlée. Quand on est encore en train de typer une expression OCaml, il ne faudrait pas changer sans raison une variable de type par n'importe quoi d'autre. Par contre, quant on a fini de typer une définition OCaml (un `let x = ...`, global ou local), les variables de types qui sont encore présents dans son type sont normalement considérés comme *universelles* : on pourra librement instantier ces variables de types par n'importe quoi quand ce nom `x` sera réutilisée ensuite. Cette étape du typage qui marquent les variables comme étant universelles est appelée la *généralisation*. Et et fait, cette généralisation n'est pas complètement systématique, il y a des variables qu'il ne faudra *pas* généraliser sous peine de soucis quand on considérera les operations impératives (voir tout en bas de ce document).
+Cette opération d'instantiation est évidemment à faire de manière contrôlée. Quand on est encore en train de typer une expression OCaml, il ne faudrait pas changer sans raison une variable de type par n'importe quoi d'autre. Par contre, quant on a fini de typer une définition OCaml (un `let x = ...`, global ou local), les variables de types qui sont encore présents dans son type sont normalement considérés comme *universelles* : on pourra librement instantier ces variables de types par n'importe quoi quand ce nom `x` sera réutilisée ensuite. Cette étape du typage qui marquent les variables comme étant universelles est appelée la *généralisation*. Et et fait, cette généralisation n'est pas complètement systématique, il y a des variables qu'il ne faudra *pas* généraliser sous peine de soucis quand on considérera les opérations impératives (voir tout en bas de ce document).
 
 Ici, on va noter `∀α1..αn, ...` devant un type pour indiquer quelles variables de ce type ont été généralisés, et sont donc universelles et librement substituables ensuite. Un type avec cette information `∀` est appelé un schéma de type. Dans les grandes lignes, la généralisation est l'étape faisant passer d'un type à un schéma de type, et l'instantiation va dans l'autre sens.
 
@@ -105,7 +105,7 @@ Enfin, on suppose ici qu'on peut toujours générer de "nouvelles" variables de 
 
 ## L'unification
 
-Une opération cruciale pour typer de l'OCaml est l'*unification* : est-ce que deux types sont suffisemment compatibles pour être rendu égaux, et que doit-on changer dans les variables de types de l'un et l'autre pour y arriver. Lors de l'inférence de type, un échec d'une étape d'unification signifie en pratique une erreur de type quelque part dans l'expression que l'on cherche à typer.
+Une opération cruciale pour typer de l'OCaml est l'*unification* : est-ce que deux types sont suffisamment compatibles pour être rendu égaux, et que doit-on changer dans les variables de types de l'un et l'autre pour y arriver. Lors de l'inférence de type, un échec d'une étape d'unification signifie en pratique une erreur de type quelque part dans l'expression que l'on cherche à typer.
 
 On utilise ici l'algorithme d'unification `mgu` (pour "most general unification") dû à Robinson.
 
@@ -116,12 +116,12 @@ On utilise ici l'algorithme d'unification `mgu` (pour "most general unification"
 **Calcul** :
 
 - Si `C` est un ensemble vide d'équations : `mgu(∅) = id`
-- Si `C` contient une equation triviale, on l'enlève et on recommence : `mgu({α = α} ∪ C) = mgu(C)`
-- Si `C` contient une équation entre une variable de type `α` et un autre type `t`, il faut impérativement que `α` n'apparaîsse pas dans `t` (pas de types cycliques, sinon `mgu(C)` est un échec). On considère ensuite la substitution `φ` telle que `φ(α)=t`, on l'applique partout, et on recommence : 
+- Si `C` contient une équation triviale, on l'enlève et on recommence : `mgu({α = α} ∪ C) = mgu(C)`
+- Si `C` contient une équation entre une variable de type `α` et un autre type `t`, il faut impérativement que `α` n'apparaisse pas dans `t` (pas de types cycliques, sinon `mgu(C)` est un échec). On considère ensuite la substitution `φ` telle que `φ(α)=t`, on l'applique partout, et on recommence : 
 `mgu({α = t} ∪ C) = mgu(φ(C)) ◦ φ`.
 - Si `C` contient une équation entre deux flèches de type, on la remplace par les deux sous-équations correspondantes : `mgu({t1 -> t2 = t1' -> t2'} ∪ C) = mgu({t1 = t1'; t2 = t2'} ∪ C)`
 - Si `C` contient une équation entre deux types "étoile", on la remplace par les deux sous-équations correspondantes : `mgu({t1 * t2 = t1' * t2'} ∪ C) = mgu({t1 = t1'; t2 = t2'} ∪ C)`. Idem pour des équations entre types n-uplets.
-- Si `C` contient une équation mentionnant une abbréviation de type, on la remplace par le contenu de cette abbréviation et on recommence.
+- Si `C` contient une équation mentionnant une abréviation de type, on la remplace par le contenu de cette abréviation et on recommence.
 - Si `C` contient une équation entre types algébriques `(t1,...tn) nom = (t1',...tn') nom`, avec le même nom des deux côtés, on continu avec les sous-équations correspondant aux paramètres `t1=t1'` ... `tn=tn'` s'il existent. Idem pour les types enregistrement.
 
 Dans tous les autres cas, `mgu(C)` échoue et C n’a pas de solutions.
@@ -131,7 +131,7 @@ Dans tous les autres cas, `mgu(C)` échoue et C n’a pas de solutions.
 
 On utilise une notion d'environnement de typage `E`, c'est-à-dire une table des variables et autres définitions, avec leurs types respectifs.
 
-Les variables libres d'un type (resp d'un environnement), noté `VL(τ)` (resp. `VL(E)`) sont toutes les variables de types qui apparaissent dans un type `τ` (resp. un environnement E) de façon non-universelles.
+Les variables libres d'un type (resp. d'un environnement), noté `VL(τ)` (resp. `VL(E)`) sont toutes les variables de types qui apparaissent dans un type `τ` (resp. un environnement E) de façon non-universelles.
 
 On utilisera la notion suivante d’instance `Inst(σ)` d’un schéma de types, qui est le remplacement de toutes les variables universelles de types
 par des nouvelles variables : `Inst(∀α1 ... αn. τ) = τ[α1 ← β1, ..., αn ← βn]` où `β1 ... βn` sont des variables "nouvelles".
@@ -148,13 +148,13 @@ L’algorithme W est alors le suivant:
 
 **Calcul**:
 
-- Si dans ce qui suit, un usage de l'unification `mgu` échoue, ou un des sous-appels récursives à W échoue, alors on répond `W (E,e) = err`.
+- Si dans ce qui suit, un usage de l'unification `mgu` échoue, ou un des sous-appels récursifs à W échoue, alors on répond `W (E,e) = err`.
 
 - Si `e` est primitif (p.ex. constante numérique ou opérateur prédéfini):
   soit `σ` son schéma de type ;
   répondre `τ = Inst(σ)` et `φ = id`.
 
-- Si `e` est une abbréviation `x` avec `x ∈ E`:
+- Si `e` est une abréviation `x` avec `x ∈ E`:
   répondre `τ = Inst(E(x))` et `φ = id`.
 
 - Si `e` est une fonction `fun x -> e1` :
@@ -173,7 +173,7 @@ L’algorithme W est alors le suivant:
 - Si `e` est un `let x = e1 in e2` :
   soit `(τ1, φ1) = W (E, e1)` le typage de `e1` ;
   soit `E1 = φ1(E)` l'environnement mis-à-jour ;
-  soit `σ1 = Gen(τ1,E1)` le schéma de type généralisant `τ1` ;
+  soit `σ1 = Gen(τ1,E1)` le schéma de type généralisant `τ1` (ou bien `σ1 = τ1` quand la généralisation est exclue ici, cf tout en bas de ce document) ; 
   soit `E2 = E1+{x:σ1}` l'environnement enrichi avec `x` ;
   soit `(τ2, φ2) = W (E2, e2)` le typage de `e2` ;
   répondre `τ = τ2` et `φ = φ2 ◦ φ1`.
@@ -238,12 +238,59 @@ correspondant:
 Cela signifie donc que le constructeur `C` admet le schéma de type
 `∀α1,...αn. (τ1 * ... τk -> (α1,...αn) t)`. Et on type ensuite `C (e1,...,en)` comme on traiterait une application à un n-uplet. C'est un léger abus, car `C` n'est pas une fonction, et ne pourrait être utilisé seul sans ses arguments, mais au niveau typage tout se passe ensuite de la même façon. En particulier, il y aura une instantiation du schéma de type de `C`, et une unification avec le n-uplet typant les arguments.
 
-- Pour un match, on va typer l'expression qu'on analyse, et verifier que le type de chaque pattern s'unifie bien avec le type de cette expression. On fait ensuite une unification des types de toutes les expressions dans les branches pour trouver le type final de ce match.
+- Si `e` est un enregistrement (record) `{ label1 = e1; ...}` : grâce aux noms des champs, on peut retrouver le type enregistrement en question, et sa déclaration. On vérifie ensuite que tous les champs sont bien présents, et que les expressions `ei` sont bien de types compatibles avec les types des champs correspondants.
 
-## Plus d'exemples
+- Si `e` est une projection `e1.label` d'un record, là encore le nom de ce champ `label` permet de retrouver de quel type enregistrement il s'agit, puis on unifie le type inféré pour `e1` avec ce type enregistrement, et enfin le type de `e1.label` est alors le type de ce champ `label` spécialisé avec les contraintes découvertes jusqu'ici. 
 
-TODO
+- Pour un match, on va typer l'expression qu'on analyse, et vérifier que le type de chaque pattern s'unifie bien avec le type de cette expression. On fait ensuite une unification des types de toutes les expressions dans les branches pour trouver le type final de ce match.
 
 ## Typage et code impératif
 
-TODO
+Comme annoncé auparavant, il est parfois crucial de ne *pas* généraliser les variables de type issues de certains `let`. Cela est dû à la présence en OCaml de constructions impératives, permettant de changer en place certains contenus en mémoire. Si ces contenus avaient reçu initialement un type avec variables, rendre ces variables universelles mènerait à la possibilité d'ajouter des éléments incompatibles dans la même structure, et invaliderait les propriétés de sûreté à l'exécution des expressions bien typées d'OCaml.
+
+Plus précisément, considérons une référence contenant initialement une liste vide :
+
+```ocaml
+let r = ref [];;
+(* r : '_a list ref *)
+```
+
+On notera que OCaml utilise une syntaxe particulière `'_a` avec un souligné pour afficher la variable de type (dans sketch.sh c'est encore plus net comme affichage : `_weak1`). Cela indique que cette variable de type n'est pas universelle, mais plutôt *existentielle*, et ne pourra donc être instantié par la suite qu'une unique fois au plus.
+
+Faisons un peu d'OCaml-fiction, et supposons que `r` ait le type `'a list ref` avec un `'a` universel. Alors `r` admet aussi le type `int list ref` (par instantiation), et donc la phrase suivante est bien typée:
+
+```ocaml
+r := 1 :: !r ;;
+```
+
+Mais une autre instantiation possible serait aussi `(int*int) list ref`, et on pourrait donc effectuer *ensuite* le calcul suivant par exemple :
+
+```ocaml
+fst (List.hd !r);; (* alors que r contient un entier en tête ?!? *)
+```
+
+Ce qui mènerait à considérer lors de l'exécution l'entier 1 comme une paire, c'est-à-dire un bloc mémoire à deux cases, et ce genre de confusion entre entier et structure mémoire mène droit à un `Segmentation Fault` et à un crash.
+
+Le fait que `r` est un type avec une variable existentielle est donc une protection d'OCaml, la première utilisation de `r` figera le contenu de cette variable de type. Ici il s'agit de `r := 1 :: !r`, donc `r` sera alors définitivement un `int list ref`, et la phrase suivante `fst (List.hd !r)` est rejeté par OCaml comme mal typée.
+
+Maintenant, quand est-il dangereux de généraliser ? Quand est-ce sûr ?
+Dans un `let x = e`, la solution d'OCaml est de rejeter toute généralisation des variables de types quand l'expression `e` comporte en tête une application. C'est bien le cas de `let r = ref 1`. Cela peut avoir un impact sur du code qui est pourtant sans risque, par exemple lors d'une application partielle:
+
+```ocaml
+let idlist = List.map (fun x -> x) 
+(* pas de généralisation, donc type '_a list -> '_a list *)
+```
+
+Solution si cela vous arrive, écrire ce genre de code avec tous les arguments :
+
+```ocaml
+let idlist l = List.map (fun x -> x) l
+(* ou bien *)
+let idlist = fun l -> List.map (fun x -> x) l
+(* cette expression est une fonction, pas une application, donc
+   généralisation, donc type 'a list -> 'a list
+```
+
+## Plus d'exemples
+
+Voir le fichier [cours-11-typage.ml](cours-11-typage.ml)

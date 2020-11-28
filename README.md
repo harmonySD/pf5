@@ -76,7 +76,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
   - Un petit [évaluateur d'OCaml en OCaml](slides/cours-10).
 
 #### Cours 11 (semaine du 23/11)
-  - Retour sur le **typage** en OCaml : [markdown](slides/cours-11-typage.md). Désolé, version encore préliminaire, à compléter ce jeudi avec vous.
+  - Retour sur le **typage** en OCaml : [markdown](slides/cours-11-typage.md) et [exemples](slides/cours-11-typage.ml) vu en séance.
 
 
 ## Travaux pratiques (via Learn-OCaml)
