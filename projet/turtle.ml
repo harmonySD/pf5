@@ -19,10 +19,10 @@ type position = {
 	: command list  =[]
 ;; *)
 
-let dessin (listCommande :'s command list)
+let dessin (listCommande : command list)
 	(position : position)
 	: unit =
-	match listeCommande with
+	match listCommande with
 	|[]->unit
 	|Line(n)::e -> moveto position.x*(cos position.a) position.y*(sin position.a) ; 
 					dessin e position
