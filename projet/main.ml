@@ -19,10 +19,18 @@ let cmdline_options = [
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
 
-let main () =
-  Arg.parse cmdline_options extra_arg_action usage;
-  print_string "Pour l'instant je ne fais rien\n"
+let test =[Line 30;Turn 60;Turn 60;Line 30;Turn 60;Turn 60; Line 30];;
 
+let main () =
+	Arg.parse cmdline_options extra_arg_action usage;
+	print_string "Pour l'instant je ne fais rien\n"
+	create_window 800 800;
+	clear_graph ();
+	synchronize();
+	dessin test;
+	clear();
+	synchronize();
+	close_after_event ()
 (** On ne lance ce main que dans le cas d'un programme autonome
     (c'est-à-dire que l'on est pas dans un "toplevel" ocaml interactif).
     Sinon c'est au programmeur de lancer ce qu'il veut *)
