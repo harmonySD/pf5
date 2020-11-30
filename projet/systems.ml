@@ -19,7 +19,7 @@ type 's system = {
 let rec printWord word =
     match word with
     |Symb s -> Printf.printf "%s" s;
-    |Seq se -> printSeq se;
+    |Seq se -> printSequence se;
     |Branch w -> Printf.printf"[";
                  printWord w;
                  Printf.printf"]";
@@ -28,12 +28,24 @@ and printSequence sequence =
     match sequence with
     |[]-> failwith "empty"
     |x::[]-> printWord x
-    |x::q-> printWord y;
+    |y::q-> printWord y;
             printSequence q
 ;;
 
-let rec transfo axiom rules=
-	match axiom with
-	|Symb x -> match rules with
-				|Symb y  when x=y-> Seq y
-				|Symb ->
+let rewrite system=
+    let rec rewrite_word w =
+      match w with
+      |Symb s-> (try system.rules s with Not_found -> Symb s)
+      |Seq se-> let rec rewrite_word_Seq se = match se with
+        |[]->[]
+        |t::q-> [rewrite_word t] @ (rewrite_word_Seq q)
+        in Seq(rewrite_word_Seq se)
+      |Branch b-> rewrite_word b
+    in
+ system.axiom=rewrite_word system.axiom
+;;
+
+
+
+
+
