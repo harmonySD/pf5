@@ -1,3 +1,4 @@
+
 (** Words, rewrite systems, and rewriting *)
 
 type 's word =

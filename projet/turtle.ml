@@ -19,16 +19,17 @@ type position = {
 	: command list  =[]
 ;; *)
 
-let dessin (listCommande : command list)
+(* let dessin (listCommande : command list)
 	(position : position)
 	: unit =
+	(* position en degre -> mettre en radian *)
 	match listCommande with
-	|[]->unit
-	|Line(n)::e -> moveto position.x*(cos position.a) position.y*(sin position.a) ; 
-					dessin e position
-	|Move(n)::e -> lineto position.x*(cos position.a) position.y*(sin position.a) ; 
-					dessin e position
+	|[]-> unit ();
+	|Line(n)::e -> moveto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
+					dessin e position;
+	|Move(n)::e -> lineto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
+					dessin e position;
 	|Turn(n)::e -> position.a <- n; dessin e position
-	|Store::e ->unit 
-	|Restore::e ->unit
-;;
+	|Store::e -> unit ();
+	|Restore::e -> unit ();
+;; *)
