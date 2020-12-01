@@ -1,4 +1,3 @@
-open Graphics
 
 type command =
 | Line of int
@@ -24,12 +23,14 @@ type position = {
 	: unit =
 	(* position en degre -> mettre en radian *)
 	match listCommande with
-	|[]-> unit ();
-	|Line(n)::e -> moveto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
+	|[]-> Graphics.set_color Graphics.black;
+	|Line(n)::e -> Graphics.moveto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
 					dessin e position;
-	|Move(n)::e -> lineto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
+	|Move(n)::e -> Graphics.lineto (int_of_float (position.x *. (cos (position.a)))) (int_of_float (position.y*.(sin (position.a)))) ; 
 					dessin e position;
 	|Turn(n)::e -> position.a <- n; dessin e position
-	|Store::e -> unit ();
-	|Restore::e -> unit ();
+	|Store::e -> Graphics.set_color Graphics.red;
+	|Restore::e -> Graphics.set_color Graphics.magenta;
 ;; *)
+
+let coucou ()= Graphics.lineto 50 50
