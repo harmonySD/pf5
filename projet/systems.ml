@@ -41,10 +41,10 @@ let rewrite system=
         |t::q-> [rewrite_word t] @ (rewrite_word_Seq q)
         in Seq(rewrite_word_Seq se)
       |Branch b-> rewrite_word b
-    in
- system.axiom=rewrite_word system.axiom
-;;
+      in
+  {axiom=(rewrite_word system.axiom); rules = system.rules}
 
+;;
 
 
 
