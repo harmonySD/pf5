@@ -45,7 +45,10 @@ let rewrite system=
   {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
 
 ;;
-
+let rec repeat_ntimes system n=
+    if n<0 then system
+    else repeat_ntimes (rewrite system) (n-1)
+;;
 
 
 
