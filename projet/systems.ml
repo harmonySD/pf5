@@ -13,6 +13,8 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
+let iter = ref 0
+let set_iter i= iter := i; Printf.printf " iter %i\n" !iter ;;
 
 
 
@@ -45,6 +47,7 @@ let rewrite system=
   {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
 
 ;;
+(* ! a appler avec n qui est iter !*)
 let rec repeat_ntimes system n=
     if n<0 then system
     else repeat_ntimes (rewrite system) (n-1)

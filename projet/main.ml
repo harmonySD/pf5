@@ -1,4 +1,4 @@
-
+open Lsystems
 (** Gestion des arguments de la ligne de commande.
     Nous suggérons l'utilisation du module Arg
     http://caml.inria.fr/pub/docs/manual-ocaml/libref/Arg.html
@@ -11,6 +11,7 @@ let action_what () = Printf.printf "%s\n" usage; exit 0
 
 let cmdline_options = [
 ("--what" , Arg.Unit action_what, "description");
+("-i" , Arg.Int (Systems.set_iter), "how many iteration");
 ]
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
