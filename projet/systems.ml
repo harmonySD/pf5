@@ -31,7 +31,7 @@ and printSequence sequence =
     |y::q-> printWord y;
             printSequence q
 ;;
-
+(* rewrite -> return a new system but axiom is changed in relation with his rules*)
 let rewrite system=
     let rec rewrite_word w =
       match w with
@@ -42,7 +42,7 @@ let rewrite system=
         in Seq(rewrite_word_Seq se)
       |Branch b-> rewrite_word b
       in
-  {axiom=(rewrite_word system.axiom); rules = system.rules}
+  {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
 
 ;;
 
