@@ -12,7 +12,7 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 
 - Le responsable du cours est Pierre Letouzey. 
 - Les chargés de TD sont Balthazar Bauer, Giovanni Bernardi, Adrien Guatto, Pierre Letouzey et Vincent Padovani.
-- Le cours est évalué par un projet et par un examen final (à confirmer).
+- Le cours est évalué par un projet (30%) et par un examen final (70%).
 
 ## Inscrivez-vous !
 
@@ -114,6 +114,8 @@ Les premiers TP utilisent http://pf5.ddns.net , une instance de la plateforme **
 - Code fourni : [morpion-partie-2.zip](tp/morpion-partie-2.zip)
 
 ## Projet
+
+**Nouveau** : les [CONSIGNES](projet/CONSIGNES.md) précises relatives au rendu et à l'évaluation sont disponibles (cela correspond au mail envoyé le 7 decembre).
 
 Voir le sous-repertoire `projet` et en particulier le [sujet](projet/projet.pdf) et le [README.md](projet/README.md).
 Attention, il peut y avoir encore des changements et correctifs, à suivre.
