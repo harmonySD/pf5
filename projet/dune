@@ -1,5 +1,6 @@
 (library
  (name lsystems)
+ (libraries graphics)
  (modules (:standard \ main))
  (flags :standard -w -27-26-32-33)
 )
