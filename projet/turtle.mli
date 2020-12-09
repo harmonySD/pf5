@@ -18,5 +18,4 @@ type position = {
 (** Put here any type and function signatures concerning turtle *)
 
 val printPos : position -> unit
-val transformSystInCommand : 's Systems.system -> command list
 val dessin : command list -> position -> position list -> unit 

@@ -1,4 +1,4 @@
-open Systems *)
+(*open Systems *)
 
 type command =
 | Line of int
@@ -24,19 +24,6 @@ let printPos pos=print_string "x= ";
 ;;
 
 (** Put here any type and function implementations concerning turtle *)
-
-(* fonction qui a partir d'un system va renvoyer une list de commande *)
-let rec transformSystInCommand (syst : 's system) 
-	: command list  = 
-	let rec transWordInCommand w = match w with
-		|Symb(s) -> [syst.interp s]
-		|Branch (b) -> [transWordInCommand b]
-		|Seq(l) -> let rec transSeqInCommand seq = match seq with
-			|[] -> []
-			|h::e ->[transWordInCommand h]@ (transSeqInCommand e)
-		in [transSeqInCommand l]
-	in [transWordInCommand syst.axiom]
-;;
 
 (* fonction qui a partir d'une liste de commande va dessiner *)
 let rec dessin (listCommande : command list)

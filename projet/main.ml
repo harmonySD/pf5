@@ -22,12 +22,15 @@ let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
 let close_after_event () =
   ignore (Graphics.wait_next_event [Button_down ; Key_pressed])
 
-let test1 =[Line 30;Turn 60;Turn 60;Line 30;Turn 60;Turn 60; Line 30];;
+(* let test1 =[Line 30;Turn 60;Turn 60;Line 30;Turn 60;Turn 60; Line 30];;
 let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
+
 let position={x=300.;y=300.;a=0};;
+
+let l=transSystInCommand Examples.snow;; *)
 
 let main () =
 	Arg.parse cmdline_options extra_arg_action usage;
@@ -35,11 +38,9 @@ let main () =
 
 	Graphics.open_graph " 800x800";
 	Graphics.clear_graph ();
-	(* synchronize(); *)
-	Graphics.moveto 300 300;
-	(* dessin test1 position []; *)
-	(* Graphics.clear_graph(); *)
-	dessin test2 position [];
+	
+	(* Graphics.moveto 300 300; *)
+	(* dessin l position []; *)
 	(* clear_graph(); *)
 	(* synchronize(); *)
 

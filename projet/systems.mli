@@ -13,3 +13,5 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function interfaces concerning systems *)
+
+val transSystInCommand : 's system -> Turtle.command list
