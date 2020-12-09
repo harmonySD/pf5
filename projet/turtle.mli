@@ -1,3 +1,5 @@
+(* open Systems *)
+
 (** Turtle graphical commands *)
 type command =
 | Line of int      (** advance turtle while drawing *)
@@ -15,6 +17,6 @@ type position = {
 
 (** Put here any type and function signatures concerning turtle *)
 
-(* val transformWordInCommand : 's list -> command list *)
-val dessin : command list -> position -> unit 
-(* val coucou : int -> unit *)
+val printPos : position -> unit
+val transformSystInCommand : 's Systems.system -> command list
+val dessin : command list -> position -> position list -> unit 

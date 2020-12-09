@@ -37,9 +37,9 @@ let main () =
 	Graphics.clear_graph ();
 	(* synchronize(); *)
 	Graphics.moveto 300 300;
-	dessin test1 position;
+	(* dessin test1 position []; *)
 	(* Graphics.clear_graph(); *)
-	dessin test2 position;
+	dessin test2 position [];
 	(* clear_graph(); *)
 	(* synchronize(); *)
 
