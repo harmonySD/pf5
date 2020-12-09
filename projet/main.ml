@@ -19,9 +19,32 @@ let cmdline_options = [
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
 
+let close_after_event () =
+  ignore (Graphics.wait_next_event [Button_down ; Key_pressed])
+
+(* let test1 =[Line 30;Turn 60;Turn 60;Line 30;Turn 60;Turn 60; Line 30];;
+let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
+			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
+			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
+
+
+let position={x=300.;y=300.;a=0};;
+
+let l=transSystInCommand Examples.snow;; *)
+
 let main () =
-  Arg.parse cmdline_options extra_arg_action usage;
-  print_string "Pour l'instant je ne fais rien\n"
+	Arg.parse cmdline_options extra_arg_action usage;
+	(* print_string "Pour l'instant je ne fais rien\n"; *)
+
+	Graphics.open_graph " 800x800";
+	Graphics.clear_graph ();
+	
+	(* Graphics.moveto 300 300; *)
+	(* dessin l position []; *)
+	(* clear_graph(); *)
+	(* synchronize(); *)
+
+	close_after_event ()
 
 (** On ne lance ce main que dans le cas d'un programme autonome
     (c'est-à-dire que l'on est pas dans un "toplevel" ocaml interactif).
