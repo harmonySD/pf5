@@ -1,0 +1,19 @@
+# Compiled source #
+*.o
+*.cmo
+*.cmi
+
+# ignorer repertoire build 
+_build/.
+
+# Packages #
+*.jar
+
+# Intelij Idea #
+.idea/
+out/
+*.iml
+
+# Eclipse #
+.settings/
+bin/
