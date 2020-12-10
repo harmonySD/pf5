@@ -15,6 +15,7 @@ let action_what () = Printf.printf "%s\n" usage; exit 0
 
 let cmdline_options = [
 ("--what" , Arg.Unit action_what, "description");
+("-i" , Arg.Int (Systems.set_iter), "how many iteration");
 ]
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
