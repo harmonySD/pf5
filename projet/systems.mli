@@ -13,7 +13,7 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function interfaces concerning systems *)
-val set_iter : int -> unit
+(*val set_iter : int -> unit*) 
 val rewrite : 's system -> 's system
 val repeat_ntimes : 's system -> int -> 's system
 val transSystInCommand : 's system -> Turtle.command list  

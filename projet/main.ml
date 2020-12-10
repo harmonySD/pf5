@@ -7,6 +7,9 @@ open Turtle
     Nous suggérons l'utilisation du module Arg
     http://caml.inria.fr/pub/docs/manual-ocaml/libref/Arg.html
 *)
+let iter = ref 0
+let set_iter i= iter := i; Printf.printf " iter %i\n" !iter ;;
+
 
 let usage = (* Entete du message d'aide pour --help *)
   "Interpretation de L-systemes et dessins fractals"
@@ -15,7 +18,7 @@ let action_what () = Printf.printf "%s\n" usage; exit 0
 
 let cmdline_options = [
 ("--what" , Arg.Unit action_what, "description");
-("-i" , Arg.Int (Systems.set_iter), "how many iteration");
+("-i" , Arg.Int (set_iter), "how many iteration");
 ]
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
@@ -30,15 +33,18 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 
 
 let position={x=300.;y=300.;a=0};;
-Printf.printf iter;;
-let newSnow = repeat_ntimes Examples.snow iter;;
+
+(*Printf.printf iter;;*)
+let newSnow = repeat_ntimes Examples.snow !iter;;
+
+
 
 let l=transSystInCommand newSnow;;
+let l2=transSystInCommand Examples.snow;;
 
 let main () =
 	Arg.parse cmdline_options extra_arg_action usage;
 	(* print_string "Pour l'instant je ne fais rien\n"; *)
-
 	Graphics.open_graph " 800x800";
 	Graphics.clear_graph ();
 	

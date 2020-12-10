@@ -14,25 +14,23 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
-let iter = ref 0
-let set_iter i= iter := i; Printf.printf " iter %i\n" !iter ;;
 
 
-let rec printWord (word : 's word) : unit =
+(*let rec printWord (word : 's word) : unit=
     match word with
     |Symb s -> Printf.printf "%s" s;
-    |Seq se -> printSequence se;
+    |Seq se -> let rec  printSequence sequence =
+      match sequence with
+      |[]-> failwith "empty"
+      |y::q-> printWord y;
+            printSequence q;
+             in printSequence se 
+
     |Branch w -> Printf.printf"[";
                  printWord w;
-                 Printf.printf"]";
+                 Printf.printf"]"
+;;*)
 
-and printSequence (sequence : 's word list) : unit =
-    match sequence with
-    |[]-> failwith "empty"
-    |x::[]-> printWord x
-    |y::q-> printWord y;
-            printSequence q
-;;
 (* rewrite -> return a new system but axiom is changed in relation with his rules*)
 let rewrite (system : 's system) : 's system =
     let rec rewrite_word w =
@@ -48,11 +46,12 @@ let rewrite (system : 's system) : 's system =
 
 ;;
 
-(* ! a appler avec n qui est iter !*)
+(* ! a appeler avec n qui est iter !*)
 let rec repeat_ntimes (system : 's system) (n : int) : 's system =
-    if n<0 then system
-    else repeat_ntimes (rewrite system) (n-1)
+    if n<=0 then system
+    else repeat_ntimes (rewrite system) (n-1);
 ;;
+
 
 (* fonction qui a partir d'un system va renvoyer une list de commande *)
 let transSystInCommand (syst : 's system) : Turtle.command list  = 
