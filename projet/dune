@@ -1,3 +1,13 @@
-(library (name lsystems) (modules (:standard \ main)))
+(library
+ (name lsystems)
+ (libraries graphics)
+ (modules (:standard \ main))
+ (flags :standard -w -27-26-32-33)
+)
 
-(executable (name main) (modules main) (libraries graphics lsystems))
+(executable
+ (name main)
+ (modules main)
+ (libraries graphics lsystems)
+ (flags :standard -w -27-26-32-33)
+)

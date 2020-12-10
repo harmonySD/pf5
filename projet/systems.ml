@@ -1,3 +1,4 @@
+
 (** Words, rewrite systems, and rewriting *)
 
 type 's word =
@@ -13,6 +14,7 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
+<<<<<<< projet/systems.ml
 let iter = ref 0
 let set_iter i= iter := i; Printf.printf " iter %i\n" !iter ;;
 
@@ -53,5 +55,34 @@ let rec repeat_ntimes system n=
     else repeat_ntimes (rewrite system) (n-1)
 ;;
 
+(* fonction qui a partir d'un system va renvoyer une list de commande *)
+let transSystInCommand (syst : 's system) 
+	: Turtle.command list  = 
+	let rec transWordInCommand w = match w with
+		|Symb(s) -> syst.interp s
+		|Branch (b) -> transWordInCommand b
+		|Seq(l) -> let rec transSeqInCommand seq = match seq with
+			|[] -> []
+			|h::e -> (transWordInCommand h) @ (transSeqInCommand e)
+		in transSeqInCommand l
+	in transWordInCommand syst.axiom
+;;
 
 
+
+
+=======
+
+(* fonction qui a partir d'un system va renvoyer une list de commande *)
+let transSystInCommand (syst : 's system) 
+	: Turtle.command list  = 
+	let rec transWordInCommand w = match w with
+		|Symb(s) -> syst.interp s
+		|Branch (b) -> transWordInCommand b
+		|Seq(l) -> let rec transSeqInCommand seq = match seq with
+			|[] -> []
+			|h::e -> (transWordInCommand h) @ (transSeqInCommand e)
+		in transSeqInCommand l
+	in transWordInCommand syst.axiom
+;;
+>>>>>>> projet/systems.ml

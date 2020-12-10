@@ -1,3 +1,4 @@
+(* open Systems *)
 
 (** Turtle graphical commands *)
 type command =
@@ -15,3 +16,6 @@ type position = {
 }
 
 (** Put here any type and function signatures concerning turtle *)
+
+val printPos : position -> unit
+val dessin : command list -> position -> position list -> unit 
