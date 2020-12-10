@@ -14,7 +14,8 @@ type position = {
 }
 
 (* fonction pour afficher une position *)
-let printPos pos=print_string "x= ";
+let printPos (pos : position) : unit = 
+	print_string "x= ";
 	print_float pos.x;
 	print_string "\ny= ";
 	print_float pos.y;

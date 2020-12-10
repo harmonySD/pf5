@@ -14,13 +14,11 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
-<<<<<<< projet/systems.ml
 let iter = ref 0
 let set_iter i= iter := i; Printf.printf " iter %i\n" !iter ;;
 
 
-
-let rec printWord word =
+let rec printWord (word : 's word) : unit =
     match word with
     |Symb s -> Printf.printf "%s" s;
     |Seq se -> printSequence se;
@@ -28,7 +26,7 @@ let rec printWord word =
                  printWord w;
                  Printf.printf"]";
 
-and printSequence sequence =
+and printSequence (sequence : 's word list) : unit =
     match sequence with
     |[]-> failwith "empty"
     |x::[]-> printWord x
@@ -36,7 +34,7 @@ and printSequence sequence =
             printSequence q
 ;;
 (* rewrite -> return a new system but axiom is changed in relation with his rules*)
-let rewrite system=
+let rewrite (system : 's system) : 's system =
     let rec rewrite_word w =
       match w with
       |Symb s-> (try system.rules s with Not_found -> Symb s)
@@ -49,15 +47,15 @@ let rewrite system=
   {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
 
 ;;
+
 (* ! a appler avec n qui est iter !*)
-let rec repeat_ntimes system n=
+let rec repeat_ntimes (system : 's system) (n : int) : 's system =
     if n<0 then system
     else repeat_ntimes (rewrite system) (n-1)
 ;;
 
 (* fonction qui a partir d'un system va renvoyer une list de commande *)
-let transSystInCommand (syst : 's system) 
-	: Turtle.command list  = 
+let transSystInCommand (syst : 's system) : Turtle.command list  = 
 	let rec transWordInCommand w = match w with
 		|Symb(s) -> syst.interp s
 		|Branch (b) -> transWordInCommand b
@@ -67,22 +65,3 @@ let transSystInCommand (syst : 's system)
 		in transSeqInCommand l
 	in transWordInCommand syst.axiom
 ;;
-
-
-
-
-=======
-
-(* fonction qui a partir d'un system va renvoyer une list de commande *)
-let transSystInCommand (syst : 's system) 
-	: Turtle.command list  = 
-	let rec transWordInCommand w = match w with
-		|Symb(s) -> syst.interp s
-		|Branch (b) -> transWordInCommand b
-		|Seq(l) -> let rec transSeqInCommand seq = match seq with
-			|[] -> []
-			|h::e -> (transWordInCommand h) @ (transSeqInCommand e)
-		in transSeqInCommand l
-	in transWordInCommand syst.axiom
-;;
->>>>>>> projet/systems.ml
