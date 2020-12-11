@@ -80,7 +80,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 #### Cours 12 (semaine du 30/11)
   - Quelques mots sur modules et signatures : [markdown](slides/cours-12-modules.md). Ceci ne sera pas au programme de l'examen, mais peut vous servir en projet.
-  - Quelques exercices pris dans les annales d'examen, cf la section [Anciens Examens] plus bas.
+  - Quelques exercices pris dans les [annales d'examen](#anciens-examens) plus bas.
 
 
 ## Travaux pratiques (via Learn-OCaml)
