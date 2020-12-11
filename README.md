@@ -80,7 +80,7 @@ Beaucoup de contenus proviennent ou s'inspirent d'anciens enseignants de ce cour
 
 #### Cours 12 (semaine du 30/11)
   - Quelques mots sur modules et signatures : [markdown](slides/cours-12-modules.md). Ceci ne sera pas au programme de l'examen, mais peut vous servir en projet.
-  - On fera jeudi quelques exercices pris dans les annales d'examen, cf la section ci-dessous.
+  - Quelques exercices pris dans les annales d'examen, cf la section [Anciens Examens] plus bas.
 
 
 ## Travaux pratiques (via Learn-OCaml)
@@ -127,9 +127,9 @@ Quelques liens:
 ## Anciens examens
 
 - [examen 2018/2019](exams/examen1819.pdf) écrit par Michele Pagani.
-  Le [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/) de correction.
+  Correction : [markdown](exams/exam1819.md), [sketch](https://sketch.sh/s/dgfrHHkNzdUuf3VYTRO3Vy/).
 
-- [examen 2019/2020](exams/examen1920.pdf) par Y. Regis-Gianas.
+- [examen 2019/2020](exams/examen1920.pdf) par Y. Regis-Gianas. Correction : [markdown](exams/exam1920.md).
 
 ## Références et bibliographie
 
