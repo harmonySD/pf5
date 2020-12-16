@@ -13,6 +13,9 @@ Voir [OBJECTIFS.md](OBJECTIFS.md)
 - Le responsable du cours est Pierre Letouzey. 
 - Les chargés de TD sont Balthazar Bauer, Giovanni Bernardi, Adrien Guatto, Pierre Letouzey et Vincent Padovani.
 - Le cours est évalué par un projet (30%) et par un examen final (70%).
+- **Dates** :
+  * Examen présentiel le **mardi 5/1 15h30-17h30**. Programme : tout sauf le cours 12. Documents papiers autorisés.
+  * Projet à finir d'ici au **lundi 11/1** au plus tard. Rendu via dépôt git sur `gaufre`, voir les consignes dans la section Projet.
 
 ## Inscrivez-vous !
 
@@ -117,7 +120,7 @@ Les premiers TP utilisent http://pf5.ddns.net , une instance de la plateforme **
 
 **Nouveau** : les [CONSIGNES](projet/CONSIGNES.md) précises relatives au rendu et à l'évaluation sont disponibles (cela correspond au mail envoyé le 7 decembre).
 
-Voir le sous-repertoire `projet` et en particulier le [sujet](projet/projet.pdf) et le [README.md](projet/README.md).
+Voir le sous-repertoire [projet](projet) et en particulier le [sujet](projet/projet.pdf) et le [README.md](projet/README.md).
 Attention, il peut y avoir encore des changements et correctifs, à suivre.
 
 Quelques liens:
