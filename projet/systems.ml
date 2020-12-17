@@ -64,12 +64,12 @@ let transfo_file_ax l =
     | []-> failwith "Erreur"
 ;;
  (*l -> read_file f -> le fichier*)
-let transfo_file_in_sys l f =
+let transfo_file_in_sys f =
     let lines= read_file f in
     List.rev lines
-    let axiom= transfo_file_ax l in
-    let rules= transfo_file_ru l 1 [] [] in
-    let interp= transfo_file_inter l 2 [] [] in
+    let axiom= transfo_file_ax lines in
+    let rules= transfo_file_ru lines 1 [] [] in
+    let interp= transfo_file_inter lines 2 [] [] in
     {axiom=axiom; rules=rules; interp=interp}
 ;;
 
