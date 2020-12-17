@@ -10,6 +10,9 @@ open Turtle
 let iter = ref 0
 let set_iter i= iter := i
 
+let str= ref ""
+let set_str st= str := st
+
 
 let usage = (* Entete du message d'aide pour --help *)
   "Interpretation de L-systemes et dessins fractals"
@@ -19,6 +22,7 @@ let action_what () = Printf.printf "%s\n" usage; exit 0
 let cmdline_options = [
 ("--what" , Arg.Unit action_what, "description");
 ("-i" , Arg.Int set_iter, "how many iteration");
+("-s", Arg.String set_str, "insert a .sys file");
 ]
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
@@ -48,8 +52,8 @@ let main () =
 
 	Graphics.moveto 300 300;
 
-	let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];
-
+	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
+    let fig= repeat_ntimes !str !iter in dessin (transSystInCommand !str) position [];
 	
 	(*dessin l position [];*)
 	(* clear_graph(); *)

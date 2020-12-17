@@ -31,6 +31,51 @@ type 's system = {
                  Printf.printf"]"
 ;;*)
 
+
+let safe f x = try Some (f x) with _ -> None
+(*prends un fichier-> l'ouvre-> pour chaque ligne la rajoute dans une liste
+on se retrouve avec une liste de string*)
+let read_file f=
+  let fi = open_in f in
+  let rec loop n l =
+  match safe input_line fi with
+  |None -> l
+  |Some _ -> loop (n+1) ((input_line fi)::l)
+  in
+  loop 0 [""]
+;;
+let transfo_ax_word s =
+    match String.length s with
+    |0-> failwith "vide"
+    |_->
+
+
+(* prends une liste de string la premiere ligne non commenter est l'axiom -> on
+va transfomer l'axiom en word avec transfo_ax_word*)
+let transfo_file_ax l =
+    match l with
+    |t::q-> if (String.length t > 0) then
+                if (not (Chqr.equal t.[0] '#')) then
+                    transfo_ax_word t
+                else
+                    transfo_file_ax q
+            else
+                failwith "Erreur"
+    | []-> failwith "Erreur"
+;;
+ (*l -> read_file f -> le fichier*)
+let transfo_file_in_sys l f =
+    let lines= read_file f in
+    List.rev lines
+    let axiom= transfo_file_ax l in
+    let rules= transfo_file_ru l 1 [] [] in
+    let interp= transfo_file_inter l 2 [] [] in
+    {axiom=axiom; rules=rules; interp=interp}
+;;
+
+
+
+
 (* rewrite -> return a new system but axiom is changed in relation with his rules*)
 let rewrite (system : 's system) : 's system =
     let rec rewrite_word w =
