@@ -44,11 +44,27 @@ let read_file f=
   in
   loop 0 [""]
 ;;
-let transfo_ax_word s =
-    match String.length s with
-    |0-> failwith "vide"
-    |_->
 
+let i = ref 0;;
+
+(* prend un string et une liste vide et 
+return le 's word associé *)
+let rec transfo_ax_word (s : string) (l : 's word list) : 's word = 
+  print_int !i;
+  i := 1+ !i;
+  let o='[' in
+  let f=']' in
+	if ((!i -1) >= (String.length s)) then Seq (List.rev l)
+	else if ((String.get s (!i-1))==o) then begin
+    transfo_ax_word s ((Branch (transfo s [] ))::l) 
+    end
+	else if ((String.get s (!i-1))==f) then begin
+    Seq (List.rev l) 
+    end
+  else begin
+    transfo_ax_word s ((Symb (String.get s (!i-1)))::l) 
+    end
+;;
 
 (* prends une liste de string la premiere ligne non commenter est l'axiom -> on
 va transfomer l'axiom en word avec transfo_ax_word*)
@@ -56,7 +72,7 @@ let transfo_file_ax l =
     match l with
     |t::q-> if (String.length t > 0) then
                 if (not (Chqr.equal t.[0] '#')) then
-                    transfo_ax_word t
+                    transfo_ax_word t []
                 else
                     transfo_file_ax q
             else
@@ -64,7 +80,7 @@ let transfo_file_ax l =
     | []-> failwith "Erreur"
 ;;
  (*l -> read_file f -> le fichier*)
-let transfo_file_in_sys f =
+let transfo_file_in_sys (f : string) : 's system =
     let lines= read_file f in
     List.rev lines
     let axiom= transfo_file_ax lines in
