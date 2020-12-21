@@ -56,7 +56,7 @@ let rec transfo_ax_word (s : string) (l : 's word list) : 's word =
   let f=']' in
 	if ((!i -1) >= (String.length s)) then Seq (List.rev l)
 	else if ((String.get s (!i-1))==o) then begin
-    transfo_ax_word s ((Branch (transfo s [] ))::l) 
+    transfo_ax_word s ((Branch (transfo_ax_word s [] ))::l)
     end
 	else if ((String.get s (!i-1))==f) then begin
     Seq (List.rev l) 
@@ -71,7 +71,7 @@ va transfomer l'axiom en word avec transfo_ax_word*)
 let transfo_file_ax l =
     match l with
     |t::q-> if (String.length t > 0) then
-                if (not (Chqr.equal t.[0] '#')) then
+                if (not (Char.equal t.[0] '#')) then
                     transfo_ax_word t []
                 else
                     transfo_file_ax q
@@ -79,14 +79,22 @@ let transfo_file_ax l =
                 failwith "Erreur"
     | []-> failwith "Erreur"
 ;;
+let get_ru l=
+
+let transfo_file_ru l =
+    match l with
+    |t::q -> if (String.length t > 0) then
+                if ((not (Char.equal t.[0] '#')) && (Char.equal t.[1] ' '))
+                    transfo_file_ru q
+
  (*l -> read_file f -> le fichier*)
 let transfo_file_in_sys (f : string) : 's system =
     let lines= read_file f in
     List.rev lines
     let axiom= transfo_file_ax lines in
-    let rules= transfo_file_ru lines 1 [] [] in
+    (*let rules= transfo_file_ru lines 1 [] [] in
     let interp= transfo_file_inter lines 2 [] [] in
-    {axiom=axiom; rules=rules; interp=interp}
+    {axiom=axiom; rules=rules; interp=interp}*)
 ;;
 
 
