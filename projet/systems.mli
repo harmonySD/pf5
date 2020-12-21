@@ -15,5 +15,6 @@ type 's system = {
 (** Put here any type and function interfaces concerning systems *)
 (*val set_iter : int -> unit*) 
 val rewrite : 's system -> 's system
-val repeat_ntimes : 's system -> int -> 's system
+val repeat_ntimes : 's system -> int -> Turtle.position -> unit
+val dessinAvecSystem : 's system -> Turtle.position -> unit
 val transSystInCommand : 's system -> Turtle.command list  
