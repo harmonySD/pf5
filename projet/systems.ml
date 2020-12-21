@@ -46,12 +46,6 @@ let rewrite (system : 's system) : 's system =
 
 ;;
 
-(* ! a appeler avec n qui est iter !*)
-let rec repeat_ntimes (system : 's system) (n : int) : 's system =
-    if n<=0 then system
-    else repeat_ntimes (rewrite system) (n-1);
-;;
-
 
 (* fonction qui a partir d'un system va renvoyer une list de commande *)
 let transSystInCommand (syst : 's system) : Turtle.command list  = 
@@ -64,3 +58,26 @@ let transSystInCommand (syst : 's system) : Turtle.command list  =
 		in transSeqInCommand l
 	in transWordInCommand syst.axiom
 ;;
+
+(* dessine a partir d'un system *)
+let dessinAvecSystem (system : 's system) (pos : Turtle.position) : unit =
+	Graphics.clear_graph ();
+	Graphics.set_color Graphics.black;
+	Graphics.fill_rect 0 0 800 800;
+	Graphics.moveto (Float.to_int pos.x) (Float.to_int pos.y);
+	Turtle.dessin (transSystInCommand system) pos [] Graphics.magenta
+;;
+
+(* ! a appeler avec n qui est iter !*)
+let rec repeat_ntimes (system : 's system) (n : int) (pos : Turtle.position) : unit =
+    if n>0 then begin 
+    	dessinAvecSystem system pos; 
+    	ignore (Graphics.wait_next_event [Button_down ; Key_pressed]);
+    	repeat_ntimes (rewrite system) (n-1) pos;
+    end
+    else begin
+    	dessinAvecSystem system pos
+    end
+;;
+
+
