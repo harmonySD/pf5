@@ -68,7 +68,7 @@ let rec transfo_ax_word (s : string) (l : 's word list) : 's word =
 
 (* prends une liste de string la premiere ligne non commenter est l'axiom -> on
 va transfomer l'axiom en word avec transfo_ax_word*)
-let transfo_file_ax l =
+let rec transfo_file_ax l =
     match l with
     |t::q-> if (String.length t > 0) then
                 if (not (Char.equal t.[0] '#')) then
@@ -79,21 +79,34 @@ let transfo_file_ax l =
                 failwith "Erreur"
     | []-> failwith "Erreur"
 ;;
-let get_ru l=
+let in_func a b =
+    for i = 0 to (List.length a) - 1 do
 
-let transfo_file_ru l =
+    let func =(function |c -> List.nth b i ) in func
+    done;
+;;
+
+
+let rec transfo_file_ru l a b n=
+    if(n<0) then rin_func a b else
     match l with
     |t::q -> if (String.length t > 0) then
-                if ((not (Char.equal t.[0] '#')) && (Char.equal t.[1] ' '))
-                    transfo_file_ru q
+                if ((not(Char.equal t.[0] '#')) && (Char.equal t.[1] ' '))then
+                 transfo_file_ru q (t.[0]::a) ([transfo_ax_word (cut t) []]@b) n
 
+                else
+                  transfo_file_ru q a b n
+             else
+                transfo_file_ru q a b (n-1)
+     |[]-> failwith "Erreur transfo_file_rules"
+;;
  (*l -> read_file f -> le fichier*)
 let transfo_file_in_sys (f : string) : 's system =
     let lines= read_file f in
     List.rev lines
     let axiom= transfo_file_ax lines in
-    (*let rules= transfo_file_ru lines 1 [] [] in
-    let interp= transfo_file_inter lines 2 [] [] in
+    (*let rules= transfo_file_ru lines  [] [] 1 in
+    let interp= transfo_file_inter lines  [] [] 2in
     {axiom=axiom; rules=rules; interp=interp}*)
 ;;
 
