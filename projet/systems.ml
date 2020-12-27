@@ -47,7 +47,7 @@ let read_file f=
 
 let i = ref 0;;
 
-(* prend un string et une liste vide et 
+(* prend un string et une liste vide et
 return le 's word associé *)
 let rec transfo_ax_word (s : string) (l : 's word list) : 's word = 
   print_int !i;
@@ -79,20 +79,25 @@ let rec transfo_file_ax l =
                 failwith "Erreur"
     | []-> failwith "Erreur"
 ;;
-let in_func a b =
-    for i = 0 to (List.length a) - 1 do
-
-    let func =(function |c -> List.nth b i ) in func
-    done;
+(*couper les 2 premiers characteres d'une string*)
+let cut s=
+  String.sub s 2 ((String.length s)-2)
+  ;;
+(*prends deux listes et retourne une liste d'association*)
+let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) =
+  let l=[] in
+  if i>=List.length a then l else ((List.nth a i),(List.nth b i ))::l @ (transfo_listAssoc a b (i+1))
 ;;
 
-
-let rec transfo_file_ru l a b n=
-    if(n<0) then rin_func a b else
+let build_fun l_assoc =  fun s -> try List.assoc s l_assoc
+                                  with Not_found -> Symb s
+                                  ;;
+let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (n: int)=
+    if(n<0) then build_fun (transfo_listAssoc a b 0) else
     match l with
     |t::q -> if (String.length t > 0) then
                 if ((not(Char.equal t.[0] '#')) && (Char.equal t.[1] ' '))then
-                 transfo_file_ru q (t.[0]::a) ([transfo_ax_word (cut t) []]@b) n
+                 transfo_file_ru q (t.[0]::a) ((transfo_ax_word (cut t) [])::b) n
 
                 else
                   transfo_file_ru q a b n
@@ -101,12 +106,12 @@ let rec transfo_file_ru l a b n=
      |[]-> failwith "Erreur transfo_file_rules"
 ;;
  (*l -> read_file f -> le fichier*)
-let transfo_file_in_sys (f : string) : 's system =
+(*let transfo_file_in_sys (f : string) : 's system =
     let lines= read_file f in
     List.rev lines
     let axiom= transfo_file_ax lines in
-    (*let rules= transfo_file_ru lines  [] [] 1 in
-    let interp= transfo_file_inter lines  [] [] 2in
+    let rules= transfo_file_ru lines  [] [] 1 in
+    let interp= transfo_file_inter lines  [] [] 2 in
     {axiom=axiom; rules=rules; interp=interp}*)
 ;;
 
