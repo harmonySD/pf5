@@ -15,7 +15,22 @@ type position = {
   a: int;          (** angle of the direction *)
 }
 
+(* dimension dune figure *)
+type dimension = {
+	xmin : float;
+	xmax : float;
+	ymin : float;
+	ymax : float;
+}
+
+(* longeur et hauteur dune figure *)
+type carre = {
+	longueur : float;
+	hauteur : float;
+}
 (** Put here any type and function signatures concerning turtle *)
 
 val printPos : position -> unit
-val dessin : command list -> position -> position list -> Graphics.color -> unit 
+val printDim : dimension -> unit
+val dessin : command list -> position -> position list -> Graphics.color -> bool -> int -> unit 
+val tailleDiminution : command list -> position -> position list -> dimension -> dimension 
