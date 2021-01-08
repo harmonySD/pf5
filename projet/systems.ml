@@ -80,9 +80,14 @@ let rec transfo_file_ax l =
     | []-> failwith "Erreur"
 ;;
 (*couper les 2 premiers characteres d'une string*)
-let cut s=
+let cut2 s=
   String.sub s 2 ((String.length s)-2)
-  ;;
+;;
+
+let cut s=
+  String.sub s 1 ((String.length s)-1)
+;;
+
 (*prends deux listes et retourne une liste d'association*)
 let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) =
   let l=[] in
@@ -92,28 +97,63 @@ let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) =
 let build_fun l_assoc =  fun s -> try List.assoc s l_assoc
                                   with Not_found -> Symb s
                                   ;;
-let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (n: int)=
-    if(n<0) then build_fun (transfo_listAssoc a b 0) else
+let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: int)=
+    if(esp<0) then build_fun (transfo_listAssoc a b 0) else
     match l with
     |t::q -> if (String.length t > 0) then
-                if ((not(Char.equal t.[0] '#')) && (Char.equal t.[1] ' '))then
-                 transfo_file_ru q (t.[0]::a) ((transfo_ax_word (cut t) [])::b) n
+                if ((not(Char.equal t.[0] '#')) && (esp == 0))then
+                 transfo_file_ru q (t.[0]::a) ((transfo_ax_word (cut2 t) [])::b) esp
 
                 else
-                  transfo_file_ru q a b n
+                  transfo_file_ru q a b esp
              else
-                transfo_file_ru q a b (n-1)
+                transfo_file_ru q a b (esp-1)
      |[]-> failwith "Erreur transfo_file_rules"
 ;;
+let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list list) (i: int) =
+  let l=[] in
+  if i>=List.length a then l else ((List.nth a i),(List.nth b i ))::l @ (transfo_listAssoc2 a b (i+1))
+;;
+(*faire peut etre une boucle ?*)
+    let build_fun2 (l_assoc : (char * Turtle.command list) list)  =  fun s -> try List.assoc s l_assoc
+                                  with Not_found ->failwith "rr"
+;;
+
+let transfo_cmd (s : string) : Turtle.command list =
+  if(String.get s 0)== 'T' then
+      [Turtle.Turn (int_of_string(cut s))]
+  else
+  if (String.get s 0)== 'L' then
+      [Turtle.Line ((int_of_string (cut s))*30)]
+  else
+  if (String.get s 0)== 'M' then
+     [Turtle.Move ((int_of_string (cut s))*30)]
+  else
+     failwith "inconnu";;
+
+
+let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command list) (esp: int) =
+  if(esp<0) then build_fun2 (transfo_listAssoc2 a [b] 0)  else
+  match l with
+  |t::q-> if (String.length t > 0) then
+              if ((not(Char.equal t.[0] '#')) && (Char.equal t.[1] ' ')) then
+                transfo_file_inter q(t.[0]::a) ((transfo_cmd (cut2 t))@b) esp
+              else
+                transfo_file_inter q a b esp
+          else
+            transfo_file_inter q a b (esp -1)
+  |[]-> failwith "Erreur transfo_file_inter"
+;;
+
+
  (*l -> read_file f -> le fichier*)
-(*let transfo_file_in_sys (f : string) : 's system =
+ let transfo_file_in_sys (f : string) : 's system =
     let lines= read_file f in
-    List.rev lines
-    let axiom= transfo_file_ax lines in
+    (*List.rev lines*)
+    let axiom= transfo_file_ax lines  in
     let rules= transfo_file_ru lines  [] [] 1 in
     let interp= transfo_file_inter lines  [] [] 2 in
-    {axiom=axiom; rules=rules; interp=interp}*)
-;;
+    {axiom=axiom; rules=rules; interp=interp};;
 
 
 

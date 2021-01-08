@@ -44,6 +44,7 @@ let position={x=300.;y=300.;a=0};;
 
 let l2=transSystInCommand Examples.snow;;
 
+
 let main () =
 	Arg.parse cmdline_options extra_arg_action usage;
 	(* print_string "Pour l'instant je ne fais rien\n"; *)
@@ -52,8 +53,11 @@ let main () =
 
 	Graphics.moveto 300 300;
 
+	(*let system= transfo_file_in_sys !str in;*)
+	
+
 	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
-    let fig= repeat_ntimes !str !iter in dessin (transSystInCommand !str) position [];
+    (*let fig= repeat_ntimes system in dessin (transSystInCommand system) position []*)
 	
 	(*dessin l position [];*)
 	(* clear_graph(); *)
