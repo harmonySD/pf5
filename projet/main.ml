@@ -36,7 +36,7 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
 
-let position={x=300.;y=300.;a=0};;
+let position={x=50.;y=50.;a=0};;
 let l2=transSystInCommand Examples.snow;;
 
 
@@ -51,11 +51,12 @@ let main () =
 	(* let s = cut "L10";
 	in print_string s;
 	print_string "\n"; *)
-	
+	(* printWord (transfo_ax_word "A+B+" []); *)
+
 	let system = transfo_file_in_sys !str	
 	in 
 	let fig = repeat_ntimes system !iter
-	in printSys fig; 
+	in  
 	dessin (transSystInCommand fig) position [];
 	
 	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)

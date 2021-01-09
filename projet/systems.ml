@@ -14,26 +14,37 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
-
-
-
+(* Differente fonction daffichage *)
 let rec printWord (word : 's word) : unit=
     match word with
     |Symb s -> print_char s;
     |Seq se -> let rec  printSequence sequence =
       match sequence with
-      |[]-> print_char ' ';
+      |[]-> print_string "";
       |y::q-> printWord y;
             printSequence q;
-             in printSequence se; 
+             in printSequence se 
 
     |Branch w -> print_char '[';
                  printWord w;
                  print_char ']'
 ;;
+(* let rec printWord2 (word : char word) : unit =
+    match word with
+    |Symb s -> print_string "Symb "; print_char s;
+    |Seq se -> print_string "[";
+    	let rec  printSequence2 sequence =
+      match sequence with
+      |[]-> print_string "]";
+      |y::q-> printWord2 y; print_string "; ";
+            printSequence2 q;
+       in printSequence2 se; 
 
+    |Branch w -> print_string "Branch (";
+                 printWord2 w;
+                 print_string ")"
+;; *)
 let printSys (s : char system) : unit = printWord s.axiom;;
-
 let rec printList l = match l with
 	|[] -> print_string "\n";
 	|b::e -> print_char b; print_char ' '; printList e
@@ -42,7 +53,10 @@ let rec printListWord l = match l with
 	|[] -> print_string "\n";
 	|b::e -> printWord b; printListWord e
 ;;
-
+let rec printListString l = match l with
+	|[] -> print_string "\n";
+	|b::e -> print_string b; print_string "\n"; printListString e
+;;
 let rec printListCommand l = match l with
 	|[] -> print_string "\n";
 	|Turtle.Line(n)::e -> print_string "line "; print_string (string_of_int n); print_string "\n"; printListCommand e
@@ -51,15 +65,11 @@ let rec printListCommand l = match l with
 	|Turtle.Restore::e -> print_string "restore \n"; printListCommand e
 	|Turtle.Store::e -> print_string "store \n";  printListCommand e
 ;;
-
 let rec printAssocRule l = match l with
 	|[] -> print_string "\n";
 	|(c,s)::e -> print_char c; print_string " "; printWord s; print_string "\n"; printAssocRule e
 ;;
-(* let rec printAssocInterp l = match l with
-	|[] -> print_string "\n";
-	|(c,s)::e -> print_char c; print_string " "; printCo s; print_string "\n"; printAssocRule e
-;; *)
+
 (* let safe f x = try Some (f x) with _ -> None *)
 (*prends un fichier-> l'ouvre-> pour chaque ligne la rajoute dans une liste
 on se retrouve avec une liste de string*)
@@ -97,7 +107,9 @@ let rec transfo_file_ax l =
     match l with
     |t::q-> if (String.length t > 0) then
                 if (not (Char.equal t.[0] '#')) then begin
+                    i := 0;
                     transfo_ax_word t []
+                    
                 end
                 else
                     transfo_file_ax q
@@ -116,13 +128,12 @@ let cut (s : string) : string =
 
 
 (*prends deux listes et retourne une liste d'association*)
-let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) = print_string "listAssoc\n"; 
-	printList a; printListWord b;
+let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) = 
   let l=[] in
   if i>=List.length a then l else ((List.nth a i),(List.nth b i))::l @ (transfo_listAssoc a b (i+1))
 ;;
 
-let build_fun l_assoc = print_string "build\n"; printAssocRule l_assoc;   
+let build_fun l_assoc = 
 	fun s -> try List.assoc s l_assoc with Not_found -> Symb s
                                   ;;
 let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: int)=
@@ -130,21 +141,8 @@ let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: i
     match l with
     |t::q -> if (String.length t > 0) then
                 if ((not(Char.equal t.[0] '#')) && (esp == 0)) then begin
-                	print_string "list a \n";
-                	printList a;
-                	print_string "list b \n";
-                	printListWord b;
-                	print_string "ligne \n";
-                	print_string t;
-                	print_string "\n";
-                	print_string "cut \n";
-                	let couper = cut2 t in
-                	print_string couper;
-                	print_string "\n";
-                	print_string "tarnsfo \n";
-                	printWord (transfo_ax_word couper []);
-                	print_string "\n";
-                	transfo_file_ru q ([t.[0]] @ a) ([(transfo_ax_word couper [])] @ b) esp
+                	i := 0;
+                	transfo_file_ru q ([t.[0]] @ a) ([(transfo_ax_word (cut2 t) [])] @ b) esp
                 end
                 else
                 	transfo_file_ru q a b esp
@@ -153,16 +151,14 @@ let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: i
 	|[]-> build_fun (transfo_listAssoc a b 0)
 ;;
 let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list) (i: int) = 
-	(* print_int (i); print_int (List.length b); print_string "\n"; *)
   	let l=[] in
 	if i>=List.length a then begin 
-		(* print_string "i>=length a\n"; *)
 		l
 	end 
 	else ((List.nth a i),[(List.nth b i )])::l @ (transfo_listAssoc2 a b (i+1))
 ;;
 (*faire peut etre une boucle ?*)
-    let build_fun2 (l_assoc : (char * Turtle.command list) list)  = 
+    let build_fun2 (l_assoc : (char * Turtle.command list) list)  =
     fun s -> try List.assoc s l_assoc with Not_found ->failwith "rr"
 ;;
 
@@ -171,34 +167,18 @@ let transfo_cmd (s : string) : Turtle.command list =
       [Turtle.Turn (int_of_string(cut s))]
   else
   if (String.get s 0)== 'L' then
-      [Turtle.Line ((int_of_string (cut s))*30)]
+      [Turtle.Line ((int_of_string (cut s)))]
   else
   if (String.get s 0)== 'M' then
-     [Turtle.Move ((int_of_string (cut s))*30)]
+     [Turtle.Move ((int_of_string (cut s)))]
   else
      failwith "inconnu";;
 
 
 let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command list) (esp: int) =
   match l with
-  |t::q-> (* print_string t; 
-  			print_string "\n";
-  			print_int (String.length t);
-  			print_string "\n";
-  			print_int esp;
-  			print_string "\n"; *)
-  		if (String.length t > 0) then
+  |t::q-> if (String.length t > 0) then
             if ((not(Char.equal t.[0] '#')) && (esp == 0)) then begin
-              	(* print_string "list a \n";
-                printList a;
-                print_string "list b \n";
-                printListCommand b;
-                print_string "ligne \n";
-                print_string t;
-                print_string "\n";
-                print_string "cut \n";
-                print_string (cut2 t);
-                print_string "\n"; *)
                 transfo_file_inter q (t.[0]::a) ((transfo_cmd (cut2 t))@b) esp
             end
             else
@@ -208,21 +188,13 @@ let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command li
   |[]-> build_fun2 (transfo_listAssoc2 a b 0) 
 ;;
 
-let rec printListString l = match l with
-	|[] -> print_string "\n";
-	|b::e -> print_string b; print_string "\n"; printListString e
-;;
-
 
  (*l -> read_file f -> le fichier*)
  let transfo_file_in_sys (f : string) : char system =
     let lines = read_file f in
     let axiom= transfo_file_ax lines  in
-    print_string "axiom \n";
     let rules= transfo_file_ru lines  [] [] 1 in  
-    print_string "rules\n";  
     let interp= transfo_file_inter lines  [] [] 2 in
-    print_string "interp\n";
     {axiom=axiom; rules=rules; interp=interp}
 ;;
 
