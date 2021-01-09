@@ -15,6 +15,7 @@ type 's system = {
 (** Put here any type and function interfaces concerning systems *)
 (*val set_iter : int -> unit*) 
 
+val printSys : char system -> unit
 val cut2 : string -> string
 val cut : string -> string
 val transfo_cmd : string -> Turtle.command list

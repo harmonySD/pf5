@@ -53,8 +53,10 @@ let main () =
 	print_string "\n"; *)
 	
 	let system = transfo_file_in_sys !str	
-	in let fig = repeat_ntimes system !iter
-	in dessin (transSystInCommand fig) position [];
+	in 
+	let fig = repeat_ntimes system !iter
+	in printSys fig; 
+	dessin (transSystInCommand fig) position [];
 	
 	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
     
