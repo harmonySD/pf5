@@ -102,7 +102,14 @@ let main () =
 	repeat_ntimes dragon !iter position !color !boolean newDim;
 	(* let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position []; *)
 
+	let system = transfo_file_in_sys !str	
+	in 
+	let fig = repeat_ntimes system !iter
+	in  
+	dessin (transSystInCommand fig) position [];
 	
+	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
+    
 	(*dessin l position [];*)
 	(* clear_graph(); *)
 	(* synchronize(); *)
