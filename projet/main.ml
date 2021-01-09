@@ -10,6 +10,9 @@ open Turtle
 let iter = ref 0
 let set_iter i= iter := i
 
+let str= ref ""
+let set_str st= str := st
+
 (* col = int en hexadecimal : OxRRGGBB *)
 let color = ref Graphics.white
 let setColor col= color :=col
@@ -28,6 +31,7 @@ let cmdline_options = [
 ("-i" , Arg.Int set_iter, "how many iteration");
 ("-c" , Arg.Int setColor, "what color");
 ("-b" , Arg.Set boolean, "tab or nothing");
+("-s", Arg.String set_str, "insert a .sys file");
 ]
 
 let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
@@ -42,7 +46,7 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
 let position={x=0.;y=0.;a=0};;
-let dimension={xmin=800.;xmax=0.;ymin=800.;ymax=0.;}
+let dimension={xmin=700.;xmax=0.;ymin=700.;ymax=0.;}
 
 type symbol = A|B|P|M
 
@@ -98,15 +102,17 @@ let main () =
 	in printDim dim5; *)
 
 	let newDim = tailleDiminution (transSystInCommand dragon) position [] dimension
-	in (* printDim newDim;  *)
-	repeat_ntimes dragon !iter position !color !boolean newDim;
+	in 
+	let system = transfo_file_in_sys !str 
+	in
+	repeat_ntimes system !iter position !color !boolean newDim;
 	(* let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position []; *)
 
-	let system = transfo_file_in_sys !str	
+	(* let system = transfo_file_in_sys !str	
 	in 
 	let fig = repeat_ntimes system !iter
 	in  
-	dessin (transSystInCommand fig) position [];
+	dessin (transSystInCommand fig) position []; *)
 	
 	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
     

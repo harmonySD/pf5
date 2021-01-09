@@ -167,10 +167,10 @@ let transfo_cmd (s : string) : Turtle.command list =
       [Turtle.Turn (int_of_string(cut s))]
   else
   if (String.get s 0)== 'L' then
-      [Turtle.Line ((int_of_string (cut s)))]
+      [Turtle.Line ((int_of_string (cut s))*30)]
   else
   if (String.get s 0)== 'M' then
-     [Turtle.Move ((int_of_string (cut s)))]
+     [Turtle.Move ((int_of_string (cut s))*30)]
   else
      failwith "inconnu";;
 
