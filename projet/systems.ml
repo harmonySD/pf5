@@ -16,20 +16,20 @@ type 's system = {
 (** Put here any type and function implementations concerning systems *)
 
 
-(*let rec printWord (word : 's word) : unit=
+let rec printWord (word : 's word) : unit=
     match word with
-    |Symb s -> Printf.printf "%s" s;
+    |Symb s -> print_char s;
     |Seq se -> let rec  printSequence sequence =
       match sequence with
-      |[]-> failwith "empty"
+      |[]-> print_char ' '
       |y::q-> printWord y;
             printSequence q;
              in printSequence se 
 
-    |Branch w -> Printf.printf"[";
+    |Branch w -> print_char '[';
                  printWord w;
-                 Printf.printf"]"
-;;*)
+                 print_char ']'
+;;
 
 
 let safe f x = try Some (f x) with _ -> None
@@ -50,20 +50,16 @@ let i = ref 0;;
 (* prend un string et une liste vide et
 return le 's word associé *)
 let rec transfo_ax_word (s : string) (l : 's word list) : 's word = 
-  print_int !i;
   i := 1+ !i;
   let o='[' in
   let f=']' in
 	if ((!i -1) >= (String.length s)) then Seq (List.rev l)
-	else if ((String.get s (!i-1))==o) then begin
-    transfo_ax_word s ((Branch (transfo_ax_word s [] ))::l)
-    end
-	else if ((String.get s (!i-1))==f) then begin
-    Seq (List.rev l) 
-    end
-  else begin
-    transfo_ax_word s ((Symb (String.get s (!i-1)))::l) 
-    end
+	else if ((String.get s (!i-1))==o) then 
+	    transfo_ax_word s ((Branch (transfo_ax_word s [] ))::l)
+	else if ((String.get s (!i-1))==f) then 
+    	Seq (List.rev l) 
+    else 
+	    transfo_ax_word s ((Symb (String.get s (!i-1)))::l) 
 ;;
 
 (* prends une liste de string la premiere ligne non commenter est l'axiom -> on
@@ -80,12 +76,21 @@ let rec transfo_file_ax l =
     | []-> failwith "Erreur"
 ;;
 (*couper les 2 premiers characteres d'une string*)
-let cut2 s=
-  String.sub s 2 ((String.length s)-2)
+let cut2 (s : string) : string =
+	String.sub s 2 ((String.length s)-2)
 ;;
 
-let cut s=
-  String.sub s 1 ((String.length s)-1)
+let cut (s : string) : string =
+	String.sub s 1 ((String.length s)-1)
+;;
+
+let rec printList l = match l with
+	|[] -> print_string "\n";
+	|b::e -> print_char b; print_char ' '; printList e
+;;
+let rec printListWord l = match l with
+	|[] -> print_string "\n";
+	|b::e -> printWord b; printListWord e
 ;;
 
 (*prends deux listes et retourne une liste d'association*)
@@ -101,14 +106,24 @@ let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: i
     if(esp<0) then build_fun (transfo_listAssoc a b 0) else
     match l with
     |t::q -> if (String.length t > 0) then
-                if ((not(Char.equal t.[0] '#')) && (esp == 0))then
-                 transfo_file_ru q (t.[0]::a) ((transfo_ax_word (cut2 t) [])::b) esp
-
+                if ((not(Char.equal t.[0] '#')) && (esp == 0)) then begin
+                	print_string "list a \n";
+                	printList a;
+                	print_string "list b \n";
+                	printListWord b;
+                	print_string "ligne \n";
+                	print_string t;
+                	print_string "\n";
+                	print_string "cut \n";
+                	print_string (cut2 t);
+                	print_string "\n";
+                	transfo_file_ru q ([t.[0]] @ a) ([(transfo_ax_word (cut2 t) [])] @ b) esp
+                end
                 else
-                  transfo_file_ru q a b esp
-             else
-                transfo_file_ru q a b (esp-1)
-     |[]-> failwith "Erreur transfo_file_rules"
+                	transfo_file_ru q a b esp
+            else
+            	transfo_file_ru q a b (esp-1)
+	|[]-> failwith "Erreur transfo_file_rules"
 ;;
 let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list list) (i: int) =
   let l=[] in
@@ -145,17 +160,21 @@ let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command li
   |[]-> failwith "Erreur transfo_file_inter"
 ;;
 
+let rec printListString l = match l with
+	|[] -> print_string "\n";
+	|b::e -> print_string b; print_string "\n"; printListString e
+;;
 
  (*l -> read_file f -> le fichier*)
- let transfo_file_in_sys (f : string) : 's system =
-    let lines= read_file f in
-    (*List.rev lines*)
+ let transfo_file_in_sys (f : string) : char system =
+    let line= read_file f in
+    let lines = List.rev line
+    in printListString lines;
     let axiom= transfo_file_ax lines  in
-    let rules= transfo_file_ru lines  [] [] 1 in
+    let rules= transfo_file_ru lines  [] [] 1 in    
     let interp= transfo_file_inter lines  [] [] 2 in
-    {axiom=axiom; rules=rules; interp=interp};;
-
-
+    {axiom=axiom; rules=rules; interp=interp}
+;;
 
 
 (* rewrite -> return a new system but axiom is changed in relation with his rules*)

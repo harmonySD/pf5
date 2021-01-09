@@ -37,11 +37,6 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 
 
 let position={x=300.;y=300.;a=0};;
-
-
-
-
-
 let l2=transSystInCommand Examples.snow;;
 
 
@@ -53,12 +48,16 @@ let main () =
 
 	Graphics.moveto 300 300;
 
-	(*let system= transfo_file_in_sys !str in;*)
+	(* let s = cut "L10";
+	in print_string s;
+	print_string "\n"; *)
 	
-
+	let system = transfo_file_in_sys !str	
+	in let fig = repeat_ntimes system !iter
+	in dessin (transSystInCommand fig) position [];
+	
 	(*let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position [];*)
-    (*let fig= repeat_ntimes system in dessin (transSystInCommand system) position []*)
-	
+    
 	(*dessin l position [];*)
 	(* clear_graph(); *)
 	(* synchronize(); *)
