@@ -30,13 +30,14 @@ let extra_arg_action = fun s -> failwith ("Argument inconnu :"^s)
 let close_after_event () =
   ignore (Graphics.wait_next_event [Button_down ; Key_pressed])
 
+(* TEST *)
 let test1 =[Line 30;Turn 60;Turn 60;Line 30;Turn 60;Turn 60; Line 30];;
 let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
+let position={x=10.;y=50.;a=0};;
 
-let position={x=50.;y=50.;a=0};;
 let l2=transSystInCommand Examples.snow;;
 
 
@@ -44,7 +45,10 @@ let main () =
 	Arg.parse cmdline_options extra_arg_action usage;
 	(* print_string "Pour l'instant je ne fais rien\n"; *)
 	Graphics.open_graph " 800x800";
+	Graphics.set_window_title "L-Systeme";
 	Graphics.clear_graph ();
+	Graphics.set_color Graphics.black;
+	Graphics.fill_rect 0 0 800 800;
 
 	Graphics.moveto 300 300;
 
