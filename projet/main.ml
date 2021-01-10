@@ -13,10 +13,10 @@ let set_iter i= iter := i
 let str= ref ""
 let set_str st= str := st
 
-(* col = int en hexadecimal : OxRRGGBB *)
+(* col = int en hexadecimal : 0xRRGGBB *) 
 let color = ref Graphics.white
 let setColor col= color :=col
-
+ 
 (* pour choisir si on prend a partir tu tableau de couleur ou rien *)
 let boolean = ref false
 
@@ -45,7 +45,7 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
-let position={x=0.;y=0.;a=0};;
+let position={x=50.;y=50.;a=0};;
 let dimension={xmin=700.;xmax=0.;ymin=700.;ymax=0.;}
 
 type symbol = A|B|P|M
@@ -69,6 +69,23 @@ let dragon : symbol system =
        | P -> [Turn 90]
        | M -> [Turn (-90)])
   }
+type sybol = A|B|P 
+let br1 : sybol system =
+  let a = Symb A in
+  let b = Symb B in
+  let p = Symb P in
+  {
+    axiom = Seq [a];
+    rules =
+      (function
+       | A -> Seq [a;Branch(Seq [b;a]);a;Branch(Seq[p;a]);a]
+       | s -> Symb s);
+    interp =
+      (function
+       | A -> [Line 300]
+       | B -> [Turn 25]
+       | P -> [Turn (-25)])
+  }
 
 (* let l2=transSystInCommand Examples.snow;; *)
 
@@ -79,7 +96,7 @@ let main () =
 	Graphics.set_window_title "L-Systeme";
 	Graphics.clear_graph ();
 	Graphics.set_color Graphics.black;
-	Graphics.fill_rect 0 0 800 800;
+	Graphics.fill_rect 0 0 700 700;
 (* 
 	let l = transSystInCommand Examples.snow
 	in let dim = tailleDiminution l position [] dimension
@@ -104,7 +121,7 @@ let main () =
 	let newDim = tailleDiminution (transSystInCommand dragon) position [] dimension
 	in 
 	let system = transfo_file_in_sys !str 
-	in
+	in 
 	repeat_ntimes system !iter position !color !boolean newDim;
 	(* let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position []; *)
 

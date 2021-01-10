@@ -57,14 +57,7 @@ let rec printListString l = match l with
 	|[] -> print_string "\n";
 	|b::e -> print_string b; print_string "\n"; printListString e
 ;;
-let rec printListCommand l = match l with
-	|[] -> print_string "\n";
-	|Turtle.Line(n)::e -> print_string "line "; print_string (string_of_int n); print_string "\n"; printListCommand e
-	|Turtle.Move(n)::e -> print_string "move "; print_string (string_of_int n); print_string "\n"; printListCommand e
-	|Turtle.Turn(n)::e -> print_string "turn "; print_string (string_of_int n); print_string "\n"; printListCommand e
-	|Turtle.Restore::e -> print_string "restore \n"; printListCommand e
-	|Turtle.Store::e -> print_string "store \n";  printListCommand e
-;;
+
 let rec printAssocRule l = match l with
 	|[] -> print_string "\n";
 	|(c,s)::e -> print_char c; print_string " "; printWord s; print_string "\n"; printAssocRule e
@@ -208,7 +201,7 @@ let rewrite (system : 's system) : 's system =
         |[]->[]
         |t::q-> [rewrite_word t] @ (rewrite_word_Seq q)
         in Seq(rewrite_word_Seq se)
-      |Branch b-> rewrite_word b
+      |Branch b-> Branch(rewrite_word b)
       in
   {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
 
@@ -233,6 +226,7 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 	Graphics.clear_graph ();
 	Graphics.set_color Graphics.black;
 	Graphics.fill_rect 0 0 700 700;
+	Graphics.moveto ((Float.to_int (pos.x))) ((Float.to_int (pos.y)));
 	(* (* Turtle.printPos pos; *)
 	print_string "\n";
 	print_string "\n"; *)
@@ -284,6 +278,7 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 let rec repeat_ntimes (system : 's system) (n : int) (pos : Turtle.position) 
 				(color : Graphics.color) (boolean : bool) (dim : Turtle.dimension) : unit =
     if n>0 then begin 
+    	(* Turtle.printPos pos; *)
     	let newDim = dessinAvecSystem system pos color boolean dim; 
     	in ignore (Graphics.wait_next_event [Button_down ; Key_pressed]);
     	repeat_ntimes (rewrite system) (n-1) pos color boolean newDim

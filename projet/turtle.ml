@@ -47,6 +47,20 @@ let printDim (dim : dimension) : unit =
 	print_string "\nymax= ";
 	print_float dim.ymax;
 	print_string "\n"
+;;
+let rec printListPos (l : position list) : unit = match l with
+	|[] -> print_string "\n"
+	|p::e -> printPos p; printListPos e;
+;;
+
+let rec printListCommand (l: command list) : unit = match l with
+	|[] -> print_string "\n";
+	|Line(n)::e -> print_string "line "; print_string (string_of_int n); print_string "\n"; printListCommand e
+	|Move(n)::e -> print_string "move "; print_string (string_of_int n); print_string "\n"; printListCommand e
+	|Turn(n)::e -> print_string "turn "; print_string (string_of_int n); print_string "\n"; printListCommand e
+	|Restore::e -> print_string "restore \n"; printListCommand e
+	|Store::e -> print_string "store \n";  printListCommand e
+;;
 
 let couleur = [Graphics.white; Graphics.red; Graphics.green; Graphics.blue; 
 				Graphics.yellow; Graphics.cyan; Graphics.magenta]
@@ -61,6 +75,14 @@ let rec dessin (listCommande : command list)
 	(boolean : bool)
 	(div : int)
 	: unit =
+	(* print_string "dessin\n";
+	print_string "list command\n";
+	printListCommand listCommande; *)
+	(* print_string "position : \n";
+	printPos position;
+	print_string "list position\n";
+	printListPos l;
+	print_string "\n"; *)
 	match listCommande with
 	|[]-> Graphics.set_color color;
 	|Line(n)::e ->  let col = 
@@ -72,23 +94,22 @@ let rec dessin (listCommande : command list)
 					color;
 				end
 				in Graphics.set_color col; 
-
+				Graphics.moveto ((Float.to_int (position.x))/div) ((Float.to_int (position.y))/div);
 				let newPos={x=position.x +. (Float.of_int n) *. 
 							(cos ((Float.of_int position.a) /.180. *.Float.pi));
 							y=position.y +. (Float.of_int n) *. 
 							(sin ((Float.of_int position.a) /.180. *.Float.pi));
 							a=position.a} in 
+				(* print_string "position ancienne : \n";
+				printPos position;
+				print_string "position nouvelle : \n";
+				printPos newPos;
+				print_string "\n"; *)
 				Graphics.lineto ((Float.to_int (newPos.x))/div) ((Float.to_int (newPos.y))/div);
-				
-				(* printPos position;
-				printPos newPos; *)
-				(* let (p1,p2) = Graphics.current_point ()
-				in print_int p1;
-				print_int p2; *)
-				(* print_string "\n"; *)
 				dessin e newPos l ((color + 256) mod 16777215) boolean div;
 
-	|Move(n)::e ->  let newPos={x=position.x +. (Float.of_int n) *. 
+	|Move(n)::e ->  Graphics.moveto ((Float.to_int (position.x))/div) ((Float.to_int (position.y))/div);
+					let newPos={x=position.x +. (Float.of_int n) *. 
 									(cos ((Float.of_int position.a) /.180. *.Float.pi));
 								y=position.y +. (Float.of_int n) *. 
 									(sin ((Float.of_int position.a) /.180. *.Float.pi));
@@ -110,7 +131,8 @@ let rec tailleDiminution (listCommande : command list)
 	: dimension =
 	match listCommande with
 	|[]-> dim
-	|Line(n)::e -> let newPos={x=position.x +. (Float.of_int n) *. 
+	|Line(n)::e -> Graphics.moveto ((Float.to_int (position.x))) ((Float.to_int (position.y)));
+					let newPos={x=position.x +. (Float.of_int n) *. 
 								(cos ((Float.of_int position.a) /.180. *.Float.pi));
 							y=position.y +. (Float.of_int n) *. 
 								(sin ((Float.of_int position.a) /.180. *.Float.pi));
@@ -121,7 +143,8 @@ let rec tailleDiminution (listCommande : command list)
 					in
 					tailleDiminution e newPos l newDim;
 
-	|Move(n)::e ->  let newPos={x=position.x +. (Float.of_int n) *. 
+	|Move(n)::e ->  Graphics.moveto ((Float.to_int (position.x))) ((Float.to_int (position.y)));
+					let newPos={x=position.x +. (Float.of_int n) *. 
 								(cos ((Float.of_int position.a) /.180. *.Float.pi) );
 							y=position.y +. (Float.of_int n) *. 
 								(sin ((Float.of_int position.a) /.180. *.Float.pi));

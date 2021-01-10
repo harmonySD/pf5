@@ -32,5 +32,6 @@ type carre = {
 
 val printPos : position -> unit
 val printDim : dimension -> unit
+val printListCommand : command list -> unit
 val dessin : command list -> position -> position list -> Graphics.color -> bool -> int -> unit 
 val tailleDiminution : command list -> position -> position list -> dimension -> dimension 
