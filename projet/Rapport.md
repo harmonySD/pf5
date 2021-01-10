@@ -7,57 +7,57 @@
 
 ### Fonctionnalités
 
-sujet minimal : dessiner une fractale a partir dun systeme, augmenter le systeme
-couleur aleatoire ou en degrade
-lecture dun fichier pour lancer un systeme
-taille adapte a la fenetre en focntion du premier trait
-
-   Donnez une description précise des fonctionnalités implémentées
-   par votre rendu - sujet minimal, extensions éventuelles,
-   éventuellement parties non réalisées ou non encore fonctionnelles.
+   **Sujet minimal :** chargement d'un L-système à partir d'un fichier (.sys), interprétations des chaines parenthésés
+  en suite de commandes, utilisations du module Graphics, affichage du dessin a chaque itérations apres un clic sur la fenêtre,
+  choix d'une échelle raisonnable.
+  
+  **Extension :** Couleur aléatoire ou en dégradé  
 
 ### Compilation et exécution
 
-make -> run avec option : 
-- -i : int : nombre d'itération 
-- -b : boolean : pour couleur aléatoire à chaque trait
-- -c : int en hexadecimal (OxRRGGBB) : couleur dégradé 
-- -s : string : choix du fichier pour le system
+*Utilisez une version d'Ocaml supérieur a 4.08.0*
+```
+> make
+> ./run (avec option)
+```
+***listes d'options disponibles***
+- i : int : nombre d'itérations 
+- b : boolean : pour couleur aléatoire à chaque trait
+- c : int en hexadecimal (0xRRGGBB) : couleur dégradé 
+- s : string : choix du fichier pour le système
 
-   Documentez ensuite de façon précise la manière dont votre
-   projet doit être compilé et exécuté. Précisez si vous vous êtes
-   servi de bibliothèques externes, et donnez dans ce cas un pointeur
-   vers leur documentation.
+Par exemple vous pouvez lancer :
+```
+> make 
+> ./run -i 6 -c 0xF68C -s examples/dragon.sys 
+```
+ou bien ...
+```
+> make 
+> ./run -i 6 -b -c 0xF68C -s examples/dragon.sys
+```
+*Rappel* pour afficher les différentes itérations, il suffit de cliquer sur la fenêtre
 
 ### Découpage modulaire
 
-- system.ml : tout ce qui traite du lsystem, la transformation dun system, la costruction dun system, la transformation dun system en commande
-- turtle.ml : tout ce qui traite du dessin, donc du module Graphics, le dessin ou la taille du dessin
+- system.ml : tout ce qui traite du L-system, la transformation d'un système, la construction d'un système apres lecture du fichier, la transformation d'un système en commande, le nombre d'appels a la transformation en fonction du nombres d'itérations.
 
-   Donnez une description des traitements pris en charge par chaque
-   module (.ml) de votre projet. Précisez le rôle et la nécessité
-   de chaque module ajouté au dépôt initial.
+- turtle.ml : tout ce qui traite du dessin, donc du module Graphics, le dessin,la couleur, ou la taille du dessin.
+
+- main.ml : lien entre l'utilisateur et le programme, options, appel a la transformation d'un fichier en fonction des paramètres rentrés par l'utilisateur.
 
 ### Organisation du travail
 
-- Sarah : tout ce qui traite du dessin : transformation dun systeme en commande, dessin a partir des commandes, couleurs, taille du dessin en fonction de la
-fenetre, transformation dune chaine en sword, -b et -c
-- Harmony : tout ce qui traite du systeme : substitution dun system, repetition dune etape dun systeme, transformation dun fichier en un systeme, -i et -s
+- Sarah : tout ce qui traite du dessin : transformation d'un système en commande, dessin à partir des commandes, couleurs, taille du dessin en fonction de la
+fenêtre, transformation d'une chaine en sword, -b et -c
+- Harmony : tout ce qui traite du système : substitution d'un système, repetition dune étape dun système, transformation d'un fichier en un système, -i et -s
 
-en premier la base, la substitution et le dessin a lecran (avant et debut confinement), puis en plus, lecture dun fichier, taille ecran et couleur 
-(fin confinement)
 
-   Cette partie est plus libre dans sa forme. Indiquez la manière
-   dont les tâches ont été réparties entre les membres du groupe
-   au cours du temps. Donnez une brève chronologie de votre travail
-   sur ce projet au cours de ce semestre, avant et après le
-   confinement.
+*En premier la base, la substitution et le dessin a l'écran (avant et debut confinement), puis en plus, lecture d'un fichier, taille écran et couleur 
+(fin confinement)*
 
 ### Misc
 
-projet sympa a faire, parfois difficile mais parfois simple, base simple mais pour rendre plus interressant plus complique
+Projet sympa a réalisé, une structure de L-system un peu difficile a comprendre au debut mais assez simple a prendre en main par la suite, sujet de base assez simple (après compréhension des structures), mais pour rendre plus intéressant (sauvegarde fichier etc..) plus compliqué.
 
-sujet de bonne taille qui permet de resumer rapidement le cours 
-
-   Cette partie est entièrement libre : remarques, suggestions,
-   questions...
+Sujet de bonne taille qui permet de résumer rapidement le cours.
