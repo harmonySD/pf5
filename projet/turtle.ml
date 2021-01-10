@@ -13,6 +13,7 @@ type position = {
   a: int;        (** angle of the direction *)
 }
 
+(* dimension de la figure en terme de position *)
 type dimension = {
 	xmin : float;
 	xmax : float;
@@ -20,6 +21,7 @@ type dimension = {
 	ymax : float;
 }
 
+(* autre facon pour les dimensions en terme de distance*)
 type carre = {
 	longueur : float;
 	hauteur : float;
@@ -75,17 +77,11 @@ let rec dessin (listCommande : command list)
 	(boolean : bool)
 	(div : int)
 	: unit =
-	(* print_string "dessin\n";
-	print_string "list command\n";
-	printListCommand listCommande; *)
-	(* print_string "position : \n";
-	printPos position;
-	print_string "list position\n";
-	printListPos l;
-	print_string "\n"; *)
 	match listCommande with
 	|[]-> Graphics.set_color color;
-	|Line(n)::e ->  let col = 
+	|Line(n)::e ->  
+				(* choix de la couleur *)
+				let col = 
 				if (boolean) then begin
 					let (nb: int) = Random.int(List.length couleur) in
 					(List.nth couleur nb);
@@ -94,17 +90,14 @@ let rec dessin (listCommande : command list)
 					color;
 				end
 				in Graphics.set_color col; 
+
 				Graphics.moveto ((Float.to_int (position.x))/div) ((Float.to_int (position.y))/div);
+				(* position a la fin du mouvement *)
 				let newPos={x=position.x +. (Float.of_int n) *. 
 							(cos ((Float.of_int position.a) /.180. *.Float.pi));
 							y=position.y +. (Float.of_int n) *. 
 							(sin ((Float.of_int position.a) /.180. *.Float.pi));
 							a=position.a} in 
-				(* print_string "position ancienne : \n";
-				printPos position;
-				print_string "position nouvelle : \n";
-				printPos newPos;
-				print_string "\n"; *)
 				Graphics.lineto ((Float.to_int (newPos.x))/div) ((Float.to_int (newPos.y))/div);
 				dessin e newPos l ((color + 256) mod 16777215) boolean div;
 
@@ -123,7 +116,7 @@ let rec dessin (listCommande : command list)
 	|Restore::e -> dessin e (List.hd l) (List.tl l) color boolean div
 ;;
 
-
+(* dessin sans reduction pour connaitre les dimensions du dessin *)
 let rec tailleDiminution (listCommande : command list)
 	(position : position)
 	(l : position list)

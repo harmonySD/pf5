@@ -1,0 +1,11 @@
+### Hexagonal Gosper 
+XF
+
+X X+YF++YF-FX--FXFX-YF+
+Y -FX+YFYF++YF+FX--FX-Y
+
+F L6
+X L6
+Y L6
++ T60
+- T-60

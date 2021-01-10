@@ -15,7 +15,7 @@ type position = {
   a: int;          (** angle of the direction *)
 }
 
-(* dimension dune figure *)
+(* dimension de la figure en terme de position *)
 type dimension = {
 	xmin : float;
 	xmax : float;
@@ -23,7 +23,7 @@ type dimension = {
 	ymax : float;
 }
 
-(* longeur et hauteur dune figure *)
+(* autre facon pour les dimensions en terme de distance*)
 type carre = {
 	longueur : float;
 	hauteur : float;
@@ -32,6 +32,7 @@ type carre = {
 
 val printPos : position -> unit
 val printDim : dimension -> unit
+val printListPos : position list -> unit
 val printListCommand : command list -> unit
 val dessin : command list -> position -> position list -> Graphics.color -> bool -> int -> unit 
 val tailleDiminution : command list -> position -> position list -> dimension -> dimension 

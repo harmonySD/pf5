@@ -14,6 +14,7 @@ type 's system = {
     interp : 's -> Turtle.command list }
 
 (** Put here any type and function implementations concerning systems *)
+
 (* Differente fonction daffichage *)
 let rec printWord (word : 's word) : unit=
     match word with
@@ -29,21 +30,6 @@ let rec printWord (word : 's word) : unit=
                  printWord w;
                  print_char ']'
 ;;
-(* let rec printWord2 (word : char word) : unit =
-    match word with
-    |Symb s -> print_string "Symb "; print_char s;
-    |Seq se -> print_string "[";
-    	let rec  printSequence2 sequence =
-      match sequence with
-      |[]-> print_string "]";
-      |y::q-> printWord2 y; print_string "; ";
-            printSequence2 q;
-       in printSequence2 se; 
-
-    |Branch w -> print_string "Branch (";
-                 printWord2 w;
-                 print_string ")"
-;; *)
 let printSys (s : char system) : unit = printWord s.axiom;;
 let rec printList l = match l with
 	|[] -> print_string "\n";
@@ -63,7 +49,7 @@ let rec printAssocRule l = match l with
 	|(c,s)::e -> print_char c; print_string " "; printWord s; print_string "\n"; printAssocRule e
 ;;
 
-(* let safe f x = try Some (f x) with _ -> None *)
+(* Lecture dun fichier *)
 (*prends un fichier-> l'ouvre-> pour chaque ligne la rajoute dans une liste
 on se retrouve avec une liste de string*)
 let read_file filename = 
@@ -77,14 +63,16 @@ let read_file filename =
 	close_in chan;
 	List.rev !lines ;;
 
+(* reference pour ne pas revenir en arriere lors de la transformation
+dune chaine en s word *)
 let i = ref 0;;
 
 (* prend un string et une liste vide et
 return le 's word associé *)
 let rec transfo_ax_word (s : string) (l : 's word list) : 's word = 
-  i := 1+ !i;
-  let o='[' in
-  let f=']' in
+	i := 1+ !i;
+	let o='[' in
+	let f=']' in
 	if ((!i -1) >= (String.length s)) then Seq (List.rev l)
 	else if ((String.get s (!i-1))==o) then 
 	    transfo_ax_word s ((Branch (transfo_ax_word s [] ))::l)
@@ -110,6 +98,7 @@ let rec transfo_file_ax l =
                 transfo_file_ax q
     | []-> failwith "Erreur"
 ;;
+
 (*couper les 2 premiers characteres d'une string*)
 let cut2 (s : string) : string =
 	String.sub s 2 ((String.length s)-2)
@@ -118,7 +107,6 @@ let cut2 (s : string) : string =
 let cut (s : string) : string =
 	String.sub s 1 ((String.length s)-1)
 ;;
-
 
 (*prends deux listes et retourne une liste d'association*)
 let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) = 
@@ -150,8 +138,8 @@ let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list) (i: int) =
 	end 
 	else ((List.nth a i),[(List.nth b i )])::l @ (transfo_listAssoc2 a b (i+1))
 ;;
-(*faire peut etre une boucle ?*)
-    let build_fun2 (l_assoc : (char * Turtle.command list) list)  =
+
+let build_fun2 (l_assoc : (char * Turtle.command list) list)  =
     fun s -> try List.assoc s l_assoc with Not_found ->failwith "rr"
 ;;
 
@@ -191,7 +179,7 @@ let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command li
     {axiom=axiom; rules=rules; interp=interp}
 ;;
 
-
+(* Affichafe dun system et transformation dun system *)
 (* rewrite -> return a new system but axiom is changed in relation with his rules*)
 let rewrite (system : 's system) : 's system =
     let rec rewrite_word w =
@@ -207,7 +195,6 @@ let rewrite (system : 's system) : 's system =
 
 ;;
 
-
 (* fonction qui a partir d'un system va renvoyer une list de commande *)
 let transSystInCommand (syst : 's system) : Turtle.command list  = 
 	let rec transWordInCommand w = match w with
@@ -220,16 +207,15 @@ let transSystInCommand (syst : 's system) : Turtle.command list  =
 	in transWordInCommand syst.axiom
 ;;
 
-(* dessine a partir d'un system *)
+(* dessine a partir d'un system une etape *)
 let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graphics.color) 
-				(boolean : bool) (dim : Turtle.dimension) : Turtle.dimension =
+	(boolean : bool) (dim : Turtle.dimension) : Turtle.dimension =
+	(* initialiser la fenetre *)
 	Graphics.clear_graph ();
 	Graphics.set_color Graphics.black;
 	Graphics.fill_rect 0 0 700 700;
 	Graphics.moveto ((Float.to_int (pos.x))) ((Float.to_int (pos.y)));
-	(* (* Turtle.printPos pos; *)
-	print_string "\n";
-	print_string "\n"; *)
+
 	(* dimension du dessin sans toucher a la taille du dessin *)
 	let newDim = Turtle.tailleDiminution (transSystInCommand system) pos [] dim 
 	(* just avoir la hauteur et la longueur de la figure *)
@@ -245,7 +231,7 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 				(Float.to_int (Float.round (carre.hauteur /. (dim.ymax -. dim.ymin))))
 	(* trouver le bon depart pour que la figure soit entierement dans la fenetre *)
 	in let x = if ((newDim.xmin/.(Float.of_int div))-.100. <= 0.) then begin
-					pos.x-.(newDim.xmin) +.100.
+					pos.x+.(Float.abs newDim.xmin) +.100.
 				end
 			else if ((newDim.xmax/.(Float.of_int div))+.100. >=(Float.of_int (Graphics.size_x ()))) then begin 
 					pos.x-.(newDim.xmax-.(Float.of_int (Graphics.size_x ()))) -.100.
@@ -254,7 +240,7 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 				pos.x
 				end 
 	in let y = if ((newDim.ymin/.(Float.of_int div))-.100. <= 0.) then begin
-					pos.y-.(newDim.ymin) +.100.
+					pos.y+.(Float.abs newDim.ymin) +.100.
 				end
 			else if ((newDim.ymax/.(Float.of_int div))+.100. >= (Float.of_int (Graphics.size_y ()))) then begin 
 					pos.y-.(newDim.ymax-.(Float.of_int (Graphics.size_y ()))) -.100.
@@ -264,17 +250,14 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 				end 
 	in let newPosDepart = {Turtle.x=x; Turtle.y=y; Turtle.a=pos.a}
 	in
-	(* Turtle.printDim newDim;
-	Turtle.printPos newPosDepart;
-	print_string "\n";
-	print_string "\n"; *)
+	(* dessiner la figure avec les infos trouver *)
 	Graphics.moveto ((Float.to_int newPosDepart.x)/div) ((Float.to_int newPosDepart.y)/div); 
 	Turtle.dessin (transSystInCommand system) newPosDepart [] color boolean div;
 	if ((dim.xmax -. dim.xmin) = 0. || (dim.ymax -. dim.ymin = 0.)) then newDim
 	else dim
 ;;
 
-(* ! a appeler avec n qui est iter !*)
+(* repetiton du lsystem, chaque etape attend le clic de lutilisateur *)
 let rec repeat_ntimes (system : 's system) (n : int) (pos : Turtle.position) 
 				(color : Graphics.color) (boolean : bool) (dim : Turtle.dimension) : unit =
     if n>0 then begin 

@@ -1,0 +1,15 @@
+### Kolam, sarrete a un moment
+-D--D
+
+A F++FFFF--F--FFFF++F++FFFF--F
+B F--FFFF++F++FFFF--F--FFFF++F
+C BFA--BFA
+D CFC--CFC
+
+F L20
+A L20
+B L20
+C L20
+D L20
++ T45
+- T-45

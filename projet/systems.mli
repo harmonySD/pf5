@@ -12,8 +12,7 @@ type 's system = {
     rules : 's rewrite_rules;
     interp : 's -> Turtle.command list }
 
-(** Put here any type and function interfaces concerning systems *)
-(*val set_iter : int -> unit*) 
+(** Put here any type and function interfaces concerning systems *) 
 
 val printWord : char word -> unit
 val printSys : char system -> unit
