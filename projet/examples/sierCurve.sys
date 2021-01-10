@@ -1,0 +1,10 @@
+###  Sierpinski arrowhead curve
+A
+
+A B-A-B
+B A+B+A
+
+A L20
+B L20
++ T60
+- T-60
