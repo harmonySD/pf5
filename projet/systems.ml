@@ -52,7 +52,7 @@ let rec printAssocRule l = match l with
 (* Lecture dun fichier *)
 (*prends un fichier-> l'ouvre-> pour chaque ligne la rajoute dans une liste
 on se retrouve avec une liste de string*)
-let read_file filename = 
+let read_file (filename : string) : string list=
 	let lines = ref [] in
 	let chan = open_in filename in
 	try
@@ -61,7 +61,8 @@ let read_file filename =
 	done; !lines
 	with End_of_file ->
 	close_in chan;
-	List.rev !lines ;;
+	List.rev !lines
+;;
 
 (* reference pour ne pas revenir en arriere lors de la transformation
 dune chaine en s word *)
@@ -84,13 +85,12 @@ let rec transfo_ax_word (s : string) (l : 's word list) : 's word =
 
 (* prends une liste de string la premiere ligne non commenter est l'axiom -> on
 va transfomer l'axiom en word avec transfo_ax_word*)
-let rec transfo_file_ax l =
+let rec transfo_file_ax (l : string list) : char word=
     match l with
     |t::q-> if (String.length t > 0) then
                 if (not (Char.equal t.[0] '#')) then begin
                     i := 0;
                     transfo_ax_word t []
-                    
                 end
                 else
                     transfo_file_ax q
@@ -114,10 +114,15 @@ let rec transfo_listAssoc (a:char list) (b:'s word list) (i: int) =
   if i>=List.length a then l else ((List.nth a i),(List.nth b i))::l @ (transfo_listAssoc a b (i+1))
 ;;
 
-let build_fun l_assoc = 
+(*construire une fonction*)
+let build_fun (l_assoc : ('a*'a word) list) : 'a ->'a word =
 	fun s -> try List.assoc s l_assoc with Not_found -> Symb s
-                                  ;;
-let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: int)=
+;;
+
+(* prends une liste de string la premiere ligne non commenter apres un saut de ligne (esp) est le debut des regles
+ -> on va transfomer les règles en fonction 'a -> 'a list  grâce aux listes a et b qui contiennent respectivement 'a et 'a list on fera appel
+ a build_fun et transfo_listAssoc pour creer une liste d'association de a et b *)
+let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: int) =
     if(esp<0) then build_fun (transfo_listAssoc a b 0) else
     match l with
     |t::q -> if (String.length t > 0) then
@@ -131,7 +136,9 @@ let rec transfo_file_ru (l: string list) (a: char list) (b:'s word list) (esp: i
             	transfo_file_ru q a b (esp-1)
 	|[]-> build_fun (transfo_listAssoc a b 0)
 ;;
-let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list) (i: int) = 
+
+(*prends deux listes et retourne une liste d'association*)
+let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list) (i: int) : (char * Turtle.command list) list=
   	let l=[] in
 	if i>=List.length a then begin 
 		l
@@ -139,10 +146,12 @@ let rec transfo_listAssoc2 (a:char list) (b: Turtle.command list) (i: int) =
 	else ((List.nth a i),[(List.nth b i )])::l @ (transfo_listAssoc2 a b (i+1))
 ;;
 
-let build_fun2 (l_assoc : (char * Turtle.command list) list)  =
-    fun s -> try List.assoc s l_assoc with Not_found ->failwith "rr"
+(*construire une fonction*)
+let build_fun2 (l_assoc : (char * Turtle.command list) list) =
+    fun s -> try List.assoc s l_assoc with Not_found ->failwith "erreur build_fun2"
 ;;
 
+(*transformation en commande pour turle suivant les symboles du système et des mouvements*)
 let transfo_cmd (s : string) : Turtle.command list =
   if(String.get s 0)== 'T' then
       [Turtle.Turn (int_of_string(cut s))]
@@ -153,9 +162,12 @@ let transfo_cmd (s : string) : Turtle.command list =
   if (String.get s 0)== 'M' then
      [Turtle.Move ((int_of_string (cut s))*30)]
   else
-     failwith "inconnu";;
+     failwith "inconnu"
+;;
 
-
+(*prends une liste de string la premiere ligne non commenter apres deux saut de ligne (esp) est le debut des interprétations
+   -> on va transfomer les interprétation en fonction 'a -> Turtle.command list  grace aux listes a et b qui contiennet respectivement 'a et Turtle.command list on fera appel
+   a build_fun2 et transfo_listAssoc2 afin de creer une liste d'association de a et b*)
 let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command list) (esp: int) =
   match l with
   |t::q-> if (String.length t > 0) then
@@ -169,8 +181,8 @@ let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command li
   |[]-> build_fun2 (transfo_listAssoc2 a b 0) 
 ;;
 
-
- (*l -> read_file f -> le fichier*)
+ (*f le nom du fichier qui contient un L-system appel a read_file pour transformer le contenu du fichier en liste de strig et appel
+ au differnetes fonctions de transforlation en axiome, règles et interprétations afin de remplir un système *)
  let transfo_file_in_sys (f : string) : char system =
     let lines = read_file f in
     let axiom= transfo_file_ax lines  in
@@ -179,8 +191,7 @@ let rec transfo_file_inter (l: string list) (a: char list) (b: Turtle.command li
     {axiom=axiom; rules=rules; interp=interp}
 ;;
 
-(* Affichafe dun system et transformation dun system *)
-(* rewrite -> return a new system but axiom is changed in relation with his rules*)
+(* Affichafe dun system et transformation d'un system *)
 let rewrite (system : 's system) : 's system =
     let rec rewrite_word w =
       match w with
@@ -192,7 +203,6 @@ let rewrite (system : 's system) : 's system =
       |Branch b-> Branch(rewrite_word b)
       in
   {axiom=(rewrite_word system.axiom); rules = system.rules; interp=system.interp}
-
 ;;
 
 (* fonction qui a partir d'un system va renvoyer une list de commande *)

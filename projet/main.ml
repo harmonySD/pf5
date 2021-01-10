@@ -29,7 +29,7 @@ let action_what () = Printf.printf "%s\n" usage; exit 0
 let cmdline_options = [
 ("--what" , Arg.Unit action_what, "description");
 ("-i" , Arg.Int set_iter, "how many iteration");
-("-c" , Arg.Int setColor, "what color");
+("-c" , Arg.Int setColor, "which color");
 ("-b" , Arg.Set boolean, "tab or nothing");
 ("-s", Arg.String set_str, "insert a .sys file");
 ]
