@@ -21,12 +21,6 @@ type dimension = {
 	ymax : float;
 }
 
-(* autre facon pour les dimensions en terme de distance*)
-type carre = {
-	longueur : float;
-	hauteur : float;
-}
-
 (* fonction pour afficher une position *)
 let printPos (pos : position) : unit = 
 	print_string "x= ";
@@ -131,8 +125,8 @@ let rec tailleDiminution (listCommande : command list)
 								(sin ((Float.of_int position.a) /.180. *.Float.pi));
 							a=position.a} in 
 					Graphics.moveto (Float.to_int (newPos.x)) (Float.to_int (newPos.y));
-					let newDim={xmin=(min dim.xmin newPos.x); xmax=(max dim.xmax newPos.x);
-								ymin=(min dim.ymin newPos.y) ;ymax=(max dim.ymax newPos.y)}
+					let newDim={xmin=(min dim.xmin (min newPos.x position.x)); xmax=(max dim.xmax (max position.x newPos.x));
+								ymin=(min dim.ymin (min newPos.y position.y)) ;ymax=(max dim.ymax (max position.y newPos.y))}
 					in
 					tailleDiminution e newPos l newDim;
 

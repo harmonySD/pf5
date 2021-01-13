@@ -45,7 +45,7 @@ let test2 =[Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60);
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30;Turn 60;Turn 60;
 			Line 30; Turn (-60); Line 30; Turn 60; Turn 60; Line 30; Turn (-60); Line 30];;
 
-let position={x=50.;y=50.;a=0};;
+let position={x=10.;y=10.;a=0};;
 let dimension={xmin=700.;xmax=0.;ymin=700.;ymax=0.;}
 
 type symbol = A|B|P|M
@@ -92,11 +92,11 @@ let br1 : sybol system =
 let main () =
 	Arg.parse cmdline_options extra_arg_action usage;
 	(* print_string "Pour l'instant je ne fais rien\n"; *)
-	Graphics.open_graph " 700x700";
+	Graphics.open_graph " 800x700";
 	Graphics.set_window_title "L-Systeme";
 	Graphics.clear_graph ();
 	Graphics.set_color Graphics.black;
-	Graphics.fill_rect 0 0 700 700;
+	Graphics.fill_rect 0 0 (Graphics.size_x ()) (Graphics.size_y ());
 (* 
 	let l = transSystInCommand Examples.snow
 	in let dim = tailleDiminution l position [] dimension
@@ -118,9 +118,10 @@ let main () =
 	in let dim5 = tailleDiminution l5 position [] dimension
 	in printDim dim5; *)
 
-	let newDim = tailleDiminution (transSystInCommand dragon) position [] dimension
-	in 
+	
 	let system = transfo_file_in_sys !str 
+	in 
+	let newDim = tailleDiminution (transSystInCommand system) position [] dimension
 	in 
 	repeat_ntimes system !iter position !color !boolean newDim;
 	(* let newSnow = repeat_ntimes Examples.snow !iter in dessin (transSystInCommand newSnow) position []; *)

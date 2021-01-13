@@ -23,11 +23,6 @@ type dimension = {
 	ymax : float;
 }
 
-(* autre facon pour les dimensions en terme de distance*)
-type carre = {
-	longueur : float;
-	hauteur : float;
-}
 (** Put here any type and function signatures concerning turtle *)
 
 val printPos : position -> unit
