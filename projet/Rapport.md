@@ -20,9 +20,7 @@
   Pour la partie Tortue, nous utilisons le module Graphics, afin de rendre l'affichage un 
    peu plus interactif, chaque itération apparait après un clic sur la fenêtre.
    
-   Le dessin s'affiche a une échelle raisonnable par rapport à la fenêtre, cependant 
-   a l'affichage, certaines figures peuvent un peu dépassées en haut, et les arbres peuvent avoir un petit 
-   problème d'affichage de cymes sur de petites itérations(*affichage de la cymes pas en entier*).
+   Le dessin s'affiche a une échelle raisonnable par rapport à la fenêtre, et donc chaque trait diminue à chaque étape en fonction de la dimension de l'image de base.
   
  De plus nous avons réussi a ajouté une **extension**, un affichage du dessin en couleur aléatoire ou en dégradé avec couleur au choix. 
 
@@ -37,17 +35,17 @@
 - `-i ` : int : nombre d'itérations 
 - `-b` : boolean : pour couleur aléatoire à chaque trait
 - `-c` : int en hexadecimal (0xRRGGBB) : couleur dégradée 
-- `-s ` : string : choix du fichier pour le système
+- `-s ` : string : choix du fichier pour le système (examples/nomFichier.sys)
 
 Par exemple vous pouvez lancer :
 ```
 > make 
-> ./run -i 6 -c 0xF68C -s examples/dragon.sys 
+> ./run -i 6 -c 0x206890 -s examples/dragon.sys 
 ```
 ou bien ...
 ```
 > make 
-> ./run -i 6 -b  -s examples/dragon.sys
+> ./run -i 10 -b  -s examples/br1.sys
 ```
 **Subtilité** si vous lancer l'option `-b` **et** `-c` alors seul le `-b` sera pris en compte !
 
@@ -64,12 +62,12 @@ ou bien ...
 ### Organisation du travail
 
 Sarah s'est occupée de tout ce qui traite du dessin, la transformation d'un système en commande. Le dessin à partir des commandes, de l'extension couleur (*et donc des options `-b` et `-c`*).
- L'adaptation de la taille du dessin en fonction de la fenêtre ainsi que de la transformation d'une chaine en sword. 
+ L'adaptation de la taille du dessin en fonction de la fenêtre ainsi que de la transformation d'une chaine de charactère en sword. 
 
 Harmony s'est occupée tout ce qui traite du système, la substitution d'un système, le nombre de répétitions d'une étape d'un système donné par l'utilisateur (*options `-i`*).
 Ainsi que de la transformation d'un fichier en un système (*option `-s`*)
 
-Et bien sure quelques séances de débogage ensemble :)
+Et bien sure quelques séances de débuggage ensemble :)
 
 *Nous avons en premier privilégier la base du projet, c'est-à-dire la substitution et le dessin a l'écran (avant et debut confinement). Puis en plus, la lecture d'un fichier, l'adaptation du dessin 
 par rapport a la taille de l'écran et des couleurs. (fin confinement)*

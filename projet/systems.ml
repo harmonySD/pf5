@@ -223,24 +223,23 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 	(* initialiser la fenetre *)
 	Graphics.clear_graph ();
 	Graphics.set_color Graphics.black;
-	Graphics.fill_rect 0 0 700 700;
+	Graphics.fill_rect 0 0 (Graphics.size_x ()) (Graphics.size_y ());
 	Graphics.moveto ((Float.to_int (pos.x))) ((Float.to_int (pos.y)));
 
 	(* dimension du dessin sans toucher a la taille du dessin *)
 	let newDim = Turtle.tailleDiminution (transSystInCommand system) pos [] dim 
-	(* just avoir la hauteur et la longueur de la figure *)
-	in let carre = {Turtle.longueur= (newDim.xmax -. newDim.xmin); 
-					Turtle.hauteur=(newDim.ymax -. newDim.ymin)} 
+
 	(* diviser la taille de chaque segment pour entrer dans la fenetre *)
 	in let div = if (dim.xmax-.dim.xmin=0. && dim.ymax-.dim.ymin=0.) then 1
 				else if (dim.xmax-.dim.xmin=0.) then 
-						(Float.to_int (Float.round (carre.hauteur/.(dim.ymax-.dim.ymin))))
+						(Float.to_int (Float.round ((newDim.ymax -. newDim.ymin)/.(dim.ymax-.dim.ymin))))
 				else if (dim.ymax-.dim.ymin=0.) then 
-						(Float.to_int (Float.round (carre.longueur /. (dim.xmax -. dim.xmin))))
-				else max (Float.to_int (Float.round (carre.longueur /. (dim.xmax -. dim.xmin)))) 
-				(Float.to_int (Float.round (carre.hauteur /. (dim.ymax -. dim.ymin))))
+						(Float.to_int (Float.round ((newDim.xmax -. newDim.xmin) /. (dim.xmax -. dim.xmin))))
+				else max (Float.to_int (Float.round ((newDim.xmax -. newDim.xmin) /. (dim.xmax -. dim.xmin)))) 
+				(Float.to_int (Float.round ((newDim.ymax -. newDim.ymin) /. (dim.ymax -. dim.ymin))))
+  in 
 	(* trouver le bon depart pour que la figure soit entierement dans la fenetre *)
-	in let x = if ((newDim.xmin/.(Float.of_int div))-.100. <= 0.) then begin
+	let x = if ((newDim.xmin/.(Float.of_int div))-.100. <= 0.) then begin
 					pos.x+.(Float.abs newDim.xmin) +.100.
 				end
 			else if ((newDim.xmax/.(Float.of_int div))+.100. >=(Float.of_int (Graphics.size_x ()))) then begin 
@@ -271,7 +270,6 @@ let dessinAvecSystem (system : 's system) (pos : Turtle.position) (color : Graph
 let rec repeat_ntimes (system : 's system) (n : int) (pos : Turtle.position) 
 				(color : Graphics.color) (boolean : bool) (dim : Turtle.dimension) : unit =
     if n>0 then begin 
-    	(* Turtle.printPos pos; *)
     	let newDim = dessinAvecSystem system pos color boolean dim; 
     	in ignore (Graphics.wait_next_event [Button_down ; Key_pressed]);
     	repeat_ntimes (rewrite system) (n-1) pos color boolean newDim
